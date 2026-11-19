@@ -1,0 +1,7 @@
+/* 시안 B: 링을 5조각으로 나눔(조각 하나 = 지표 하나). 오른쪽은 가장 낮은 지표 한 줄과 설명 */
+.tb-callout{display:flex;flex-direction:column;gap:3px;cursor:pointer}
+.tb-callout .k{font-family:'Pretendard-Medium',sans-serif;font-size:11px;color:#72747b}
+.tb-callout .m{display:flex;align-items:center;gap:7px;font-family:'Pretendard-SemiBold',sans-serif;font-size:18px;color:#171719;line-height:24px}
+.tb-callout .m b{font-weight:400;color:#c4570a}
+.tb-callout .dot{width:8px;height:8px;border-radius:50%;background:#f07b2a;flex:none}
+.tb-callout .cap{margin-top:5px;font-family:'Pretendard-Medium',sans-serif;font-size:11px;line-height:16px;color:#72747b}

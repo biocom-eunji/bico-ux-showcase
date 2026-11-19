@@ -1,0 +1,18 @@
+sequenceDiagram
+  actor U as 사용자
+  participant R as 기록 (/record)
+  participant D as 식단 기록하기 (/record/diet/add)
+  participant M as 기록 방법 시트
+  U->>R: 식단 카드의 + 선택
+  R-->>D: 이동
+  D-->>U: 아침 · 점심 · 저녁 · 간식 4개
+  U->>D: 끼니 선택 (예: 아침)
+  D-->>M: 시트 열림 "아침은 어떻게 남길까요?"
+  M-->>U: 사진으로 남기기 (찍으면 메뉴와 양을 알아봐요)<br/>직접 입력하기 (메뉴 이름이나 재료로 찾아요)<br/>공복으로 보냈어요 (단식 중이라 먹지 않았다면)
+  alt 사진 또는 직접 입력
+    U->>M: 방법 선택
+    Note over M: 이후 단계는 이번 크롤에서 미확인
+  else 공복
+    U->>M: 공복으로 보냈어요
+    M-->>R: 기록 반영 (확인 필요)
+  end

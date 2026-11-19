@@ -1,0 +1,37 @@
+flowchart TD
+  H["홈 /"]
+  TAB(["하단 탭<br/>콘텐츠 · 기록 · 홈 · AI · 쇼핑"])
+  H -.- TAB
+
+  subgraph TOP["상단 영역"]
+    H -->|"레벨 바"| REC["기록 /record"]
+    H -->|"포인트"| SHOP["쇼핑 /shop"]
+    H -->|"알림"| ALARM["알림 /my/alarm"]
+    H -->|"마이"| MY["마이 /my"]
+    H -->|"결과지"| REP["결과지 /report"]
+    H -->|"보관함"| SHEET1(["시트: 보관함<br/>(내용 미확인)"])
+    H -->|"목표 바꾸기(피부 ▾)"| SHEET2(["시트: 목표 모드 선택"])
+  end
+
+  subgraph SCORE["점수 카드"]
+    H -->|"이너뷰티 점수"| GS["점수 상세 /goal/score"]
+    H -->|"분석 정확도"| COMP["분석 정확도 /completeness"]
+    H -->|"검사로 +10%"| SHOP
+  end
+
+  subgraph CHK["아침 체크인"]
+    H -->|"알로에게 묻기"| AI["AI /ai"]
+    H -->|"답 5개 중 하나"| H2(["같은 화면에서<br/>다음 문항 1/4→2/4"])
+    H -->|"트러블 없던 날"| CS["컨디션 통계 /record/checkin"]
+  end
+
+  subgraph BEAUTY["이너뷰티 카드 5개"]
+    H -->|"식단 · 영양 · 스킨케어<br/>배변 · 회복"| CARE["케어 상세 /care/영역"]
+  end
+
+  subgraph SHORTS["오늘의 60초"]
+    H -->|"영상 4개"| SH["숏츠 /shorts/s1~s7"]
+    H -->|"전체 보기"| CT["콘텐츠 /content"]
+  end
+
+  H -->|"온보딩 보기"| ONB["온보딩 /onboarding"]

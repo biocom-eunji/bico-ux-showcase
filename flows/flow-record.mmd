@@ -1,0 +1,39 @@
+flowchart TD
+  R["기록 /record"]
+  TAB(["하단 탭"])
+  R -.- TAB
+  R -->|"포인트"| SHOP["쇼핑 /shop"]
+
+  subgraph ADV["모험"]
+    R -->|"입장하기 · 알로스타 카드"| PL["알로스타 행성 /planet/allostar"]
+    R -->|"가이아 · 글로우 (잠김)"| LOCK(["변화 없음<br/>잠긴 행성"])
+  end
+
+  subgraph MISSION["오늘의 미션"]
+    R -->|"미션 3개"| MS(["같은 화면에서 상태 변화"])
+  end
+
+  subgraph TODAY["오늘 한 것"]
+    R -->|"식단 상세"| D["식단 /record/diet"]
+    R -->|"식단 +"| DA["식단 기록하기 /record/diet/add"]
+    R -->|"수면 상세"| S["수면 /record/sleep"]
+    R -->|"수면 +"| SA["수면 기록하기 /record/sleep/add"]
+    R -->|"단식 상세"| F["단식 /record/fasting"]
+    R -->|"단식 +"| FS["단식 시작 /record/fasting/start"]
+    R -->|"영양제"| SU["영양제 /record/supplement"]
+    R -->|"걸음"| ST["걸음 /record/steps"]
+    R -->|"운동"| EX["운동 /record/exercise"]
+    R -->|"자외선 차단"| SUN["자외선 차단 /record/sun"]
+    R -->|"항목 관리"| MG(["시트: 항목 관리<br/>순서 · 숨기기"])
+  end
+
+  subgraph STATE["내 상태"]
+    R -->|"체중"| W["체중 /record/weight"]
+    R -->|"배변"| B["배변 /record/bowel"]
+    R -->|"오늘 컨디션"| CK["컨디션 /record/checkin"]
+    R -->|"생리 주기"| PE(["시트: 생리 주기<br/>선택 기록"])
+    R -->|"기기 연결"| DV(["시트: 기기 연결"])
+  end
+
+  CK -->|"아침 체크인하기"| H["홈 /"]
+  DA -->|"아침 · 점심 · 저녁 · 간식"| DS(["시트: 기록 방법<br/>사진 · 직접 입력 · 공복"])

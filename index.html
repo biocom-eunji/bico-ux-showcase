@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>비코 홈·기록 UX 개선안</title>
+<link rel="icon" href="data:,">
+<style>
+@font-face{font-family:'Pretendard';font-weight:400;src:url('http://localhost:8776/assets/assets/fonts/Pretendard-Regular.d6e0de06bff8b7fda2db4682168e3ddf.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pretendard';font-weight:500;src:url('http://localhost:8776/assets/assets/fonts/Pretendard-Medium.7305f90c923d4409825ec2f4380b63d6.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pretendard';font-weight:600;src:url('http://localhost:8776/assets/assets/fonts/Pretendard-SemiBold.459eff7ba5380583ccd6eda49c846c85.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pretendard';font-weight:700;src:url('http://localhost:8776/assets/assets/fonts/Pretendard-Bold.dfb614ebecd405875f50a918ca11c17c.ttf') format('truetype');font-display:swap}
+:root{
+  --bg:#f4f5f7; --panel:#fff; --ink:#1c2230; --sub:#6b7385; --line:#e2e5eb;
+  --asis:#C4553F; --tobe:#3FAFD3; --brand:#0f9d8a;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14171d; --panel:#1d222b; --ink:#eef0f4; --sub:#9aa3b5; --line:#2e3542; }
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo",sans-serif}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:14px 24px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:20}
+header h1{font-size:16px;margin:0;font-weight:700}
+header .sub{font-size:12px;color:var(--sub)}
+.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:0 24px 40px;margin-top:-30px}
+.nav button,.ctl button,.ctl select{font-family:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.nav button[aria-current="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.ctl{margin-left:auto;display:flex;gap:8px;align-items:center;font-size:13px;color:var(--sub)}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--sub);align-items:center}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+main{display:flex;justify-content:center;gap:40px;padding:22px 24px 60px}
+.col{display:flex;flex-direction:column;gap:8px}
+.col h2{margin:0;font-size:13px;display:flex;align-items:center;gap:8px}
+.col h2 b{padding:2px 8px;border-radius:6px;color:#fff;font-size:12px}
+.col h2 span{color:var(--sub);font-weight:400;font-size:12px}
+.frame{position:relative;border:1px solid var(--line);border-radius:0;background:#fff;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08)}
+.frame iframe{position:absolute;left:0;top:0;width:390px;height:844px;border:0;transform-origin:0 0;background:#fff}
+#asisCol h2 b{background:var(--asis)} #tobeCol h2 b{background:var(--tobe)}
+#bubble{position:fixed;z-index:50;max-width:320px;padding:12px 14px;border-radius:12px;background:var(--panel);color:var(--ink);border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.22);font-size:13px;line-height:1.5;pointer-events:none;display:none}
+#bubble .tags{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+#bubble .tag{font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;color:#fff}
+#bubble .tag.kind{background:var(--sub)}
+#bubble strong{display:block;font-size:14px;margin-bottom:4px}
+#bubble .ref{margin-top:8px;font-size:11px;color:var(--sub)}
+.empty{font-size:12px;color:var(--sub);padding:0 4px}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>비코 홈·기록 UX 개선안</h1>
+    <div class="sub">정책 기준: 비코 알고리즘 설계 · 점에 마우스를 올리면 말풍선이 떠요</div>
+  </div>
+  <div class="legend"><span><i style="background:var(--asis)"></i>AS-IS 문제</span><span><i style="background:var(--tobe)"></i>TO-BE 개선</span></div>
+  <div class="ctl">
+    <label>점 <button id="pinBtn" aria-pressed="true">보기</button></label>
+    <label>크기 <select id="zoom"><option value="auto">맞춤</option><option value="1">100%</option><option value="0.85">85%</option><option value="0.7">70%</option></select></label>
+  </div>
+</header>
+<main>
+  <section class="col" id="asisCol">
+    <h2><b>AS-IS</b> 지금 앱 <span id="asisPath"></span></h2>
+    <div class="frame" id="asisFrame"><iframe id="asis" title="AS-IS 비코 앱"></iframe></div>
+  </section>
+  <section class="col" id="tobeCol">
+    <h2><b>TO-BE</b> 개선안 <span id="tobeNote">초안 = AS-IS 복제</span></h2>
+    <div class="frame" id="tobeFrame"><iframe id="tobe" title="TO-BE 개선안"></iframe></div>
+  </section>
+</main>
+<nav class="nav" id="nav" aria-label="화면 바로가기"></nav>
+<div id="bubble" role="tooltip"></div>
+<script>
+(function () {
+  var ASIS = 'http://localhost:8776';
+  var SCREENS = [
+    { path: '/', key: 'home', name: '홈(문진 전)', id: 'home' },
+    { path: '/', key: 'home', name: '홈(문진 후)', id: 'home-done', done: true },
+    { path: '/goal/score', key: 'goal-score', name: '점수 상세', id: 'goal-score' },
+    { path: '/record/diet/add', key: 'diet-add', name: '식단 기록하기', id: 'diet-add' }
+  ];
+  var curId = 'home';
+  var W = 390, H = 844, scale = 1, curPath = '/', pinsOn = true;
+  var asis = document.getElementById('asis'), tobe = document.getElementById('tobe');
+  var bubble = document.getElementById('bubble');
+
+  function keyOf(p) { var s = SCREENS.filter(function (x) { return x.path === p; })[0]; return s ? s.key : 'other'; }
+  function tobeSrc(p) { var k = keyOf(p); return 'tobe/tobe-' + k + '.html' + (k === 'other' ? '?path=' + encodeURIComponent(p) : ''); }
+
+  /* ---------- 화면 바로가기 ---------- */
+  var nav = document.getElementById('nav');
+  SCREENS.forEach(function (s) {
+    var b = document.createElement('button'); b.textContent = s.name; b.dataset.path = s.path;
+    b.dataset.id = s.id;
+    b.onclick = function () { go(s.path, true, s); };
+    nav.appendChild(b);
+  });
+  function markNav() { [].forEach.call(nav.children, function (b) { b.setAttribute('aria-current', String(b.dataset.id === curId)); }); }
+
+  /* ---------- 이동: 한쪽이 움직이면 다른 쪽도 같은 화면으로 ---------- */
+  function once(frame, cb) { var f = function () { frame.removeEventListener('load', f); cb(); }; frame.addEventListener('load', f); }
+  function idOf(p) { var s = SCREENS.filter(function (x) { return x.path === p; })[0]; return s ? s.id : 'other'; }
+  function go(p, reloadAsis, scr) {
+    var wantDone = !!(scr && scr.done);
+    curPath = p; curId = scr ? scr.id : idOf(p); markNav();
+    document.getElementById('asisPath').textContent = p;
+    var t = tobeSrc(p), sep = t.indexOf('?') < 0 ? '?' : '&';
+    if (wantDone) {                                   /* 홈(문진 후): TO-BE는 ?done=1, AS-IS는 앱 사본의 데모 값 ?demo=checked(문진 끝낸 상태)로 바로 완료 화면 */
+      tobe.setAttribute('src', t + sep + 'done=1&r=' + Date.now());
+      asis.setAttribute('src', ASIS + p + '?demo=checked');
+    } else {
+      if (scr && p === '/') tobe.setAttribute('src', t + sep + 'r=' + Date.now());           /* 같은 홈이라도 새로 열어 문진 전으로 */
+      else if (tobe.getAttribute('src') !== t) tobe.setAttribute('src', t);
+      if (reloadAsis) asis.setAttribute('src', ASIS + p);
+    }
+    document.getElementById('tobeNote').textContent = keyOf(p) === 'other' ? '이번 범위 밖 화면' : keyOf(p) === 'home' ? '홈: D1~D55 반영 · 파란 점 = AS-IS 대비 새로 생긴 것' : keyOf(p) === 'goal-score' ? '1차 수정: 카드 순서(D10) · 나머지는 AS-IS 복제' : '초안 = AS-IS 복제';
+  }
+
+  window.addEventListener('message', function (e) {
+    var d = e.data; if (!d || d.src !== 'ux') return;
+    if (d.type === 'route' && d.variant === 'asis') { if (d.path !== curPath) go(d.path, false); else { markNav(); } }
+    else if (d.type === 'nav' && d.variant === 'tobe') { go(d.path, true); }
+    else if (d.type === 'scroll') { (d.variant === 'asis' ? tobe : asis).contentWindow.postMessage({ src: 'ux-parent', type: 'scroll', ratio: d.ratio }, '*'); }
+    else if (d.type === 'click') { (d.variant === 'asis' ? tobe : asis).contentWindow.postMessage({ src: 'ux-parent', type: 'click', label: d.label }, '*'); }
+    else if (d.type === 'pin') { showBubble(d); }
+    else if (d.type === 'pin-off') { bubble.style.display = 'none'; }
+  });
+
+  /* ---------- 말풍선 ---------- */
+  function showBubble(d) {
+    var fr = (d.variant === 'asis' ? asis : tobe).getBoundingClientRect();
+    var x = fr.left + (d.rect.l + d.rect.w / 2) * scale, y = fr.top + (d.rect.t + d.rect.h) * scale;
+    var isA = d.variant === 'asis';
+    bubble.innerHTML = '<div class="tags"><span class="tag" style="background:' + (isA ? 'var(--asis)' : 'var(--tobe)') + '">' + (isA ? 'AS-IS · 문제' : 'TO-BE · 개선') + '</span>' +
+      (d.kind ? '<span class="tag kind">' + esc(d.kind) + '</span>' : '') + '</div><strong>' + esc(d.t) + '</strong>' + esc(d.d) +
+      (d.ref ? '<div class="ref">' + (isA ? '정책 근거 ' : '관련 ') + esc(d.ref) + '</div>' : '');
+    bubble.style.display = 'block';
+    var bw = bubble.offsetWidth, bh = bubble.offsetHeight;
+    var left = Math.min(Math.max(8, x - bw / 2), innerWidth - bw - 8);
+    var top = y + 10; if (top + bh > innerHeight - 8) top = Math.max(8, fr.top + d.rect.t * scale - bh - 10);
+    bubble.style.left = left + 'px'; bubble.style.top = top + 'px';
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  /* ---------- 크기 · 점 켜기 ---------- */
+  function fit() {
+    var z = document.getElementById('zoom').value;
+    scale = z === 'auto' ? Math.min(1, (innerHeight - 190) / H) : parseFloat(z);
+    ['asis', 'tobe'].forEach(function (id) {
+      var f = document.getElementById(id), fr = document.getElementById(id + 'Frame');
+      f.style.transform = 'scale(' + scale + ')'; fr.style.width = W * scale + 'px'; fr.style.height = H * scale + 'px';
+    });
+  }
+  document.getElementById('zoom').onchange = fit; addEventListener('resize', fit);
+  var pinBtn = document.getElementById('pinBtn');
+  pinBtn.onclick = function () {
+    pinsOn = !pinsOn; pinBtn.textContent = pinsOn ? '보기' : '숨김'; pinBtn.setAttribute('aria-pressed', String(pinsOn));
+    [asis, tobe].forEach(function (f) { f.contentWindow.postMessage({ src: 'ux-parent', type: 'pins', on: pinsOn }, '*'); });
+    bubble.style.display = 'none';
+  };
+
+  fit();
+  var start = (location.hash || '').replace('#', '') || '/';
+  go(start, true);
+})();
+</script>
+</body>
+</html>

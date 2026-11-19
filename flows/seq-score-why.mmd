@@ -1,0 +1,18 @@
+sequenceDiagram
+  actor U as 사용자
+  participant H as 홈 (/)
+  participant G as 점수 상세 (/goal/score)
+  participant C as 분석 정확도 (/completeness)
+  participant I as 지표 상세 (/v3/index)
+  U->>H: 이너뷰티 점수 60 선택
+  H-->>G: 이동
+  G-->>U: 점수 추이(4주·12주, 하루 점) · 영역별 변화(식단 +1.4 등)<br/>하위 지표 막대(장 73 · 음식 반응 77 · 진정 56 · 탄수화물 대사 61 · 회복력 44)
+  U->>G: 하위 지표 막대 선택 (예: 진정 56)
+  G-->>U: 같은 화면에서 근거 문장 펼침<br/>"트러블이 자주 있다고 답하셨어요 · 챙길 날 6일 중 4일"
+  U->>G: 분석 정확도 66% 선택
+  G-->>C: 이동
+  C-->>U: 지표 12개별 정확도(60~100%) · 어떻게 계산하나요 시트
+  U->>C: 지표 하나 (예: 배변 60%)
+  C-->>I: /v3/index/gut?sub=bowel 로 이동
+  U->>C: 기기·검사 안내 선택
+  C-->>U: 연결된 기기 /my/device 또는 쇼핑으로 이동

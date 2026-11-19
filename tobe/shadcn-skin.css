@@ -1,0 +1,38 @@
+/* TO-BE 홈 · shadcn/ui 스킨 (CSS 부분: 직접 만든 요소 .tb-*)  — 동작하는 나머지는 shadcn-skin.js
+   토큰: foreground #171719 · muted #72747b · border #e4e4e7 · radius md 6 / lg 8 / xl 12 */
+:root{ --sk-fg:#171719; --sk-muted:#72747b; --sk-border:#e4e4e7; --sk-accent:#22c3bc }
+/* 헤더 레벨 · 포인트: 알약 + 그림자 → 8px 모서리 + 얇은 테두리 */
+.tb-lv,.tb-pt{border-radius:8px;box-shadow:none;border:1px solid var(--sk-border);background:rgba(255,255,255,.9)}
+.tb-lv b{border-radius:999px;font-size:11px}
+.tb-lv span{font-size:12px;font-family:'Pretendard-SemiBold',sans-serif}
+.tb-pt{font-size:12px;font-family:'Pretendard-SemiBold',sans-serif}
+/* 점수 영역: 숫자 하나만 크게(44) · 나머지는 한 단계씩 낮춤 */
+.tb-score .name{font-size:12px;color:var(--sk-muted);font-family:'Pretendard-Medium',sans-serif}
+.tb-score .num b{font-size:44px;letter-spacing:-1.5px;font-family:'Pretendard-Bold',sans-serif;color:var(--sk-fg)}
+.tb-score .num i{font-size:14px;color:var(--sk-muted);font-family:'Pretendard-Medium',sans-serif}
+.tb-score .num u{font-size:16px;color:#72747b}
+.tb-goal{border-radius:8px;height:26px;font-size:12px;font-family:'Pretendard-SemiBold',sans-serif;border-color:var(--sk-border);background:rgba(255,255,255,.9)}
+.tb-focus{border-radius:6px;font-size:11px;font-family:'Pretendard-SemiBold',sans-serif;padding:3px 8px}
+.tb-chip{border-radius:6px;font-size:12px;font-family:'Pretendard-Medium',sans-serif;padding:4px 8px}
+.tb-chip.g{background:#f6f8f9;color:#5a5c63}
+.tb-chip.t{background:rgba(34,195,188,.16);color:#22c3bc}
+.tb-gauge{height:4px;background:#e4e4e7}.tb-gauge .band{border-radius:999px}
+.tb-gauge .dot{width:12px;height:12px;margin-left:-6px;top:-4px;border-width:2px}
+.tb-ticks{font-size:11px;color:#72747b;font-family:'Pretendard-Medium',sans-serif}
+/* 분석 정확도 줄은 보조 정보 */
+.tb-acc{font-size:12px;color:var(--sk-muted);border-top-color:var(--sk-border)}
+.tb-acc b{font-family:'Pretendard-SemiBold',sans-serif;color:#5a5c63}
+.tb-acc .more{border-radius:6px;background:transparent;border:1px solid var(--sk-border);color:#5a5c63;font-size:11px;font-family:'Pretendard-Medium',sans-serif;padding:3px 8px}
+/* 점수 변화 띠 */
+.tb-band{font-size:12px;font-family:'Pretendard-Medium',sans-serif;color:#5a5c63}
+.tb-band b{font-family:'Pretendard-SemiBold',sans-serif}
+.tb-band .up{color:#22c3bc}.tb-band .dn{color:#72747b}
+.tb-band .chev{font-size:16px;color:#72747b}
+/* 헤더 */
+.tb-hdr{background:#fff!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-bottom:1px solid rgba(23,23,25,.06)}   /* 헤더는 v4처럼 흰색 */
+/* 관리 타일 */
+.tb-flat{background:#f6f8f9!important}
+/* 완료 뒤 「알로에게 더 물어보기」 · 토스트 */
+.tb-ask-more{height:36px;border-radius:8px;background:transparent;border:1px solid var(--sk-border);color:#5a5c63;font-size:12px;font-family:'Pretendard-Medium',sans-serif}
+.tb-toast{border-radius:12px;background:#171719;font-size:12px;padding:10px 14px}
+.tb-toast b{font-size:12px}

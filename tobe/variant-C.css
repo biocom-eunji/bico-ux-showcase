@@ -1,0 +1,7 @@
+/* 시안 C: 링 대신 점수 숫자 + 최근 7일 꺾은선(스파크라인). 점이 오늘 */
+.tb-charge.tb-trend{width:112px;height:auto;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.tb-trend .s1{display:flex;align-items:baseline;gap:6px;line-height:1}
+.tb-trend .s1 b{font-family:'Pretendard-SemiBold',sans-serif;font-weight:400;font-size:38px;letter-spacing:-1.5px;color:#171719}
+.tb-trend .s1 .z{font-family:'Pretendard-Medium',sans-serif;font-size:12px;color:#5a5c63}
+.tb-trend .spark{display:block;margin-top:2px}
+.tb-trend .cap{font-family:'Pretendard-Medium',sans-serif;font-size:11px;color:#72747b}

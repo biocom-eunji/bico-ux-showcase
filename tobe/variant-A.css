@@ -1,0 +1,9 @@
+/* 시안 A: 가장 낮은 것 + 가장 높은 것만 보이고 나머지 3개는 「외 3개 지표 ⌄」로 접기 */
+.tb-parts{gap:8px}
+.tb-parts .p{height:15px}
+.tb-parts .x{display:none}
+.tb-parts.open .x{display:flex}
+.tb-parts .n .tg{font-style:normal;margin-left:4px;padding:1px 4px;border-radius:4px;background:#fde9d8;color:#c4570a;font-family:'Pretendard-SemiBold',sans-serif;font-size:10px}
+.tb-more{display:inline-flex;align-items:center;gap:3px;align-self:flex-start;height:16px;border:0;background:transparent;padding:0;cursor:pointer;font-family:'Pretendard-Medium',sans-serif;font-size:11px;color:#72747b}
+.tb-more svg{transition:transform .15s}
+.tb-more[aria-expanded="true"] svg{transform:rotate(180deg)}

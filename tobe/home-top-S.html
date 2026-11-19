@@ -1,0 +1,53 @@
+<!-- 헤더: 포인트만 알림 · 마이 바로 왼쪽에 둔다(D10). 레벨은 캐릭터 라벨 안으로 옮김 -->
+<div class="tb-hdr-mid">
+  <button class="tb-pt" aria-label="포인트 3,720P" data-nav="/shop"><i class="coin"></i>3,720P</button>
+</div>
+<!--SPLIT-->
+<!-- 시안 S: 상단 이너뷰티 카드 = 상태 + 방향. 하위 지표 목록은 홈에서 뺌(정책 10-1) → 집중 한 단어 · 다음 구간까지 거리 · 이번 주 움직임. 올리는 길은 두 줄로 나눔: 점수 올리기(작은 태스크) / 정확도 올리기(큰 태스크) -->
+<section class="tb-score" aria-label="이너뷰티 점수">
+  <div class="tb-body">
+    <div class="tb-charge" data-nav="/goal/score" role="button" aria-label="이너뷰티 점수 60, 보통, 자세히">
+      <svg width="96" height="96" viewBox="0 0 96 96" aria-hidden="true" class="tb-gauge-svg"><path d="M19.01 76.99 A41 41 0 0 1 65.84 11.09" fill="none" stroke="#F28A6A" stroke-width="8"/><path d="M67.37 11.87 A41 41 0 0 1 85.54 31.52" fill="none" stroke="#F9C65B" stroke-width="8"/><path d="M86.20 33.11 A41 41 0 0 1 88.93 50.36" fill="none" stroke="#6CC189" stroke-width="8"/><path d="M88.80 52.07 A41 41 0 0 1 76.99 76.99" fill="none" stroke="#6495DE" stroke-width="8"/><circle cx="19.01" cy="76.99" r="4.0" fill="#F28A6A"/><circle cx="76.99" cy="76.99" r="4.0" fill="#6495DE"/><circle cx="66.61" cy="11.47" r="6.4" fill="#fff" stroke="#E6AC39" stroke-width="3"/></svg>
+      <div class="c"><span class="nm">이너뷰티</span><b>60</b><span class="z" style="color:#8A5C00">보통</span></div>
+    </div>
+    <div class="tb-side">
+      <div class="tb-sh">
+        <button class="tb-goal" aria-label="피부 목표, 바꾸기" data-sheet="goal"><span class="goalname">피부 목표</span> <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+      </div>
+      <div class="tb-gap" data-nav="/goal/score" role="button" aria-label="좋음까지 15점, 이번 주 1.5점 올랐어요, 자세히">
+        <b>좋음까지 15점</b>
+        <span>이번 주 +1.5 · 이 속도면 약 10주</span>
+      </div>
+      <div class="tb-why" data-nav="/goal/score" role="button" aria-label="집중 회복력, 자세히"><em class="tg">집중</em><span>회복력이 가장 낮아요. 올리면 점수가 가장 크게 올라요</span></div>
+    </div>
+  </div>
+  <button class="tb-cta" data-nav="/goal/score" aria-label="점수 올리기, 회복력 올리기, 오늘 할 일 다 하면 내일 +1.7"><i class="dot"></i><b>회복력 올리기</b><span>다 하면 내일 +1.7</span><em>›</em></button>
+  <div class="tb-accsec">
+    <button class="tb-acc-h" aria-expanded="false" aria-controls="tb-acc-p" aria-label="분석 정확도 66%, 검사로 10퍼센트 올리기">
+      <span class="hd"><span class="t">분석 정확도 <b>66%</b></span><span class="r">검사로 +10%</span></span>
+      <span class="cap2">데이터가 많을수록 분석 정확도가 높아져요</span>
+      <span class="abar2"><i></i><u></u></span>
+    </button>
+    <div class="tb-acc-p" id="tb-acc-p" hidden>
+    <div class="cap">정확도는 이 점수를 얼마나 믿을 수 있는지예요. 점수는 매일 하는 기록으로 움직여요.</div>
+    <div class="grp">한 번에 크게 <small>정확도가 가장 크게 올라요</small></div>
+    <div class="tb-lever" data-nav="/shop" role="button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h4M7 2v4L3.5 12.5A1 1 0 0 0 4.4 14h7.2a1 1 0 0 0 .9-1.5L9 6V2"/></svg><span class="t">검사로 정확도 올리기<small>종합 대사기능 분석 결과를 점수에 반영</small></span><span class="tag">+10%</span><span class="chev">›</span></div>
+    <div class="grp">매일 조금씩 <small>꾸준할수록 더 정확해져요</small></div>
+    <div class="tb-lever" data-nav="/record" role="button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 13.5 3 10l7-7 3 3-7 7-3.5.5ZM9 4l3 3"/></svg><span class="t">기록 꾸준히 남기기<small>식단 · 수면 · 컨디션</small></span><span class="chev">›</span></div>
+    <div class="tb-lever" data-nav="/record" role="button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h10v10H3zM5.5 6.5h5M5.5 9.5h3"/></svg><span class="t">문진 다시 답하기<small>지금 상태를 다시 확인해요</small></span><span class="chev">›</span></div>
+    <div class="tb-lever" data-nav="/my" role="button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="8" height="8" rx="2"/><path d="M6 4l.5-2h3L10 4M6 12l.5 2h3l.5-2M8 6.5V8l1 .8"/></svg><span class="t">웨어러블 연결하기<small>수면 · 걸음 기록이 자동으로 채워져요</small></span><span class="chev">›</span></div>
+    </div>
+  </div>
+</section>
+<!--SPLIT-->
+<!-- D13: 점수 변화 띠는 홈에서 뺌(점수 상세 「이번 주 움직임」에 있음) -->
+<!--SPLIT-->
+<section class="tb-care" aria-label="이너뷰티 관리별 점수">
+  <header class="ch"><h3>이너뷰티</h3><p>이번 주 내가 한 만큼 · 최근 7일, 지난주 대비</p></header>
+  <div class="band" data-nav="/goal/score" role="button" aria-label="이번 주 점수 변화, 자세히">이번 주 <b>+1.5</b>, 식단 <b class="up">+1.4</b>, 회복 <b class="dn">−0.9</b></div>
+  <div class="cr" data-nav="/care/%EC%8B%9D%EB%8B%A8" role="button" aria-label="식단 63점, 지난주보다 1점 낮음, 자세히"><span class="ic">{{ic:식단}}</span><span class="nm">식단</span><span class="bar"><i style="width:63%"></i></span><span class="sc">63</span><span class="dl">−1</span></div>
+  <div class="cr empty" data-nav="/care/%EC%98%81%EC%96%91" role="button" aria-label="영양, 채울 성분이 아직 없어요, 채우기"><span class="ic">{{ic:영양}}</span><span class="nm">영양</span><span class="em">채울 성분이 아직 없어요</span><span class="fill">채우기</span></div>
+  <div class="cr" data-nav="/care/%EC%8A%A4%ED%82%A8%EC%BC%80%EC%96%B4" role="button" aria-label="스킨케어 69점, 지난주보다 1점 낮음, 자세히"><span class="ic">{{ic:스킨케어}}</span><span class="nm">스킨케어</span><span class="bar"><i style="width:69%"></i></span><span class="sc">69</span><span class="dl">−1</span></div>
+  <div class="cr" data-nav="/care/%EB%B0%B0%EB%B3%80" role="button" aria-label="배변 86점, 지난주와 같음, 자세히"><span class="ic">{{ic:배변}}</span><span class="nm">배변</span><span class="bar"><i style="width:86%"></i></span><span class="sc">86</span><span class="dl">—</span></div>
+  <div class="cr f" data-nav="/care/%ED%9A%8C%EB%B3%B5" role="button" aria-label="회복 56점, 지난주보다 1점 낮음, 자세히"><span class="ic">{{ic:회복}}</span><span class="nm">회복<em class="tg">집중</em></span><span class="bar"><i style="width:56%"></i></span><span class="sc">56</span><span class="dl">−1</span></div>
+</section>
