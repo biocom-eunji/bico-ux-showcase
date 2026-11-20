@@ -9,7 +9,7 @@
 .tb-hdr-mid{position:absolute;right:104px;top:10px;height:32px;display:flex;align-items:center;z-index:3}   /* 알림(36) · 마이(36) · 간격(8×2) · 오른쪽 여백(16) 바로 왼쪽 */
 .tb-pt{display:flex;align-items:center;height:32px;border-radius:999px;background:rgba(255,255,255,.78);border:1px solid rgba(20,30,50,.06);box-shadow:0 1px 4px rgba(20,30,50,.06);cursor:pointer;font-family:inherit;color:var(--tb-ink);padding:0}
 .tb-pt{gap:5px;padding:0 11px 0 6px;font-size:14px;font-family:'Pretendard-ExtraBold',sans-serif;font-weight:400}
-.tb-pt .coin{width:22px;height:22px;border-radius:0;background:url(https://biocom-eunji.github.io/bico-ux-showcase/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat;box-shadow:none}   /* D12: v4 포인트 아이콘 */
+.tb-pt .coin{width:22px;height:22px;border-radius:0;background:url(http://localhost:8775/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat;box-shadow:none}   /* D12: v4 포인트 아이콘 */
 
 /* 2) 캐릭터 영역(D10): 캐릭터는 약 78%(높이 약 176px)로 키우고, 그 아래 한 줄에
       「결과지 · [Lv.6 비코 • 상태] · 보관함」을 좌우 대칭으로 둔다. 점수는 약 282px(33%)에서 시작 */
@@ -226,13 +226,13 @@
 @keyframes tbWake{0%{transform:scale(1)}30%{transform:scale(1.12) rotate(-4deg)}60%{transform:scale(1.08) rotate(3deg)}100%{transform:scale(1)}}
 .tb-ckh .av.tb-wake{animation:tbWake .6s ease-out;background:#d9f6ee}
 .tb-coin{position:fixed;z-index:80;display:flex;align-items:center;gap:4px;pointer-events:none;font-family:'Pretendard-Bold',sans-serif;font-size:15px;color:#8a5300;background:#fff;border-radius:999px;padding:3px 9px 3px 4px;box-shadow:0 4px 14px rgba(23,23,25,.18)}
-.tb-coin i{display:block;width:20px;height:20px;background:url(https://biocom-eunji.github.io/bico-ux-showcase/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat}
+.tb-coin i{display:block;width:20px;height:20px;background:url(http://localhost:8775/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat}
 .tb-pt.tb-pop{animation:tbPop .4s}
 @keyframes tbPop{0%{transform:scale(1)}40%{transform:scale(1.14)}100%{transform:scale(1)}}
 
 /* D23) 보상 뱃지 · 트러블 없던 날 축소 */
 .tb-ckh .rw{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 11px 0 6px;border-radius:8px;background:#fff5de;box-shadow:0 0 0 1px #f2e0b4;font-family:'Pretendard-SemiBold',sans-serif;font-size:14px;color:#8a5300;white-space:nowrap}
-.tb-ckh .rw i:not(.uxpin){display:block;width:20px;height:20px;background:url(https://biocom-eunji.github.io/bico-ux-showcase/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat}
+.tb-ckh .rw i:not(.uxpin){display:block;width:20px;height:20px;background:url(http://localhost:8775/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat}
 .tb-ckh .rw.got{background:#e6f4f0;box-shadow:0 0 0 1px #cdebe8;color:#22c3bc}
 .tb-ckh .rw.got i:not(.uxpin){filter:grayscale(1) opacity(.5)}
 .tb-wk{display:grid!important;grid-template-columns:84px 1fr;grid-template-rows:auto auto;column-gap:14px;row-gap:3px;align-items:end;padding:10px 14px!important;height:auto!important;min-height:0!important}
@@ -543,8 +543,8 @@ button[aria-label*="결과지"],button[aria-label*="보관함"],button[aria-labe
 .tb-tasks .tb-task{background:#f6f8f9!important;border:0!important;box-shadow:none!important;border-radius:12px!important;padding:12px 12px 12px 10px!important;gap:10px!important}
 .tb-tasks .tb-task .tb-ico{display:block!important;flex:none;width:40px!important;height:40px!important;border-radius:0!important;background:center/contain no-repeat!important}
 .tb-tasks .tb-task .tb-ico svg{display:none!important}
-.tb-tasks .tb-task[data-k=sleep] .tb-ico{background-image:url(https://biocom-eunji.github.io/assets/assets/v2/rec_sleep.39f0dbf4f026572e5602dec2bf7ef743.png)!important}
-.tb-tasks .tb-task[data-k=meal] .tb-ico{background-image:url(https://biocom-eunji.github.io/assets/assets/v2/rec_meal.cc91bd7e8010bbd0b459e45c2ee23c61.png)!important}
+.tb-tasks .tb-task[data-k=sleep] .tb-ico{background-image:url(http://localhost:8776/assets/assets/v2/rec_sleep.39f0dbf4f026572e5602dec2bf7ef743.png)!important}
+.tb-tasks .tb-task[data-k=meal] .tb-ico{background-image:url(http://localhost:8776/assets/assets/v2/rec_meal.cc91bd7e8010bbd0b459e45c2ee23c61.png)!important}
 .tb-tasks .tb-task>div:nth-child(2){gap:2px!important}
 .tb-tasks .tb-task div[dir=auto].r-dnmrzs{font-size:14px!important;line-height:21px!important;letter-spacing:-.2px}
 .tb-tasks .tb-task div[dir=auto]:not(.r-dnmrzs){font-size:12px!important;line-height:17px!important;color:#5a5c63!important}
@@ -583,3 +583,354 @@ button[aria-label*="결과지"],button[aria-label*="보관함"],button[aria-labe
 /* D64) 진한 청록(#157D78) · 에메랄드 초록(#0E9F6E)을 TO-BE에서 쓰지 않음 → 브랜드 민트 #22C3BC 하나로. 할 일 아이콘은 속성 색이 남아 있어서 CSS로 덮음 */
 .tb-tasks .tb-task svg,.tb-tasks .tb-task svg *{fill:#22c3bc!important;color:#22c3bc!important}
 .tb-hero div[style*="border-radius: 226px"]{border-color:#22c3bc!important}   /* 캐릭터 깨어날 때 퍼지는 링(AS-IS 청록) */
+
+/* D72) 목표는 읽기만 하는 글자 라벨(바꾸기 유도 · 시트 없음) */
+.tb-score .tb-goal{cursor:default}
+.tb-score .tb-goal::before{display:none}
+
+/* D74) 오늘 할 일 상태 3가지: 기록형 미완료 = 민트 「기록」 버튼 / 완료 = 회색 + 체크 + 「했어요」 / 챌린지형(자정 확정) = 버튼이 아니라 테두리 알약 「지키는 중」 → 지키면 「지켰어요」 */
+.tb-tasks .tb-task.tb-chal .tb-cta2{width:auto;min-width:0;padding:0 10px;background:transparent;color:#5a5c63;border:1px solid #e4e4e7;font-family:'Pretendard-Medium',sans-serif;cursor:default}
+.tb-tasks .tb-task.tb-chal.tb-done .tb-cta2{display:none}
+
+/* D81) 결과지 버튼 모양은 처음(유리 사각형 + 아이콘 + 아래 글자)으로 되돌림. 보관함은 홈에서 뺌(D75), 버튼은 오른쪽(시안 B 위치).
+   새 분석 결과가 있으면 버튼 위에 말풍선 「새 분석 결과가 도착했어요!」가 4초 떴다가 사라지고, 주황 NEW 점은 누를 때까지 남는다 */
+.tb-box{display:none!important}
+.tb-res{left:auto!important;right:16px!important;transform-origin:100% 0}
+.tb-res .rs-dot{position:absolute;top:-3px;right:-3px;width:14px;height:14px;border-radius:50%;background:#e0873a;border:2px solid #fff;box-sizing:border-box;z-index:3}
+.rs-bub{position:absolute;z-index:8;box-sizing:border-box;height:32px;padding:0 12px;display:flex;align-items:center;white-space:nowrap;border-radius:8px;background:#171719;color:#fff;font-family:'Pretendard-SemiBold',sans-serif;font-size:12px;line-height:16px;box-shadow:0 4px 12px rgba(23,23,25,.22);opacity:0;transform:translateY(4px);transition:opacity .3s ease,transform .3s ease;pointer-events:none}
+.rs-bub.on{opacity:1;transform:none}
+.rs-bub::after{content:"";position:absolute;bottom:-4px;right:20px;width:10px;height:10px;background:#171719;transform:rotate(45deg);border-radius:2px}
+@media (prefers-reduced-motion:reduce){.rs-bub{transition:none}}
+
+/* D77) 체크인 카드에 섹션 이름 「체크인」을 보이게 함(회의 11/18: 임의로 붙인 이름이라도 섹션 이름은 드러나야 함). 질문 위 작은 글자, 오른쪽 +10 보상 뱃지와 같은 줄 */
+.tb-ck h1::before{content:"오늘 체크인";display:block;margin-bottom:6px;font-family:'Pretendard-Bold',sans-serif;font-weight:400;font-size:14px;line-height:18px;letter-spacing:-.1px;color:#157d78}
+
+
+/* D83) 하단 이너뷰티 카드 고도화 — 인터뷰(11/19) 기반
+   ① 위 카드와 같은 호 게이지를 한 번 더(「지난주 → 이번 주」) ② 행 오른쪽 = 점수에 미친 영향(이번 주 ±n점) ③ 행 안에 오늘 기록 상태(점 + 글자) ④ 집중 행 강조 ⑤ 맨 아래에 합계를 맞춰 인과를 닫음 */
+.tb-care .tb-cg{display:flex;align-items:center;gap:14px;padding:8px 0 14px;cursor:pointer;border-bottom:1px solid rgba(23,23,25,.06)}
+.tb-care .tb-cg .g{position:relative;width:116px;height:116px;flex:none}
+.tb-care .tb-cg .c{position:absolute;inset:0 0 8px 0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.tb-care .tb-cg .c b{font-family:'Pretendard-Bold',sans-serif;font-weight:400;font-size:28px;line-height:32px;color:#171719}
+.tb-care .tb-cg .c span{font-family:'Pretendard-SemiBold',sans-serif;font-size:12px;line-height:16px;color:#8A5C00}
+.tb-care .tb-cg .t{flex:1;min-width:0}
+.tb-care .tb-cg .k{font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#72747b}
+.tb-care .tb-cg .v{display:flex;align-items:center;gap:8px;margin-top:2px;font-family:'Pretendard-Bold',sans-serif;font-size:28px;line-height:34px;color:#171719}
+.tb-care .tb-cg .v i{font-style:normal;font-family:'Pretendard-Medium',sans-serif;font-size:16px;color:#72747b}
+.tb-care .tb-cg .d{margin-top:2px;font-family:'Pretendard-SemiBold',sans-serif;font-size:14px;line-height:20px;color:#157d78}
+.tb-care .cap2{margin:12px 0 2px;font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#72747b}
+.tb-care .cr.r2{grid-template-columns:20px 1fr 56px 52px;height:56px;column-gap:10px}
+.tb-care .cr.r2 .nx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.tb-care .cr.r2 .st{display:flex;align-items:center;gap:5px;font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;white-space:nowrap}
+.tb-care .cr.r2 .st i{width:7px;height:7px;border-radius:50%;box-sizing:border-box;flex:none}
+.tb-care .cr.r2 .st.todo{color:#171719}
+.tb-care .cr.r2 .st.todo i{border:1.5px solid #72747b;background:#fff}
+.tb-care .cr.r2 .st.ok{color:#72747b}
+.tb-care .cr.r2 .st.ok i{background:#22c3bc}
+.tb-care .cr.r2 .im{font-family:'Pretendard-SemiBold',sans-serif;font-size:14px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tb-care .cr.r2 .im.up{color:#157d78}
+.tb-care .cr.r2 .im.dn{color:#5a5c63}
+.tb-care .cr.r2 .im.z{color:#a1a4ab;font-family:'Pretendard-Medium',sans-serif}
+.tb-care .cr.r2.f{background:rgba(240,123,42,.07);border-radius:8px;margin:0 -8px;padding:0 8px;border-top-color:transparent}
+.tb-care .cr.r2.f + .ft,.tb-care .cr.r2.f{border-top-color:transparent}
+.tb-care .ft{margin:4px 0 12px;padding-top:10px;border-top:1px solid rgba(23,23,25,.06);font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#5a5c63}
+.tb-care{padding-bottom:2px}
+
+/* D88) 캐릭터 아래 줄 정리(13번 여백 점검) — 라벨 「Lv.6 비코 · 상태」를 왼쪽 16px로 정렬(카드 왼쪽 여백과 같은 선), 결과지 버튼은 오른쪽 16px(카드 오른쪽 선).
+   두 요소의 세로 가운데를 맞춤: 라벨 가운데 228 = 결과지 아이콘 상자 가운데 228. 결과지 아래 글자까지 점수 카드와 17px 간격 */
+.tb-state{left:16px!important;right:auto!important;margin:0!important;transform:none!important;top:215px!important}
+.tb-res{top:208px!important}
+/* 체크인 카드 아래 진행 점과 이너뷰티 카드 사이 간격 42 → 32(다른 카드 사이 간격 16 · 33과 비슷하게) */
+.tb-ck{margin-bottom:16px!important}
+
+/* D89) 라벨 「Lv.6 비코 · 상태」를 결과지 버튼과 같은 높이(57) · 모서리(12) · 테두리 · 유리 배경으로 맞추고, 가로는 왼쪽 구역을 채움(x 16 ~ 결과지 왼쪽 8px 앞).
+   안은 두 줄: 「Lv.6 비코」 / 「상태」 + 아래 성장 막대 */
+.tb-state{top:208px!important;left:16px!important;width:297px!important;height:57px!important;box-sizing:border-box!important;border-radius:12px!important;padding:8px 14px 0!important;
+  background:rgba(255,255,255,.72)!important;-webkit-backdrop-filter:saturate(180%) blur(6px)!important;backdrop-filter:saturate(180%) blur(6px)!important;
+  box-shadow:0 0 0 1px #e4e4e7,0 1px 2px rgba(9,9,11,.04)!important;
+  display:grid!important;grid-template-columns:auto 1fr!important;grid-template-rows:20px 16px!important;column-gap:6px!important;row-gap:0!important;align-content:start!important;align-items:center!important;justify-items:start!important}
+.tb-state>*:nth-child(1){grid-column:1;grid-row:1}
+.tb-state>*:nth-child(2){grid-column:2;grid-row:1}
+.tb-state>*:nth-child(3){display:none!important}
+.tb-state>*:nth-child(4){grid-column:1/3;grid-row:2;display:flex!important;align-items:center;gap:6px}
+.tb-state>*:nth-child(4)::before{content:"";width:6px;height:6px;border-radius:50%;background:#22c3bc;flex:none}
+.tb-state>*:nth-child(1),.tb-state>*:nth-child(2){font-size:14px!important;line-height:20px!important}
+.tb-state>*:nth-child(4){font-size:12px!important;line-height:16px!important;color:#5a5c63!important}
+.tb-state .tb-lvbar{position:absolute!important;left:14px!important;right:14px!important;top:auto!important;bottom:7px!important;width:auto!important;height:3px!important;border-radius:999px!important;overflow:hidden;background:rgba(34,195,188,.18)!important}
+.tb-state .tb-lvbar i{height:100%!important;border-radius:999px!important}
+.tb-state::after{inset:-4px -6px!important}
+
+/* D90) 캐릭터 · 라벨/결과지 줄 · 점수 카드 사이 여백 확보. 이전: 받침판 아래 4px · 줄 아래 17px(너무 붙음)
+   지금: 받침판 → 줄 18px, 줄 → 점수 카드 18px. 줄 top 208 → 222, 점수 카드 top 282 → 297(+15), 그 아래 모든 카드가 15px씩 내려감 */
+.tb-state{top:222px!important}
+.tb-res{top:222px!important}
+.tb-score{margin-top:297px!important}
+
+/* D91) 라벨 = 시안 C(큰 Lv 블록). 높이 57 · 모서리 12 · 테두리는 D89 그대로. 왼쪽 민트 블록 + 이름 · 상태 한 줄 + 막대 · 「120 남음」 */
+.tb-state{padding:8px 14px 0 8px!important;grid-template-columns:51px auto auto 1fr auto!important;grid-template-rows:20px 6px!important;column-gap:0!important;row-gap:7px!important;align-content:start!important;align-items:center!important;justify-items:start!important}
+.tb-state>.lvblk{grid-column:1;grid-row:1/3;align-self:start;justify-self:start;width:44px;height:44px;margin:0;border-radius:10px;background:#BFE9E3;color:#0f6c67;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;font-size:0!important;line-height:1!important;padding-top:0;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}   /* D94: 미색 → 연한 민트(칩 배경 계열), 글자 정렬: 상속된 line-height 20px를 끊고 LV · 숫자를 가운데 한 덩어리로 */
+.tb-state>.lvblk small{display:block;font-size:11px;line-height:12px;letter-spacing:0;font-family:'Pretendard-SemiBold',sans-serif;color:#0f6c67}
+.tb-state>.lvblk b{display:block;font-size:26px;line-height:26px;font-family:'Pretendard-Bold',sans-serif;font-weight:400;color:#0f6c67;letter-spacing:-.3px}
+.tb-state>.tb-lvtag{display:none!important}
+.tb-state>*:nth-child(3){display:block!important;grid-column:2;grid-row:1;font-size:14px!important;line-height:20px!important;font-family:'Pretendard-SemiBold',sans-serif!important;color:#171719!important}
+.tb-state>*:nth-child(4){display:block!important;grid-column:3;grid-row:1;width:6px;height:6px;margin:0 5px 0 6px;border-radius:50%;background:#22c3bc!important}
+.tb-state>*:nth-child(5){display:flex!important;grid-column:4/6;grid-row:1;font-size:12px!important;line-height:16px!important;color:#5a5c63!important;font-family:'Pretendard-Medium',sans-serif!important;white-space:nowrap}
+.tb-state>*:nth-child(5)::before{display:none!important}
+.tb-state .tb-lvbar{position:static!important;grid-column:2/5;grid-row:2;width:100%!important;height:6px!important;border-radius:99px!important;background:rgba(34,195,188,.18)!important;overflow:hidden;align-self:center}
+.tb-state .tb-lvbar i{width:76%!important;border-radius:99px!important}
+.tb-state>.lvrem{grid-column:5;grid-row:2;margin-left:8px;font-family:'Pretendard-Medium',sans-serif;font-size:11px;line-height:14px;color:#72747b;white-space:nowrap}
+
+
+/* D94) 캐릭터 영역 = 시안 C(후광 + 반짝임). 캐릭터 · 받침판 · 라벨 위치는 그대로, 뒤쪽에 크림 후광 + 작은 별 6개(2.6초 깜빡임, 동작 줄이기 설정이면 정지) */
+.tb-glow{position:absolute;left:0;right:0;top:0;height:260px;pointer-events:none;z-index:0}
+.tb-glow .halo{position:absolute;left:50%;top:50px;width:300px;height:300px;transform:translateX(-50%);border-radius:50%!important;background:radial-gradient(circle,rgba(255,246,214,.95) 0,rgba(255,246,214,.5) 42%,transparent 68%)}
+.tb-glow .st{position:absolute;display:block;background:#fff;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:.9}
+@media (prefers-reduced-motion:no-preference){.tb-glow .st{animation:tbTw 2.6s ease-in-out infinite}}
+@keyframes tbTw{0%,100%{opacity:.2;transform:scale(.6)}50%{opacity:1;transform:scale(1.1)}}
+
+.tb-state{grid-template-columns:54px auto auto 1fr auto!important}   /* D95: LV 블록 44px로 키움 → 첫 열 54px */
+
+/* D98: 분석 정확도 바는 D97 이전(연속 바 + 손잡이)으로 롤백. 레벨 XP 바만 10칸 분절 + 호박색, LV 블록도 호박 계열로 */
+.tb-state .tb-lvbar{display:flex!important;gap:3px;background:none!important;height:8px!important;border-radius:0!important;overflow:visible!important;-webkit-mask:none!important;mask:none!important}   /* D99: 5칸 알약 */
+.tb-state .tb-lvbar s{flex:1;height:100%;border-radius:99px;text-decoration:none;background:linear-gradient(90deg,#F2B33D var(--f),rgba(249,198,91,.3) var(--f))}
+.tb-state>.lvblk{background:#FBE4A6!important}
+.tb-state>.lvblk small,.tb-state>.lvblk b{color:#7A4E00!important}
+
+/* D100 · 하단 이너뷰티: 맨 위 진행 현황 한 줄 · 행 오른쪽 숫자 삭제 → 이행도 막대 더 길게 · 합계 줄 삭제 */
+.tb-care .tb-prog{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 4px;padding:10px 12px;border-radius:8px;background:rgba(34,195,188,.1)}
+.tb-care .tb-prog b{font-family:'Pretendard-SemiBold',sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#157d78}
+.tb-care .tb-prog .seg{display:flex;gap:3px;flex:none}
+.tb-care .tb-prog .seg i{width:18px;height:6px;border-radius:999px;background:rgba(21,125,120,.22)}
+.tb-care .tb-prog .seg i.on{background:#22c3bc}
+.tb-care .cr.r2{grid-template-columns:20px 96px 1fr;column-gap:12px}
+.tb-care .tb-cg{padding-bottom:6px}
+.tb-care{padding-bottom:6px!important}
+
+/* D101 · 하단 이너뷰티: 최근 7일 점수 꺾은선(일 단위 7점, 시안 값) */
+.tb-care .tb-trend{padding:12px 0 4px;border-bottom:1px solid rgba(23,23,25,.06);cursor:pointer}
+.tb-care .tb-trend .th{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2px}
+.tb-care .tb-trend .th b{font-family:'Pretendard-SemiBold',sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#171719}
+.tb-care .tb-trend .th span{font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#157d78}
+.tb-care .tb-trend svg{display:block;overflow:visible}
+.tb-care .tb-trend .tx{font-family:'Pretendard-Medium',sans-serif;font-size:12px;fill:#72747b}
+.tb-care .tb-trend .tn{font-family:'Pretendard-SemiBold',sans-serif;fill:#171719}
+.tb-care .tb-trend .tg2{font-family:'Pretendard-Medium',sans-serif;font-size:12px;fill:#72747b}
+.tb-care .tb-trend .tv{font-family:'Pretendard-Bold',sans-serif;font-size:14px;fill:#157d78}
+
+/* D102 · 하단 이너뷰티: 5행 → Garmin 「한눈에 보기」식 2열 타일(링 · 지난 7일 체크 · 주간 선 · 구간 막대 · 4주 점 띠 · 7일 막대) */
+.tb-care .cap2{margin:12px 0 8px}
+.tb-care .tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 14px}
+.tb-care .tl{display:flex;flex-direction:column;min-width:0;padding:10px 12px;border-radius:8px;background:rgba(23,23,25,.04);cursor:pointer;color:#72747b}
+.tb-care .tl.wide{grid-column:1/-1}
+.tb-care .tl.f{background:rgba(240,123,42,.08);color:#f07b2a}
+.tb-care .th2{display:flex;align-items:center;gap:6px;min-height:20px}
+.tb-care .th2 .ic{width:18px;height:18px;flex:none}
+.tb-care .th2 .nm{display:flex;align-items:center;gap:4px;font-family:'Pretendard-SemiBold',sans-serif;font-size:14px;color:#171719;white-space:nowrap}
+.tb-care .th2 .st{margin-left:auto;display:flex;align-items:center;gap:4px;font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;white-space:nowrap}
+.tb-care .th2 .st i{width:7px;height:7px;border-radius:50%;box-sizing:border-box;flex:none}
+.tb-care .th2 .st.todo{color:#171719}.tb-care .th2 .st.todo i{border:1.5px solid #72747b;background:#fff}
+.tb-care .th2 .st.ok{color:#72747b}.tb-care .th2 .st.ok i{background:#22c3bc}
+.tb-care .rgw{display:flex;justify-content:center;padding:6px 0 4px}
+.tb-care .rg{display:block}.tb-care .rv{font-family:'Pretendard-SemiBold',sans-serif;font-size:19px;fill:#171719}
+.tb-care .bt{margin-top:auto;padding-top:6px;border-top:1px solid rgba(23,23,25,.08)}
+.tb-care .dl7{display:flex;justify-content:space-between;font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#72747b}
+.tb-care .dl7 span{width:17px;text-align:center}.tb-care .dl7 span.tn{font-family:'Pretendard-SemiBold',sans-serif;color:#171719}
+.tb-care .dl7.ck span{display:grid;place-items:center;height:16px}
+.tb-care .ln{display:block}
+.tb-care .hv{display:flex;flex-direction:column;padding:6px 0 4px}
+.tb-care .hv b{font-family:'Pretendard-Bold',sans-serif;font-weight:400;font-size:26px;line-height:30px;color:#171719}
+.tb-care .hv span{font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#72747b}
+.tb-care .sg{position:relative;display:flex;gap:2px;height:8px;margin:0 0 8px}
+.tb-care .sg i{display:block;height:100%;border-radius:4px}
+.tb-care .sg b{position:absolute;top:-3px;width:3px;height:14px;margin-left:-1.5px;border-radius:2px;background:#171719;box-shadow:0 0 0 1.5px #f4f4f5}
+.tb-care .cp{font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#72747b}
+.tb-care .wr{display:flex;align-items:flex-end;gap:12px}
+.tb-care .wr .hv{flex:none;width:96px;padding-bottom:0}
+.tb-care .wb{flex:1;min-width:0}
+.tb-care .dl7.w span{width:18px}
+.tb-care .tl.empty{align-items:center;justify-content:center;gap:4px;text-align:center}
+.tb-care .tl.empty .eic{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:rgba(23,23,25,.06);margin-bottom:2px}
+.tb-care .tl.empty .eic svg{width:18px;height:18px}
+.tb-care .tl.empty .et{font-family:'Pretendard-SemiBold',sans-serif;font-size:14px;color:#72747b}
+.tb-care .tl.empty .em{font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#72747b}
+.tb-care .tl.empty .fill{font-family:'Pretendard-SemiBold',sans-serif;font-size:12px;color:#157d78;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(34,195,188,.4)}
+.tb-care{padding-bottom:12px!important}
+
+.tb-care .bars,.tb-care .dl7.g7{display:grid;grid-template-columns:repeat(7,1fr);justify-items:center}
+.tb-care .bars{align-items:end;height:46px;margin-bottom:4px}
+.tb-care .bars i{display:block;width:10px;border-radius:2px;background:#d4d4d8}
+.tb-care .bars i.on{background:#f07b2a}
+.tb-care .dl7.g7 span{width:auto}
+
+.tb-care .sg i.s1{background:#d4d4d8!important}.tb-care .sg i.s2{background:#b4b6bc!important}.tb-care .sg i.s3{background:#8e9097!important}.tb-care .sg i.s4{background:#5a5c63!important}
+
+.tb-care svg.sg{display:block;margin:0 0 6px;overflow:visible}
+
+.tb-care svg.sg{width:100%;height:auto}
+.tb-care .bc{display:flex;align-items:flex-end}.tb-care .bc svg{display:block}
+
+/* D-카드 · 이너뷰티 점수 카드 여백 · 레이아웃 정리: 호 안은 숫자만, 「보통」은 헤드 텍스트 노란 칩으로, 서브 문구 한 줄, 세로 여백 촘촘히 */
+.tb-score{padding:12px 16px 0!important;margin-bottom:28px!important}
+.tb-score>.tb-sh{height:24px!important;margin:0 0 6px!important}
+.tb-score .tb-goal{height:24px!important}
+.tb-body{gap:16px!important;align-items:center!important}
+.tb-charge{width:96px!important;height:96px!important}
+.tb-charge .c{inset:0!important;padding:0!important}
+.tb-charge b{font-family:'Pretendard-Bold',sans-serif;font-size:32px;line-height:36px;letter-spacing:-1px;color:#171719}
+.tb-side{gap:4px!important}
+.tb-sum{font-size:17px!important;line-height:26px!important;letter-spacing:-.3px}
+.tb-sum .chip{display:inline-block;margin:0 1px;padding:0 9px;height:26px;line-height:26px;border-radius:8px;background:#FFF0B8;color:#7A4E00;font-style:normal;font-family:'Pretendard-Bold',sans-serif;vertical-align:top}
+.tb-sum .ss{margin-top:2px!important;font-size:13px!important;line-height:18px!important;color:#5a5c63!important}
+.tb-accsec{margin-top:10px!important;padding-top:12px!important;padding-bottom:14px!important}
+.tb-accsec .abar2{margin-top:8px!important}
+
+/* D-카드2 · 아래 이너뷰티 카드 호도 숫자만 + 헤드 서브에 「어제보다 ▲1」 칩(점수 상세 칩과 같은 모양) */
+.tb-care .tb-cg .c{inset:0!important}
+.tb-care .tb-cg .c b{font-size:32px;line-height:36px;letter-spacing:-1px}
+.tb-sum .ss{display:flex!important;flex-direction:column;align-items:flex-start;gap:5px;margin-top:4px!important}
+.tb-sum .ss .yd{display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border-radius:6px;background:#f4f4f5;color:#3f3f46;font-family:'Pretendard-SemiBold',sans-serif;font-size:12px;line-height:16px;white-space:nowrap}
+.tb-sum .ss .gp{font-size:13px;line-height:18px}
+.tb-care .tb-cg .yd{display:inline-flex;align-items:center;margin-top:8px;min-height:24px;padding:0 8px;border-radius:6px;background:#f4f4f5;color:#3f3f46;font-family:'Pretendard-SemiBold',sans-serif;font-size:12px;line-height:16px;white-space:nowrap}
+
+/* D-카드3 · 위 카드: 「▲1」은 호 안 60 아래로, 카드는 한 단계 작게(호 84px · 여백 축소) */
+.tb-score{padding:10px 16px 0!important;margin-bottom:24px!important}
+.tb-score>.tb-sh{height:22px!important;margin:0 0 2px!important}
+.tb-body{gap:14px!important}
+.tb-charge{width:84px!important;height:84px!important}
+.tb-charge .tb-gauge-svg{width:84px;height:84px}
+.tb-charge .c{flex-direction:column;gap:2px;padding-top:2px!important}
+.tb-charge b{font-size:28px;line-height:30px}
+.tb-charge .yd{display:inline-flex;align-items:center;height:18px;padding:0 6px;border-radius:5px;background:#e9ebee;color:#3f3f46;font-family:'Pretendard-SemiBold',sans-serif;font-size:11px;line-height:1}
+.tb-sum{font-size:16px!important;line-height:24px!important}
+.tb-sum .chip{height:24px;line-height:24px;padding:0 8px}
+.tb-accsec{margin-top:6px!important;padding-top:10px!important;padding-bottom:12px!important}
+.tb-accsec .abar2{margin-top:6px!important}
+.tb-charge .yd{height:15px;padding:0 4px;border-radius:4px;font-size:10px}
+
+/* D-카드4 · 위 카드 이름 = 「이너뷰티 요약」(+작게 「피부 목표」) · 서브 「실천이 늘고 있어요」 · 체크인 점 네비게이션 앞으로 올 단계는 회색 점 */
+.tb-score .tb-goal{gap:8px!important}
+.tb-score .tb-goal .goalname{order:1}
+.tb-score .tb-goal .gl{order:2;font-size:12px}
+.tb-sum .ss{display:block!important;margin-top:2px!important;font-family:'Pretendard-Medium',sans-serif;font-size:13px!important;line-height:18px!important;color:#157d78!important}
+.tb-ck [aria-label$="번째 질문"]>div:not(.tb-cur){background-color:#d2ccc2}
+.tb-ck [aria-label$="번째 질문"]>div.tb-pass{background-color:#8fd9d3}
+
+/* D-카드5 · 분석 정확도 오른쪽은 글자 대신 화살표 버튼(눌러서 들어간다는 신호) */
+.tb-accsec .hd{align-items:center}
+.tb-accsec .hd .r{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin:-3px 0;border-radius:50%;background:#fff;color:#14a89f;text-decoration:none;box-shadow:0 0 0 1px rgba(34,195,188,.28),0 1px 2px rgba(23,23,25,.06)}
+.tb-accsec .tb-acc-h:active .r{background:#e6f6f4}
+.tb-accsec .hd .r{width:20px;height:20px;margin:0;border-radius:0;background:transparent!important;box-shadow:none;color:#22c3bc}
+.tb-accsec .hd .r svg{width:20px;height:20px}
+
+/* D-카드6 · 관리별 카드 5장은 2열로 모두 같은 가로 길이(회복도 한 칸 폭) */
+.tb-care .tiles{grid-template-columns:1fr 1fr!important}
+.tb-care .tl,.tb-care .tl.wide{grid-column:auto!important;width:100%;box-sizing:border-box}
+.tb-care .tl.f .wr{flex-direction:column;align-items:stretch;gap:6px}
+.tb-care .tl.f .wr .hv{width:auto;padding:4px 0 0}
+.tb-care .tl.f .bars{height:34px;margin-bottom:2px}
+.tb-care .tl.f .dl7.g7 span{font-size:11px;width:auto}
+
+/* D-카드7 · 위 카드 균형: 제목 줄과 호 사이 간격을 벌리고 위 · 아래 여백을 맞춤 */
+.tb-score{padding-top:14px!important}
+.tb-score>.tb-sh{margin:0 0 10px!important}
+.tb-accsec{margin-top:10px!important}
+.tb-score .tb-body{margin-bottom:-8px}   /* 호 아래가 열려 있어 보이는 여백이 위보다 커서 맞춤 */
+.tb-score{margin-bottom:40px!important}   /* 이너뷰티 카드 ↔ 체크인 간격 24 → 40 */
+.tb-care .tb-cg .c b small{margin-left:1px;font-family:'Pretendard-SemiBold',sans-serif;font-size:16px;letter-spacing:0;color:#171719}
+/* D-카드8 · 한눈에 보기: 「지난주 → 이번 주 59 → 60」 대신 「지금은 [보통] 단계예요」(노란 칩) + 어제보다 칩 */
+.tb-care .tb-cg .v2{font-family:'Pretendard-SemiBold',sans-serif;font-size:17px;line-height:26px;letter-spacing:-.3px;color:#171719;word-break:keep-all}
+.tb-care .tb-cg .v2 .chip{display:inline-block;margin:0 1px;padding:0 9px;height:26px;line-height:26px;border-radius:8px;background:#FFF0B8;color:#7A4E00;font-style:normal;font-family:'Pretendard-Bold',sans-serif;vertical-align:top}
+.tb-care .tb-cg .yd{margin-top:6px}
+
+/* D-카드9 · 이너뷰티 카드 제목 옆 인포(ⓘ) + 점수 단계 시트 */
+.tb-score .tb-goal .tb-info{position:relative;order:3;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin-left:-2px;padding:0;border:0;background:transparent;color:#8a8d94;cursor:pointer}
+.tb-score .tb-goal .tb-info::before{content:"";position:absolute;inset:-12px}
+.tb-score .tb-goal .tb-info:active{color:#22c3bc}
+.tb-sheet.bd{padding-bottom:22px}
+.bd-list{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.bd-row{display:flex;gap:12px;padding:12px;border-radius:12px;background:#f6f8f9;border:1px solid transparent}
+.bd-row.on{background:#fffaea;border-color:#f3dfa0}
+.bd-row>i{flex:none;width:6px;border-radius:3px}
+.bd-row .hd{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.bd-row .hd b{font-family:'Pretendard-Bold',sans-serif;font-weight:400;font-size:15px;line-height:22px;color:#171719}
+.bd-row .hd span{font-family:'Pretendard-Medium',sans-serif;font-size:13px;line-height:20px;color:#5a5c63}
+.bd-row .hd em{margin-left:auto;font-style:normal;font-family:'Pretendard-SemiBold',sans-serif;font-size:11px;line-height:18px;padding:0 7px;border-radius:6px;background:#FFF0B8;color:#7A4E00}
+.bd-row .ds{margin-top:2px;font-family:'Pretendard-Medium',sans-serif;font-size:13px;line-height:19px;color:#5a5c63;word-break:keep-all}
+.tb-sheet.bd .act{margin-top:12px}
+.bd-row .tx{flex:1;min-width:0}
+
+/* D-카드10 · 한눈에 보기 관리별 카드: 항목마다 키 컬러(회색 → 비활성처럼 보이던 것 해소). --k 진한 색 · --kt 카드 배경 · --kl 트랙/연한 면 */
+.tb-care .tl[data-nav$="%EC%8B%9D%EB%8B%A8"]{--k:#F08A3C;--kt:#FFF9F3;--kr:#FFF3E8;--kl:#FBD9BC}
+.tb-care .tl[data-nav$="%EC%98%81%EC%96%91"]{--k:#E8628C;--kt:#FFF7FA;--kr:#FFEFF4;--kl:#F9CEDB}
+.tb-care .tl[data-nav$="%EC%8A%A4%ED%82%A8%EC%BC%80%EC%96%B4"]{--k:#3B9BF0;--kt:#F5FAFF;--kr:#EAF4FE;--kl:#C3DEFA}
+.tb-care .tl[data-nav$="%EB%B0%B0%EB%B3%80"]{--k:#43AE6B;--kt:#F5FBF7;--kr:#EBF7EF;--kl:#C4E7D0}
+.tb-care .tl[data-nav$="%ED%9A%8C%EB%B3%B5"]{--k:#7B6CF0;--kt:#F8F7FF;--kr:#F0EEFE;--kl:#D3CEFA}
+.tb-care .tl[data-nav]{background:var(--kt)!important}
+.tb-care .tl[data-nav] .th2 .ic,.tb-care .tl[data-nav] .eic{color:var(--k)}
+.tb-care .tl[data-nav] .th2 .ic svg,.tb-care .tl[data-nav] .eic svg{color:var(--k);stroke:currentColor}
+.tb-care .tl[data-nav] .eic{background:var(--kr)!important}
+.tb-care .tl[data-nav] .bt{border-top-color:rgba(23,23,25,.07)}
+/* 링 · 선 · 막대 */
+.tb-care .tl[data-nav] .rg{color:var(--k)}
+.tb-care .tl[data-nav] .rg circle:first-child{stroke:var(--kr)}
+.tb-care .tl[data-nav] .dl7.ck path{stroke:var(--k)}
+.tb-care .tl[data-nav] .ln polyline{stroke:var(--k)}
+.tb-care .tl[data-nav] .ln circle{fill:var(--k)}
+.tb-care .tl[data-nav] .ln polygon{fill:var(--kl)}
+.tb-care .tl[data-nav] svg.sg rect:nth-child(1){fill:var(--kl)}
+.tb-care .tl[data-nav] svg.sg rect:nth-child(2){fill:color-mix(in srgb,var(--k) 45%,#fff)}
+.tb-care .tl[data-nav] svg.sg rect:nth-child(3){fill:color-mix(in srgb,var(--k) 72%,#fff)}
+.tb-care .tl[data-nav] svg.sg rect:nth-child(4){fill:var(--k)}
+.tb-care .tl[data-nav] .bars .bc svg rect{fill:var(--kl)}
+.tb-care .tl[data-nav] .bars .bc:last-child svg rect{fill:var(--k)}
+.tb-care .tl.f .th2 .nm .tg{background:#fff}
+.tb-care .tl.empty .fill{color:var(--k);text-decoration-color:var(--k)}
+.tb-care .tl[data-nav].tb-flat,.tb-care .tl.tb-flat[data-nav]{background:var(--kt)!important}
+.tb-care .ic svg *{fill:currentColor!important}
+.tb-care .tl[data-nav] .th2 .ic svg{fill:var(--k);color:var(--k)}
+.tb-care .tl[data-nav] .th2 .ic svg *{fill:var(--k)!important}
+.tb-care .tl[data-nav] .eic svg *{fill:var(--k)!important}
+/* D-카드11 · 한눈에 보기 호 옆 문구를 위 카드와 같은 모양으로(글자 16px · 칩 높이 24px · 칩과 조사 사이 띄움 없음) */
+.tb-care .tb-cg .v2{font-size:16px;line-height:24px}
+.tb-care .tb-cg .v2 .chip{height:24px;line-height:24px;padding:0 8px;margin:0 1px}
+
+/* D-카드12 · 한눈에 보기 호 = 이중 호형(시안 C) · 점수 65 */
+.tb-care .tb-cg .c{inset:0!important}
+.tb-care .tb-cg .c b{font-size:24px;line-height:28px;letter-spacing:-.8px}
+.tb-care .tb-cg .c b small{font-size:12px}
+/* D-카드13 · 한눈에 보기 호 116 → 144px */
+.tb-care .tb-cg .g{width:144px;height:144px}
+.tb-care .tb-cg .g svg{width:144px;height:144px}
+.tb-care .tb-cg .c b{font-size:30px;line-height:34px}
+.tb-care .tb-cg .c b small{font-size:14px}
+
+/* D-카드14 · 한눈에 보기 문구 = 위 카드 문장 그대로(요약) + 호 안쪽 자를 읽는 범례(상세): 지금 65점 · 좋음(75점)까지 10점 */
+.tb-care .tb-cg .t{display:flex;flex-direction:column;align-items:flex-start}
+.tb-care .tb-cg .yd{margin-top:6px}
+.tb-care .tb-cg .lgs{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:3px}
+.tb-care .tb-cg .lgs li{display:flex;align-items:center;gap:6px;font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:18px;color:#5a5c63;white-space:nowrap}
+.tb-care .tb-cg .lgs b{font-family:'Pretendard-SemiBold',sans-serif;font-weight:400;color:#171719}
+.tb-care .tb-cg .lgs i{flex:none;width:10px;height:10px;border-radius:50%;box-sizing:border-box}
+.tb-care .tb-cg .lgs .d1{background:#F9C65B;box-shadow:0 0 0 1.5px #fff,0 0 0 2.5px #F2D58A}
+.tb-care .tb-cg .lgs .d2{background:#fff;border:2px solid #6CC189}
+/* D-카드15 · 최근 7일 점수 영역 배경 = 「어제보다」 칩과 같은 색(스킨이 맞춘 #f6f8f9) */
+.tb-care .tb-trend{margin-top:14px;padding:14px 16px 8px;border-bottom:0;border-radius:12px;background:#f6f8f9}
+
+/* D-카드16 · 최근 7일 점수는 토글(details): 접힘 = 제목 · 오늘 65점 · 화살표, 펼침 = 그래프 */
+.tb-care details.tb-trend{padding:0;cursor:default}
+.tb-care details.tb-trend>summary{display:flex;align-items:center;gap:8px;margin:0;padding:12px 16px;list-style:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tb-care details.tb-trend>summary::-webkit-details-marker{display:none}
+.tb-care details.tb-trend>summary b{flex:1}
+.tb-care details.tb-trend>summary .chv{flex:none;color:#72747b;transition:transform .2s}
+.tb-care details.tb-trend[open]>summary .chv{transform:rotate(180deg)}
+.tb-care details.tb-trend>svg{margin:0;padding:0 16px 8px;width:calc(100% - 32px);box-sizing:content-box}
+.tb-care details.tb-trend[open]>summary{padding-bottom:4px}
+
+/* D-카드17 · 구분선은 호 + 최근 7일 점수(요약) 아래로: 구분선 위 = 이너뷰티 요약 · 아래 = 관리별 */
+.tb-care .tb-cg{border-bottom:0!important;padding-bottom:0!important}
+.tb-care .tb-trend{margin:12px 0 0!important}
+.tb-care .cap2{margin:14px 0 8px!important;padding-top:14px;border-top:1px solid rgba(23,23,25,.06)}
+
+/* D-카피 · 알로에게 더 물어보기 위 구분선 */
+.tb-tasks .tb-ask-more{position:relative;margin-top:12px!important;height:44px!important;border-radius:0!important}
+.tb-tasks .tb-ask-more::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:#e4e4e7}

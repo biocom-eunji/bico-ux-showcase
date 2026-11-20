@@ -1,0 +1,33 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>캐릭터 무대 조명 시안 3개</title>
+<style>
+body{margin:0;background:#f4f4f5;font-family:Pretendard,-apple-system,"Apple SD Gothic Neo",sans-serif;color:#18181b}
+header{padding:14px 24px;border-bottom:1px solid #e4e4e7;background:#fff}header h1{margin:0;font-size:16px}header p{margin:4px 0 0;font-size:12px;color:#71717a;line-height:1.55;max-width:900px}
+main{display:flex;gap:24px;justify-content:center;padding:20px 24px 40px;flex-wrap:wrap}
+.c{display:flex;flex-direction:column;gap:6px}.c h2{margin:0;font-size:13px}.c h2 span{font-weight:400;color:#71717a;font-size:12px;margin-left:6px}
+.c .d{font-size:12px;color:#52525b;line-height:1.55;max-width:300px}
+.f{width:300px;height:262px;border:1px solid #e4e4e7;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.07);position:relative}
+iframe{width:390px;height:844px;border:0;transform:scale(.769);transform-origin:0 0;position:absolute;left:0;top:-30px}
+</style></head><body>
+<header><h1>캐릭터 영역 무대 조명 시안 3개</h1><p>플리더스(스포트라이트 아래 무대) · 포스텔러(풍경 위 캐릭터)에서 빌린 아이디어예요. 캐릭터 · 받침판 · 라벨 위치는 그대로이고 뒤쪽 빛만 달라요. 정보 영역(점수 카드)이 눈에 더 들어와야 해서 모두 밝고 옅게 만들었어요.</p></header>
+<main>
+<section class="c"><h2>현재 <span>D11 크림 글로우 + 2단 원판</span></h2><div class="f"><iframe data-v="0" src="tobe/tobe-home.html?res=seen"></iframe></div><div class="d">비교 기준이에요.</div></section>
+<section class="c"><h2>A · 스포트라이트 <span>플리더스 참고</span></h2><div class="f"><iframe data-v="A" src="tobe/tobe-home.html?res=seen"></iframe></div><div class="d">위에서 캐릭터로 내려오는 부드러운 빛 원뿔 + 바닥 밝은 웅덩이. 「무대 위의 주인공」 느낌이 가장 분명해요.</div></section>
+<section class="c"><h2>B · 바닥 조명 링 <span>무대 바닥</span></h2><div class="f"><iframe data-v="B" src="tobe/tobe-home.html?res=seen"></iframe></div><div class="d">받침판 아래로 크림색 조명 웅덩이와 동심원 두 겹, 가장자리는 아주 옅게 어둡게. 캐릭터 뒤는 깨끗해서 가장 조용해요.</div></section>
+<section class="c"><h2>C · 후광 + 반짝임 <span>포스텔러 참고</span></h2><div class="f"><iframe data-v="C" src="tobe/tobe-home.html?res=seen"></iframe></div><div class="d">캐릭터 뒤에 크림 후광, 주변에 작은 별이 천천히 깜빡여요(동작 줄이기 설정이면 멈춤). 가장 따뜻하고 귀엽지만 시선을 조금 더 가져가요.</div></section>
+</main>
+<script>
+var CSS={
+A:'.sp{position:absolute;left:0;right:0;top:0;height:260px;pointer-events:none;z-index:0}.sp .cone{position:absolute;left:50%;top:44px;width:260px;height:160px;transform:translateX(-50%);background:linear-gradient(180deg,rgba(255,252,240,0) 0%,rgba(255,250,232,.55) 70%,rgba(255,250,232,.8) 100%);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);filter:blur(3px)}.sp .pool{position:absolute;left:50%;top:166px;width:250px;height:54px;transform:translateX(-50%);border-radius:50%!important;background:radial-gradient(ellipse,rgba(255,252,238,.95) 0,rgba(255,252,238,.45) 55%,transparent 72%)}.sp .lamp{position:absolute;left:50%;top:44px;width:44px;height:14px;transform:translateX(-50%);border-radius:50%!important;background:radial-gradient(ellipse,rgba(255,255,255,.95),transparent 70%)}',
+B:'.sp{position:absolute;left:0;right:0;top:0;height:260px;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 50% 38%,transparent 52%,rgba(40,80,75,.10) 100%)}.sp .pool{position:absolute;left:50%;top:150px;width:330px;height:84px;transform:translateX(-50%);border-radius:50%!important;background:radial-gradient(ellipse,rgba(255,250,232,.95) 0,rgba(255,250,232,.5) 48%,transparent 72%)}.sp .r1,.sp .r2{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%!important;border:1.5px solid rgba(255,255,255,.9)}.sp .r1{top:160px;width:250px;height:64px}.sp .r2{top:150px;width:310px;height:82px;border-color:rgba(255,255,255,.5)}',
+C:'.sp{position:absolute;left:0;right:0;top:0;height:260px;pointer-events:none;z-index:0}.sp .halo{position:absolute;left:50%;top:50px;width:300px;height:300px;transform:translateX(-50%);border-radius:50%!important;background:radial-gradient(circle,rgba(255,246,214,.95) 0,rgba(255,246,214,.5) 42%,transparent 68%)}.sp .st{position:absolute;width:10px;height:10px;background:#fff;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:.9}@media (prefers-reduced-motion:no-preference){.sp .st{animation:tw 2.6s ease-in-out infinite}}@keyframes tw{0%,100%{opacity:.2;transform:scale(.6)}50%{opacity:1;transform:scale(1.1)}}'
+};
+var HTML={
+A:'<div class="cone"></div><div class="lamp"></div><div class="pool"></div>',
+B:'<div class="pool"></div><div class="r2"></div><div class="r1"></div>',
+C:'<div class="halo"></div><i class="st" style="left:84px;top:92px;width:16px;height:16px"></i><i class="st" style="left:288px;top:80px;width:20px;height:20px;animation-delay:.6s"></i><i class="st" style="left:58px;top:152px;width:11px;height:11px;animation-delay:1.2s"></i><i class="st" style="left:318px;top:146px;width:12px;height:12px;animation-delay:1.8s"></i><i class="st" style="left:134px;top:60px;width:11px;height:11px;animation-delay:.3s"></i><i class="st" style="left:250px;top:58px;width:10px;height:10px;animation-delay:1.5s"></i>'
+};
+[].forEach.call(document.querySelectorAll('iframe'),function(f){f.addEventListener('load',function(){setTimeout(function(){
+  var d=f.contentDocument,v=f.dataset.v;var s=d.createElement('style');s.textContent='.uxpin{display:none!important}'+(CSS[v]||'');d.head.appendChild(s);
+  if(!HTML[v])return;var ch=d.querySelector('.tb-stage')||d.querySelector('.tb-char');if(!ch)return;var w=d.createElement('div');w.className='sp';w.innerHTML=HTML[v];ch.parentElement.insertBefore(w,ch);
+},900)})});
+</script></body></html>

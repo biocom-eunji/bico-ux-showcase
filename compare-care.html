@@ -1,0 +1,37 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>이너뷰티 카드 그래프 시안</title>
+<style>
+body{margin:0;background:#f4f4f5;font-family:Pretendard,-apple-system,"Apple SD Gothic Neo",sans-serif;color:#18181b}
+header{padding:14px 24px;border-bottom:1px solid #e4e4e7;background:#fff}header h1{margin:0;font-size:16px}header p{margin:4px 0 0;font-size:12px;color:#71717a;line-height:1.55;max-width:900px}
+main{display:flex;gap:24px;justify-content:center;padding:20px 24px 40px;flex-wrap:wrap}
+.c{display:flex;flex-direction:column;gap:6px}.c h2{margin:0;font-size:13px}.c h2 span{font-weight:400;color:#71717a;font-size:12px;margin-left:6px}
+.c .d{font-size:12px;color:#52525b;line-height:1.55;max-width:340px}
+.f{width:340px;height:470px;border:1px solid #e4e4e7;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.07);position:relative}
+iframe{width:390px;height:700px;border:0;transform:scale(.87);transform-origin:0 0;position:absolute;left:0;top:0}
+</style></head><body>
+<header><h1>이너뷰티 카드 · 행 그래프 4안</h1><p>세로 나열은 유지하고 행의 그래프만 비교해요. 값은 시안용이에요(식단 +1 · 스킨케어 0 · 배변 0 · 회복 −1, 눈금은 ±2 가정 → 확인 필요).</p></header>
+<main>
+<section class="c"><h2>A · 현재 <span>회색 바 + 점수 영향</span></h2><div class="f"><iframe data-v="A" src="tobe/tobe-home.html?done=1&res=seen"></iframe></div><div class="d">바(63% 등)와 오른쪽 「+1점」이 서로 다른 값이라 한 행에 숫자 두 개가 다른 뜻으로 있어요. 바 길이 근거는 정책에 없어요.</div></section>
+<section class="c"><h2>B · 양방향 바 <span>추천</span></h2><div class="f"><iframe data-v="B" src="tobe/tobe-home.html?done=1&res=seen"></iframe></div><div class="d">가운데 기준선에서 오른쪽 민트(+), 왼쪽 코랄(−), 변화 없음은 회색 점. 바와 오른쪽 숫자가 같은 값을 말해요.</div></section>
+<section class="c"><h2>C · 바 없음 <span>숫자만</span></h2><div class="f"><iframe data-v="C" src="tobe/tobe-home.html?done=1&res=seen"></iframe></div><div class="d">그래프 없이 이름 · 오늘 상태 · 점수 영향만. 가장 단순하지만 그래프 느낌이 사라져요.</div></section>
+<section class="c"><h2>D · 행마다 다른 그래프 <span>지표 성격별</span></h2><div class="f"><iframe data-v="D" src="tobe/tobe-home.html?done=1&res=seen"></iframe></div><div class="d">식단 = 영양 비율 누적 바 · 영양 = 채울 칸(점선) · 스킨케어 = 최근 7일 점 · 배변 = 최근 7일 막대 · 회복 = 수면 7일 선. 각 행의 성격에 맞지만, 오른쪽 점수 영향(+1점)과는 다른 값이에요.</div></section>
+</main>
+<script>
+var BASE='.tb-hdr,nav,[class*=tb-nav]{display:none!important}';
+var B_CSS='.tb-care .cr.r2 .bar{position:relative!important;width:76px!important;height:8px!important;background:none!important;overflow:visible!important}.tb-care .cr.r2 .bar:before{content:"";position:absolute;left:0;right:0;top:3px;height:2px;border-radius:2px;background:#e4e4e7}.tb-care .cr.r2 .bar:after{content:"";position:absolute;left:50%;top:0;width:2px;height:8px;margin-left:-1px;border-radius:1px;background:#a1a4ab}.tb-care .cr.r2 .bar i{position:absolute!important;top:1px;height:6px!important;border-radius:3px;z-index:1}.tb-care .cr.r2 .bar i.p{left:50%;width:19px!important;background:#22c3bc}.tb-care .cr.r2 .bar i.n{right:50%;width:19px!important;background:#F28A6A}.tb-care .cr.r2 .bar i.z{left:50%;width:6px!important;height:6px!important;margin-left:-3px;border-radius:50%;background:#a1a4ab}';
+var C_CSS='.tb-care .cr.r2 .bar{display:none!important}';
+var D_CSS='.tb-care .cr.r2 .bar{position:relative!important;width:76px!important;height:22px!important;background:none!important;overflow:visible!important;display:flex!important;align-items:center;justify-content:flex-end;gap:3px}.tb-care .cr.r2 .bar>i{display:none!important}.g-stack{display:flex;width:76px;height:8px;border-radius:4px;overflow:hidden;gap:2px}.g-stack b{display:block;height:100%}.g-dots{display:flex;gap:5px}.g-dots b{width:7px;height:7px;border-radius:50%;background:#22c3bc}.g-dots b.o{background:#e4e4e7}.g-cols{display:flex;align-items:flex-end;gap:4px;height:20px}.g-cols b{width:6px;border-radius:2px 2px 0 0;background:#22c3bc}.g-cols b.o{background:#e4e4e7}.g-slots{display:inline-flex;gap:4px;margin:0 8px 0 auto}.tb-care .cr .fill{white-space:nowrap!important;flex:none}.g-slots b{width:12px;height:12px;border-radius:50%;border:1.5px dashed #c4c7cc;box-sizing:border-box}';
+var CSS={A:'',B:B_CSS,C:C_CSS,D:D_CSS};
+function dG(d){var rows=d.querySelectorAll('.tb-care .cr');
+ var H=['<span class="g-stack"><b style="flex:5;background:#22c3bc"></b><b style="flex:3;background:#7fdad4"></b><b style="flex:2;background:#c5eeea"></b></span>',null,
+  '<span class="g-dots"><b></b><b></b><b></b><b></b><b></b><b class="o"></b><b class="o"></b></span>',
+  '<span class="g-cols"><b style="height:10px"></b><b style="height:14px"></b><b style="height:8px"></b><b style="height:16px"></b><b style="height:12px"></b><b style="height:14px"></b><b class="o" style="height:6px"></b></span>',
+  '<svg width="76" height="22" viewBox="0 0 76 22"><polyline points="4,8 16,5 28,10 40,7 52,12 64,15 72,17" fill="none" stroke="#22c3bc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="72" cy="17" r="3.5" fill="#F28A6A"/></svg>'];
+ rows.forEach(function(r,i){if(i===1){var em=r.querySelector('.em');if(em){em.insertAdjacentHTML('afterend','<span class="g-slots"><b></b><b></b><b></b></span>');em.style.display='none';}return;}
+  var bar=r.querySelector('.bar');if(bar)bar.innerHTML='<i></i>'+H[i];});}
+[].forEach.call(document.querySelectorAll('iframe'),function(f){f.addEventListener('load',function(){setTimeout(function(){
+  var d=f.contentDocument,s=d.createElement('style');s.textContent=BASE+CSS[f.dataset.v];d.head.appendChild(s);
+  if(f.dataset.v==='B'){[].forEach.call(d.querySelectorAll('.tb-care .cr.r2'),function(r){var i=r.querySelector('.bar i'),im=r.querySelector('.im');if(!i||!im)return;i.removeAttribute('style');i.className=im.classList.contains('up')?'p':im.classList.contains('dn')?'n':'z';});}
+  if(f.dataset.v==='D')dG(d);
+  var c=d.querySelector('.tb-care');if(c)c.scrollIntoView({block:'start'});
+},900);});});
+</script></body></html>

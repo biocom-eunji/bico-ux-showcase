@@ -6,7 +6,7 @@
    - D5: 완료 상태에서 「트러블 없던 날」 7칸은 할 일 카드 아래로 내린다.
    - D4: 완료 상태의 「알로에게 묻기」 칩은 빼고, 할 일 카드 아래에 「알로에게 더 물어보기 ›」를 둔다. */
 (function () {
-  var URL_JSON = 'https://biocom-eunji.github.io/bico-ux-showcase/tobe/home-done.json';
+  var URL_JSON = 'http://localhost:8775/tobe/home-done.json';
   var NAV = { '23시 30분 전에 잠자리에 들기': '/record/sleep/add', '2주 정제 탄수화물 줄여 보기': '/record/diet/add', '잠들기 전 종이책 읽기': '/record/sleep/add' };
   var data = null, step = 0, done = false;
   var quiet = false, instant = /[?&]done=1/.test(location.search);       /* D53: 쇼케이스 「홈(문진 후)」 — 문진 없이 바로 완료 화면 */
@@ -61,7 +61,7 @@
 
   /* D21 · 체크인 카드를 bico-renewal-v4 구조로: 아바타 + 제목 + 「4문항 · 완료하면 +10 P」 → 분절 진행 막대 → 질문 → 표정 5개.
      「아침 체크인」 라벨과 구분선은 뺀다. 「트러블 없던 날」은 카드 밖 아래 별도 카드로 뺀다(정책 10-2 유지, 체크인 카드는 v4처럼 컴팩트). */
-  var CK_IMG = 'https://biocom-eunji.github.io/bico-ux-showcase/tobe/icons/bico2_still_sleep.png';
+  var CK_IMG = 'http://localhost:8775/tobe/icons/bico2_still_sleep.png';
   function findCkCard() {
     var r = document.querySelector('[role=radio]');
     for (var e = r, n = 0; e && n < 14; n++, e = e.parentElement) { if ((e.innerText || '').indexOf('아침 체크인') >= 0 && getComputedStyle(e).borderTopWidth !== '0px') return e; }
@@ -113,7 +113,7 @@
     old.replaceWith(card);
     card.classList.add('tb-tasks');
     var cs = document.querySelector('.tb-cta .sub'); if (cs) cs.textContent = '2점 올릴 수 있어요 · 내일 반영';   // D38: 체크인 뒤에만 보상 문구
-    tidyTasks(card); intify(card); reskinTasks(card);
+    tidyTasks(card); intify(card); reskinTasks(card); rewriteTasks(card);
     var tk = location.search.match(/[?&]tasks=(\d)/); if (tk) setDoneCount(card, +tk[1]);
     recolorWeek(card);
     var st = leaf('쿨쿨 자는 중'); if (st) st.textContent = data.status;                                               // 비코 상태 줄
@@ -173,16 +173,31 @@
         var lf = leafOf(sub), cur = (lf.innerText || '').trim(), m = vt.match(/^\+(\d+)/), html;
         var tags = [].map.call(sub.querySelectorAll('[style*="79, 107, 237"]'), function (c) { return (c.innerText || '').trim(); });
         var mt = tags[0] ? '<b class="tb-m">' + tags[0] + '</b>' : '';
-        if (vt === '밤에 확정') html = '밤에 확정 · ' + mt;
-        else if (m) html = '하면 내일 아침 ' + mt + ' <b class="tb-g">+' + m[1] + '</b>';
-        else html = (/^지금/.test(cur) ? cur + ' · ' : '하면 내일 아침 ') + mt;
+        if (vt === '밤에 확정') { html = '자정에 확정 · ' + mt; b.classList.add('tb-chal'); }   // D74: 챌린지형(자정에 판정)
+        else if (m) html = '하면 내일 아침 ' + mt + ' <b class="tb-g">+' + m[1] + '점</b>';
+        else html = (/^지금 평균/.test(cur) ? cur.replace(/^지금 평균 (.+)$/, '요즘 평균 $1에 잠들어요') + ' · ' : /^지금/.test(cur) ? cur + ' · ' : '하면 내일 아침 ') + mt;   // D76: 동사가 없던 「지금 평균 2시 10분」
         lf.classList.add('tb-subleaf'); lf.innerHTML = html; b.setAttribute('data-sub', html);
         [].forEach.call(sub.querySelectorAll('[style*="79, 107, 237"]'), function (c) { c.style.setProperty('display', 'none', 'important'); });
       }
       var cta = document.createElement('span'); cta.className = 'tb-cta2'; cta.setAttribute('aria-hidden', 'true'); cta.textContent = '기록'; b.appendChild(cta);
       var dn = document.createElement('span'); dn.className = 'tb-donetx'; dn.setAttribute('aria-hidden', 'true'); dn.textContent = '했어요'; b.appendChild(dn);
+      if (b.classList.contains('tb-chal')) { cta.textContent = '지키는 중'; dn.textContent = '지켰어요'; }   // D74: 챌린지는 「기록」 버튼 대신 상태 알약
     });
     refreshTasks(card);
+  }
+  /* D-카피 · 문진 뒤 「피부를 위해 오늘 할 일」 라이팅: 제목 + 아래 줄(해야 할 일 한 줄). 값 · 꼬리표(회복력 · +1점)는 이 줄에서 뺀다 */
+  var COPY = {
+    '23시 30분 전에 잠자리에 들기': ['23:30 전에 잠들기', '오늘 수면을 기록해주세요'],
+    '2주 정제 탄수화물 줄여 보기': ['정제 탄수화물 먹지 않기', '오늘 자정까지 지켜주세요'],
+    '잠들기 전 종이책 읽기': ['자기 전 책 읽기', '독서 사진을 인증해주세요']
+  };
+  function rewriteTasks(card) {
+    [].forEach.call(card.querySelectorAll('.tb-task'), function (b) {
+      var c = COPY[b.getAttribute('aria-label')]; if (!c) return;
+      var tl = leafIn(b, b.getAttribute('aria-label')); if (tl) tl.textContent = c[0];
+      b.setAttribute('aria-label', c[0]); b.setAttribute('data-sub', c[1]);
+      var sl = b.querySelector('.tb-subleaf'); if (sl) sl.textContent = c[1];
+    });
   }
   /* 완료 상태(D59 P6): 기록하면 정책상 자동 완료. 시안에서는 「n/3 완료」 글자를 누르면 하나씩 완료로 넘겨 볼 수 있고, 주소에 ?tasks=1~3을 붙이면 그 수만큼 완료된 채로 열림 */
   function refreshTasks(card) {
@@ -192,8 +207,8 @@
     rows.forEach(function (b) {
       var on = b.classList.contains('tb-done'), val = b.querySelector('.tb-val');
       if (on) n++;
-      var sl = b.querySelector('.tb-subleaf'); if (sl) sl.innerHTML = on ? '오늘 기록했어요' : (b.getAttribute('data-sub') || '');
-      b.setAttribute('aria-label', (b.getAttribute('aria-label') || '').replace(/ · 했어요$/, '') + (on ? ' · 했어요' : ''));
+      var sl = b.querySelector('.tb-subleaf'); if (sl) sl.innerHTML = on ? (b.classList.contains('tb-chal') ? '오늘 지켰어요' : '오늘 기록했어요') : (b.getAttribute('data-sub') || '');
+      b.setAttribute('aria-label', (b.getAttribute('aria-label') || '').replace(/ · (했어요|지켰어요)$/, '') + (on ? (b.classList.contains('tb-chal') ? ' · 지켰어요' : ' · 했어요') : ''));
     });
     rows.filter(function (b) { return !b.classList.contains('tb-done'); }).concat(rows.filter(function (b) { return b.classList.contains('tb-done'); })).forEach(function (b) { list.appendChild(b); });
     var total = rows.length, all = n === total;
@@ -221,7 +236,7 @@
     ['아주 그래요', '그래요', '조금 그래요', '거의 아니에요', '전혀 아니에요'],
     ['아주 그래요', '그래요', '조금 그래요', '거의 아니에요', '전혀 아니에요']
   ];
-  var AWAKE_IMG = 'https://biocom-eunji.github.io/assets/assets/cell/bico3_idle.48349d69146c60ca6cc024310447e714.webp';
+  var AWAKE_IMG = 'http://localhost:8776/assets/assets/cell/bico3_idle.48349d69146c60ca6cc024310447e714.webp';
   var locked = false, answers = [];
   function leafOf(n) { while (n && n.children.length) n = n.children[0]; return n; }
   function enhanceBlock(card) {

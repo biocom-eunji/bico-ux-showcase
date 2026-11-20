@@ -35,14 +35,6 @@
       if (tg && tg.scrollIntoView) tg.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
-    var h = e.target.closest && e.target.closest('.tb-acc-h');
-    if (h) {
-      e.preventDefault(); e.stopPropagation();
-      var open = h.getAttribute('aria-expanded') !== 'true';
-      h.setAttribute('aria-expanded', String(open));
-      var p = document.getElementById('tb-acc-p'); if (p) { if (open) p.removeAttribute('hidden'); else p.setAttribute('hidden', ''); }
-      return;
-    }
     var mo = e.target.closest && e.target.closest('.tb-more');
     if (mo) {
       e.preventDefault(); e.stopPropagation();

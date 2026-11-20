@@ -1,0 +1,46 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>결과지 버튼 시안 3개 · 1번 NEW + 2번 처음 크게/이후 작게</title>
+<style>
+body{margin:0;background:#f4f4f5;font-family:Pretendard,-apple-system,"Apple SD Gothic Neo",sans-serif;color:#18181b}
+header{padding:14px 24px;border-bottom:1px solid #e4e4e7;background:#fff}header h1{margin:0;font-size:16px}header p{margin:4px 0 0;font-size:12px;color:#71717a;line-height:1.55}
+main{display:grid;grid-template-columns:repeat(3,auto);gap:28px 28px;justify-content:center;padding:20px 24px 40px}
+.c{display:flex;flex-direction:column;gap:6px}.c h2{margin:0;font-size:13px}.c h2 span{font-weight:400;color:#71717a;font-size:12px;margin-left:6px}
+.c .d{font-size:12px;color:#52525b;line-height:1.5;max-width:300px;min-height:54px}
+.st{font-size:11px;color:#71717a;margin:2px 0 -2px}
+.f{width:300px;height:330px;border:1px solid #e4e4e7;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.07);position:relative}
+iframe{width:390px;height:430px;border:0;transform:scale(.769);transform-origin:0 0;position:absolute;left:0;top:0}
+.rowhead{grid-column:1/-1;font-size:12px;font-weight:600;color:#3f3f46;margin-bottom:-14px}
+</style></head><body>
+<header><h1>결과지 버튼 시안 3개</h1><p>같은 홈 화면을 두 상태로 비교해요. <b>① 새 결과지가 도착한 첫 진입</b>(크게 + NEW) → <b>② 확인한 뒤 평소</b>(작게). 주황 점 = NEW 표식. 시안 C는 말풍선류라 회의 「이번 버전엔 말풍선 제외」 결정과 부딪혀요.</p></header>
+<main>
+<div class="rowhead">① 새 결과지가 도착한 첫 진입 (크게 + NEW)</div>
+<section class="c"><h2>A · 알약 확장 <span>왼쪽 자리 유지</span></h2><div class="f"><iframe data-v="A" data-s="0" src="tobe/tobe-home.html"></iframe></div><div class="d">민트로 꽉 찬 알약 + 「내 결과지 ›」 + NEW 점. 지금 자리 그대로라 바뀐 걸 바로 알아봐요.</div></section>
+<section class="c"><h2>B · 오른쪽 이동 <span>엄지 닿는 쪽</span></h2><div class="f"><iframe data-v="B" data-s="0" src="tobe/tobe-home.html"></iframe></div><div class="d">보관함이 있던 오른쪽으로 옮기고 「새 결과지」 알약 + NEW 점. 이후에는 아이콘 원형으로 줄어요.</div></section>
+<section class="c"><h2>C · 캐릭터 옆 칩 <span>가장 눈에 띔</span></h2><div class="f"><iframe data-v="C" data-s="0" src="tobe/tobe-home.html"></iframe></div><div class="d">비코 옆에 떠 있는 「새 결과지 ›」 칩(위아래로 살짝 움직임). 말풍선류라 회의 결정과 충돌 — 이번 버전엔 부담.</div></section>
+<div class="rowhead">② 확인한 뒤 평소 (작게)</div>
+<section class="c"><h2>A · 평소 <span>현재 D75 모양</span></h2><div class="f"><iframe data-v="A" data-s="1" src="tobe/tobe-home.html"></iframe></div><div class="d">지금 구현된 아이콘 + 「결과지」 알약 그대로.</div></section>
+<section class="c"><h2>B · 평소 <span>아이콘 원형</span></h2><div class="f"><iframe data-v="B" data-s="1" src="tobe/tobe-home.html"></iframe></div><div class="d">글자 없이 아이콘만 40px 원형. 가장 조용하지만 처음 오는 사람은 뭔지 모를 수 있어요.</div></section>
+<section class="c"><h2>C · 평소 <span>왼쪽 알약으로 복귀</span></h2><div class="f"><iframe data-v="C" data-s="1" src="tobe/tobe-home.html"></iframe></div><div class="d">칩이 사라지고 왼쪽 알약(현재 모양)으로 돌아와요.</div></section>
+</main>
+<script>
+var CSS={
+ A0:'.tb-res{top:216px!important}.tb-res>div{height:44px!important;border-radius:22px!important;background:#157d78!important;box-shadow:0 4px 12px rgba(21,125,120,.35)!important}.tb-res>div>div:first-child{display:none!important}.tb-res>div>div:last-child{height:44px!important;padding:0 14px 0 10px!important}.tb-res>div>div:last-child>div{color:#fff!important;font-size:14px!important;line-height:18px!important}.tb-res img{filter:brightness(0) invert(1)}',
+ B0:'.tb-res{left:auto!important;right:16px!important;top:216px!important}.tb-res>div{height:44px!important;border-radius:22px!important;box-shadow:0 0 0 1.5px #22c3bc,0 4px 12px rgba(34,195,188,.25)!important}.tb-res>div>div:last-child{height:44px!important;padding:0 14px 0 10px!important}.tb-res>div>div:last-child>div{font-size:14px!important;line-height:18px!important;color:#157d78!important}',
+ B1:'.tb-res{left:auto!important;right:16px!important;top:218px!important}.tb-res>div,.tb-res>div>div:first-child,.tb-res>div>div:first-child>div,.tb-res>div>div:last-child{width:40px!important;height:40px!important;border-radius:50%!important;padding:0!important}.tb-res>div>div:last-child>div{display:none!important}.tb-res::before{inset:-2px!important}',
+ DOT:'.tb-res::after{content:"";position:absolute;top:0;right:0;width:12px;height:12px;border-radius:50%;background:#e0873a;border:2px solid #fff;z-index:3}',
+ C0:'.tb-res{visibility:hidden!important}.rc-chip{position:absolute;left:254px;top:122px;z-index:9;display:flex;align-items:center;gap:6px;height:36px;padding:0 12px 0 8px;border-radius:18px;background:#fff;box-shadow:0 0 0 1.5px #22c3bc,0 6px 16px rgba(34,195,188,.3);font:600 13px Pretendard,sans-serif;color:#157d78;animation:rcb 2.2s ease-in-out infinite}.rc-chip img{width:22px;height:22px}.rc-chip i{position:absolute;top:-4px;right:-3px;width:12px;height:12px;border-radius:50%;background:#e0873a;border:2px solid #fff}.rc-chip:after{content:"";position:absolute;left:-5px;bottom:8px;width:10px;height:10px;background:#fff;transform:rotate(45deg);box-shadow:-1.5px 1.5px 0 0 #22c3bc}@keyframes rcb{50%{transform:translateY(-4px)}}'
+};
+function css(doc,t){var s=doc.createElement('style');s.textContent=t;doc.head.appendChild(s)}
+[].forEach.call(document.querySelectorAll('iframe'),function(f){
+  f.addEventListener('load',function(){
+    var d=f.contentDocument,v=f.dataset.v,s=f.dataset.s;css(d,'.uxpin{display:none!important}');
+    setTimeout(function(){
+      var res=d.querySelector('.tb-res'),lab=res&&res.querySelector('[data-nz],div[dir=auto]');
+      var txt=function(t){var n=[].filter.call(res.querySelectorAll('div'),function(x){return !x.children.length&&x.textContent.trim().length})[0];if(n)n.textContent=t};
+      if(v==='A'&&s==='0'){css(d,CSS.A0+CSS.DOT);txt('내 결과지 ›')}
+      if(v==='B'&&s==='0'){css(d,CSS.B0+CSS.DOT);txt('새 결과지')}
+      if(v==='B'&&s==='1'){css(d,CSS.B1)}
+      if(v==='C'&&s==='0'){css(d,CSS.C0);var c=d.createElement('div');c.className='rc-chip';c.innerHTML='<img src="'+res.querySelector('img').src+'"><span>새 결과지 ›</span><i></i>';res.parentElement.appendChild(c)}
+    },900);
+  });
+});
+</script></body></html>

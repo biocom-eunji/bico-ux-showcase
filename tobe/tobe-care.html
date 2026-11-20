@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>관리 · TO-BE</title>
+<style>
+@font-face{font-family:P-M;src:url(http://localhost:8776/assets/assets/fonts/Pretendard-Medium.7305f90c923d4409825ec2f4380b63d6.ttf)}
+@font-face{font-family:P-SB;src:url(http://localhost:8776/assets/assets/fonts/Pretendard-SemiBold.459eff7ba5380583ccd6eda49c846c85.ttf)}
+@font-face{font-family:P-B;src:url(http://localhost:8776/assets/assets/fonts/Pretendard-Bold.dfb614ebecd405875f50a918ca11c17c.ttf)}
+:root{--fg:#171719;--mid:#5a5c63;--mute:#72747b;--line:#e4e4e7;--face:#f6f8f9;--mint:#22c3bc;--mint-d:#157d78;--mint-bg:#e1f6f5;--org:#b04a00;--org-bg:#fde9d8}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{color:var(--fg);font-family:P-M,'Pretendard',sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;background:linear-gradient(180deg,#e4f3f0 0,#f4f8f8 320px,#f6f8f9 100%)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+.top{position:sticky;top:0;z-index:5;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(238,246,245,.92);backdrop-filter:blur(8px)}
+.top .back{position:absolute;left:4px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:20px;text-align:center}
+.top h1{font-size:16px;font-family:P-SB,sans-serif;font-weight:400}
+main{padding:4px 16px 40px;display:flex;flex-direction:column;gap:12px}
+.card{background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.9);border-radius:16px;box-shadow:0 4px 14px rgba(23,23,25,.06);padding:16px}
+.h{font-size:16px;font-family:P-B,sans-serif;font-weight:400}
+.sub{font-size:12px;color:var(--mute);margin-top:2px;line-height:1.4}
+/* 머리 */
+.eye{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mute)}
+.score{display:flex;align-items:flex-end;gap:10px;margin-top:6px}
+.score b{font-size:44px;line-height:44px;letter-spacing:-1.5px;font-family:P-B,sans-serif;font-weight:400}
+.score span{font-size:12px;color:var(--mute);padding-bottom:5px}
+.dl{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:6px;font-size:12px;font-family:P-SB,sans-serif;background:var(--face);color:var(--mid);margin-bottom:5px}
+.dl.up{background:var(--mint-bg);color:var(--mint-d)}
+.fo{font-size:11px;padding:2px 6px;border-radius:6px;background:var(--org-bg);color:var(--org);font-family:P-SB,sans-serif;margin-left:4px}
+.path{margin-top:12px;padding:12px;border-radius:12px;background:var(--face)}
+.path .k{font-size:12px;color:var(--mute)}
+.path .ch{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.path .ch span{font-size:12px;font-family:P-SB,sans-serif;padding:5px 8px;border-radius:6px;background:#fff;border:1px solid var(--line)}
+.path .ch span.me{background:var(--fg);color:#fff;border-color:var(--fg)}
+.path .ch i{font-style:normal;color:#a1a4ab;font-size:12px}
+.path .im{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:14px;font-family:P-SB,sans-serif;min-height:44px;width:100%}
+.path .im b{font-size:16px;color:var(--mint-d);font-family:P-B,sans-serif;font-weight:400}
+.path .im b.dn{color:var(--mid)}
+.path .im em{font-style:normal;font-size:12px;color:var(--mute);margin-left:6px;font-family:P-M,sans-serif}
+.today{display:flex;align-items:center;gap:10px;margin-top:12px}
+.st{display:flex;align-items:center;gap:6px;font-size:12px;line-height:16px;flex:1}
+.st i{width:8px;height:8px;border-radius:50%;box-sizing:border-box;flex:none}
+.st.todo{color:var(--fg)}.st.todo i{border:1.5px solid var(--mute);background:#fff}
+.st.ok{color:var(--mute)}.st.ok i{background:var(--mint)}
+.cta{height:44px;padding:0 16px;border-radius:12px;background:var(--mint);color:#06403c;font-family:P-SB,sans-serif;font-size:14px;text-align:center;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.dir{margin-top:10px;font-size:12px;color:var(--mid);line-height:1.5}
+/* 오늘 할 일 */
+.todo{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 12px;margin-top:8px;border-radius:12px;background:var(--face);width:100%}
+.todo .ic{width:32px;height:32px;border-radius:50%;background:var(--mint-bg);display:flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+.todo .tx{flex:1;min-width:0}.todo .tx b{display:block;font-size:14px;font-family:P-SB,sans-serif;font-weight:400}.todo .tx small{display:block;font-size:12px;color:var(--mute);margin-top:1px}
+.todo .tg{font-size:11px;color:var(--mint-d);font-family:P-SB,sans-serif}
+.todo .rec{height:34px;padding:0 14px;border-radius:8px;background:var(--mint);color:#06403c;font-family:P-SB,sans-serif;font-size:12px;display:inline-flex;align-items:center;flex:none}
+.todo .pill{height:30px;padding:0 10px;border-radius:8px;border:1px solid var(--line);font-size:12px;color:var(--mid);display:inline-flex;align-items:center;flex:none;background:#fff}
+/* 기록 항목 */
+.items{padding:4px 16px}
+.it{padding:14px 0;border-top:1px solid var(--line)}
+.it:first-child{border-top:0}
+.r1{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.nm{font-size:14px;font-family:P-SB,sans-serif;display:flex;align-items:center;gap:6px}
+.imp{font-size:11px;padding:2px 6px;border-radius:6px;background:var(--org-bg);color:var(--org);font-family:P-SB,sans-serif}
+.pl{font-size:12px;font-family:P-SB,sans-serif;padding:4px 8px;border-radius:999px;background:var(--face);color:var(--mid);white-space:nowrap}
+.pl.good{background:var(--mint-bg);color:var(--mint-d)}
+.val{font-size:20px;line-height:26px;font-family:P-B,sans-serif;margin-top:4px}
+.val small{font-size:12px;color:var(--mute);font-family:P-M,sans-serif;margin-left:6px}
+.std{font-size:12px;color:var(--mute);margin-top:2px}
+.viz{position:relative;margin-top:10px;display:flex;align-items:flex-end;justify-content:space-between;height:48px;padding-bottom:0}
+.viz .b{flex:1;display:flex;justify-content:center;align-items:flex-end;height:100%}
+.viz .b i{width:22px;border-radius:4px 4px 0 0;background:#d4d6db;display:block}
+.viz .b.on i{background:#8e929b}
+.viz .ref{position:absolute;left:0;right:0;border-top:1.5px dashed #9aa0a8;pointer-events:none}
+.dots .b{align-items:center}.dots .b i{width:10px;height:10px;border-radius:50%;background:#d4d6db}.dots .b.y i{background:var(--mint)}
+.days{display:flex;justify-content:space-between;margin-top:4px}
+.days span{flex:1;text-align:center;font-size:11px;color:var(--mute)}.days span:last-child{color:var(--fg);font-family:P-SB,sans-serif}
+.rd{margin-top:8px;font-size:12px;line-height:1.5;color:var(--mid)}
+.rd .t{color:var(--mute)}
+.ft{display:flex;align-items:center;gap:8px;margin-top:8px}
+.ft .tag{font-size:11px;color:var(--mint-d);background:var(--mint-bg);border-radius:6px;padding:3px 7px;font-family:P-SB,sans-serif}
+.ft .more{margin-left:auto;height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--line);font-size:12px;font-family:P-SB,sans-serif;display:inline-flex;align-items:center;background:#fff}
+.ft .more.rec{background:var(--mint);border-color:var(--mint);color:#06403c}
+.empty{text-align:center;padding:28px 8px}
+.empty .ic{font-size:32px}
+.empty h2{font-size:16px;font-family:P-B,sans-serif;font-weight:400;margin-top:8px}
+.empty p{font-size:12px;color:var(--mute);margin-top:4px;line-height:1.5}
+.empty .cta{margin-top:16px;width:100%}
+</style></head><body>
+<div class="top"><button class="back" data-nav="/" aria-label="뒤로">‹</button><h1 id="ttl">관리</h1></div>
+<main id="root"></main>
+<script>
+var DAYS=['월','화','수','목','금','토','오늘'];
+/* 시안 값: 값 · 7일 그림 · 문장은 AS-IS 관리 화면 값을 따르고, 몫은 점수 상세 「이번 주 움직임」(정수)과 같은 숫자 */
+var C={
+'식단':{ic:'🍴',score:63,delta:'▼1',up:0,reach:['장','음식 반응'],imp:1,state:'todo',ci:'식단',cta:'식단 기록하기',nav:'/record/diet/add',
+ todos:[{t:'2주 정제 탄수화물 줄여 보기',s:'자정에 확정 · 탄수화물 대사',k:'chal'}],
+ items:[
+  {n:'당류',imp:1,val:'13%',pl:['지난주와 같음',0],vals:[13,12,13,13,12,13,14],ref:10,std:'기준 10% 이하 · 낮을수록 좋아요',rd:['당류의 100%가 간식에서 나왔어요','지난주와 비슷해요'],more:'자세히'},
+  {n:'초가공식품',imp:1,val:'33%',pl:['지난주와 같음',0],vals:[1,1,1,1,1,1,1],ref:0.3,std:'기준 10% 이하 · 초가공식품이 든 끼니 비율',rd:['지난주와 비슷해요'],more:'자세히'},
+  {n:'과민식품',imp:1,val:'0회',pl:['지난주와 같음',0],vals:[0,0,0,0,0,0,0],ref:0,std:'기준 적을수록 좋음',rd:['이번 주 과민식품이 든 적이 없었어요','지난주와 비슷해요'],more:'자세히'},
+  {n:'단백질',val:'하루 평균 46g',pl:['지난주와 같음',0],vals:[55,44,45,43,49,44,43],ref:55,std:'기준 55g · 하루 평균 46g, 기준까지 9g 남았어요',rd:['지난주와 비슷해요'],more:'자세히'},
+  {n:'식이섬유',val:'평균 13g',pl:['지난주와 같음',0],vals:[13,13,14,13,14,13,13],ref:20,std:'기준 20g · 하루 평균 13g, 기준까지 7g 남았어요',rd:['지난주와 비슷해요'],more:'자세히'},
+  {n:'채소와 과일',val:'평균 267g',pl:['지난주와 같음',0],vals:[257,267,272,260,286,268,261],ref:400,std:'기준 400g · 하루 평균 267g, 기준까지 133g 남았어요',rd:['지난주와 비슷해요'],more:'자세히'},
+  {n:'발효식품',val:'4일',pl:['지난주와 같음',0],dots:[1,1,0,1,0,1,0],std:'기준 주 7일',rd:['월요일, 목요일, 토요일에 발효식품을 먹지 않았어요','지난주와 비슷해요'],more:'자세히'},
+  {n:'유제품',val:'—',pl:null,vals:[0,0,0,0,0,0,0],ref:1,std:'기록 0일 · 기준 하루 1잔까지',rd:[],rec:1}
+ ]},
+'영양':{ic:'💊',empty:1},
+'스킨케어':{ic:'☀️',score:69,delta:'▼1',up:0,reach:['진정'],state:'ok',ci:'스킨케어',cta:'기록하기',nav:'/record',
+ items:[{n:'자외선 차단',val:'챙길 날 6일 중 4일',pl:['지난주와 같음',0],dots:[1,0,0,1,1,1,1],std:'기준 매일',rd:['수요일과 목요일에 챙길 날이었는데 챙기지 못했어요','지난주와 비슷해요'],more:'자세히',tagx:'진정'}]},
+'배변':{ic:'🚽',score:86,delta:'어제와 같음',up:0,same:1,reach:['장'],state:'ok',ci:'배변',cta:'기록하기',nav:'/record',dir:'편안한 모양이 많아요. 지금처럼 이어 가요',
+ items:[
+  {n:'대변 모양',val:'7번 중 7번 편안한 모양',pl:['지난주와 같음',0],dots:[1,1,1,1,1,1,1],std:'기준 벗어난 모양 25% 이하',rd:['벗어난 모양 25% 안이에요','지난주와 비슷해요'],more:'자세히',tagx:'장'},
+  {n:'배변 만족도',val:'시원한 날 0일',pl:['지난주와 같음',0],vals:[2,3,2,3,2,3,2],ref:4,std:'기준 시원했어요 이상 · 답한 7일 중 0일 시원했어요',rd:['지난주와 비슷해요'],more:'자세히'},
+  {n:'배변 횟수',val:'이번 주 7번',pl:['지난주와 같음',0],dots:[1,1,1,1,1,1,1],std:'기준 주 3 ~ 21번 안이에요',rd:['지난주와 비슷해요'],more:'자세히',tagx:'장'}]},
+'회복':{ic:'🌙',score:56,delta:'▼1',up:0,focus:1,reach:['진정','회복력','장','탄수화물 대사'],imp:-1,state:'todo',ci:'회복',cta:'수면 기록하기',nav:'/record',
+ todos:[{t:'23시 30분 전에 잠자리에 들기',s:'+1점 · 회복력',k:'rec'},{t:'잠들기 전 종이책 읽기',s:'+1점 · 진정',k:'rec'}],
+ items:[
+  {n:'수면 시간',val:'평균 4시간 20분',pl:['지난주와 같음',0],vals:[4.3,4.3,4.4,4.7,4.3,4.1,4.7],ref:6,std:'기준 6시간 이상 · 기준보다 1시간 40분 적어요',rd:['지난주와 비슷해요'],more:'자세히',today:'잠들기 전 종이책 읽기'},
+  {n:'마음 편안함',val:'답한 7일 중 7일 편했어요',pl:null,dots:[1,1,1,1,1,1,1],std:'기준 평소 이상',rd:['이번 주 답이 평소 범위예요'],more:'자세히'},
+  {n:'취침 시각',val:'평균 2시 10분',pl:['▼17분',1],vals:[2.4,2.2,1.9,2.3,2.1,2.5,2.2],ref:1.6,std:'기준 1시 37분 · 하루 평균 1시간 40분 벗어났어요',rd:['지난주보다 기준 시각과의 차이가 10분 작아요'],more:'자세히',today:'23시 30분 전에 잠자리에 들기'},
+  {n:'취침 전 식사 간격',val:'평균 2시간 10분',pl:['지난주와 같음',0],vals:[2.1,2.2,2.2,2.1,2.3,2.2,2.1],ref:3,std:'기준 3시간 이상 · 기준보다 50분 짧아요',rd:['지난주와 비슷해요'],more:'자세히'}]}
+};
+var name=decodeURIComponent((location.search.match(/[?&]c=([^&]+)/)||[0,'식단'])[1]);var d=C[name]||C['식단'];
+document.getElementById('ttl').textContent=name;
+function viz(it){
+ var h='';
+ if(it.dots){h+='<div class="viz dots">'+it.dots.map(function(v,i){return '<div class="b'+(v?' y':'')+'"><i></i></div>'}).join('')+'</div>'}
+ else{var mx=Math.max.apply(null,it.vals.concat([it.ref||0]))||1;
+  h+='<div class="viz">'+it.vals.map(function(v,i){return '<div class="b'+(i==6?' on':'')+'"><i style="height:'+Math.max(2,Math.round(v/mx*100))+'%"></i></div>'}).join('')+(it.ref!=null?'<div class="ref" style="bottom:'+Math.round(it.ref/mx*100)+'%"></div>':'')+'</div>'}
+ return h+'<div class="days">'+DAYS.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'}
+var html='';
+if(d.empty){
+ html='<section class="card"><div class="empty"><div class="ic">'+d.ic+'</div><h2>채울 성분이 아직 없어요</h2><p>먹고 있는 영양 성분을 채우면 식사로 얼마나 챙기는지 여기서 볼 수 있어요.<br>점수에는 영향을 주지 않아요.</p><button class="cta" data-nav="/record">성분 채우기</button></div></section>'
+}else{
+ var path='<div class="ch"><span class="me">'+name+'</span><i>→</i>'+d.reach.map(function(r){return '<span>'+r+'</span>'}).join('')+'<i>→</i><span class="me">이너뷰티 점수</span></div>';
+ var imp=d.imp?('<button class="im" data-nav="/goal/score"><span>이번 주 점수에 준 영향<em>점수 상세에서 보기 ›</em></span><b class="'+(d.imp<0?'dn':'')+'">'+(d.imp>0?'+':'−')+Math.abs(d.imp)+'점</b></button>'):('<button class="im" data-nav="/goal/score"><span>이번 주 점수에 준 영향<em>점수 상세에서 보기 ›</em></span><b class="dn">—</b></button>');
+ html+='<section class="card" id="head"><div class="eye"><span>'+d.ic+'</span>이너뷰티'+(d.focus?'<span class="fo">집중</span>':'')+'</div>'+
+ '<div class="score"><b>'+d.score+'</b><span>최근 7일</span><span class="dl '+(d.up?'up':'')+'">'+(d.same?d.delta:'지난주보다 '+d.delta)+'</span></div>'+
+ '<div class="path" id="path"><div class="k">이 관리가 닿는 길</div>'+path+imp+'</div>'+
+ '<div class="today" id="today"><span class="st '+d.state+'"><i></i>오늘 '+(d.state==='todo'?'기록 전':'기록 완료')+'</span>'+(d.state==='todo'?'<button class="cta" data-nav="'+d.nav+'">'+d.cta+'</button>':'<button class="cta" style="background:#fff;border:1px solid var(--line);color:var(--mid)" data-nav="'+d.nav+'">기록 더하기</button>')+'</div>'+
+ (d.dir?'<p class="dir">'+d.dir+'</p>':'')+'</section>';
+ if(d.todos){html+='<section class="card" id="todos"><div class="h">오늘 할 일</div><p class="sub">오늘 하면 내일 아침 점수에 들어가요</p>'+d.todos.map(function(t){return '<button class="todo" data-nav="'+d.nav+'"><span class="ic">'+(t.k==='chal'?'🍴':'🌙')+'</span><span class="tx"><b>'+t.t+'</b><small>'+t.s+'</small></span>'+(t.k==='chal'?'<span class="pill">지키는 중</span>':'<span class="rec">기록</span>')+'</button>'}).join('')+'</section>'}
+ html+='<section class="card items" id="items">'+d.items.map(function(it){
+  var pl=it.pl?'<span class="pl'+(it.pl[1]?' good':'')+'">'+it.pl[0]+'</span>':'';
+  return '<div class="it"><div class="r1"><div><div class="nm">'+it.n+(it.imp?'<span class="imp">중요</span>':'')+'</div><div class="val">'+it.val+'</div></div>'+pl+'</div>'+
+  '<div class="std">'+it.std+'</div>'+(it.vals||it.dots?viz(it):'')+
+  (it.rd&&it.rd.length?'<div class="rd">'+it.rd.map(function(x,i){return '<div'+(i?' class="t"':'')+'>'+x+'</div>'}).join('')+'</div>':'')+
+  '<div class="ft">'+(it.today?'<span class="tag">오늘 할 일</span><span style="font-size:12px;color:var(--mid)">'+it.today+'</span>':'')+(it.tagx?'<span class="tag" style="background:var(--face);color:var(--mid)">'+it.tagx+'</span>':'')+
+  (it.rec?'<button class="more rec" data-nav="'+d.nav+'">기록하기</button>':'<button class="more" data-nav="'+d.nav+'">'+it.more+' ›</button>')+'</div></div>'}).join('')+'</section>'}
+document.getElementById('root').innerHTML=html;
+</script>
+<script src="http://localhost:8775/ux-pins.js"></script>
+<script src="http://localhost:8775/ux-bridge.js"></script>
+</body></html>

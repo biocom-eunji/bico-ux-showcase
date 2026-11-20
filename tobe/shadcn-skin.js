@@ -95,7 +95,7 @@
   /* 위계를 직접 정하는 곳: 낮출 것은 낮추고, 중요한 것은 그대로 */
   function hierarchy() {
     var L = function (t) { return [].filter.call(document.querySelectorAll('div'), function (x) { return !x.children.length && (x.textContent || '').trim() === t; })[0]; };
-    var d = L('오늘의 60초'); if (d) { d.style.fontSize = '16px'; d.style.color = '#171719'; }      // 콘텐츠 영역은 한 단계 낮춤
+    var d = [].filter.call(document.querySelectorAll('h1,h2,div'), function (x) { return !x.children.length && (x.textContent || '').trim() === '오늘의 60초'; })[0]; if (d) { d.textContent = '피부를 위한 60초'; d.style.fontSize = '16px'; d.style.color = '#171719'; }   // D78: 이름만 목표 연관으로(목표가 바뀌면 「{목표}를 위한 60초」)      // 콘텐츠 영역은 한 단계 낮춤
     var s = L('최근 7일'); if (s) s.style.color = MUTED;
     [].forEach.call(document.querySelectorAll('div'), function (x) {
       if (x.children.length) return; var t = (x.textContent || '').trim();
@@ -132,7 +132,8 @@
         if (to) { e.style.setProperty('font-size', to + 'px', 'important'); set.push('font-size'); }
         if ((k = textTone(c.color))) { e.style.setProperty('color', k, 'important'); set.push('color'); }
       }
-      if ((k = lineTone(c.backgroundColor)) || (rc.height <= 10 && (k = barFill(c.backgroundColor)))) { e.style.setProperty('background-color', k, 'important'); set.push('background-color'); }
+      if (e.matches('.tb-care .tl[data-nav]')) { /* 관리별 카드는 항목 키 컬러 배경(D-카드10)이라 회색 단계로 맞추지 않음 */ }
+      else if ((k = lineTone(c.backgroundColor)) || (rc.height <= 10 && (k = barFill(c.backgroundColor)))) { e.style.setProperty('background-color', k, 'important'); set.push('background-color'); }
       else if (rc.height <= 10 && (k = barFill(c.backgroundColor))) { e.style.setProperty('background-color', k, 'important'); set.push('background-color'); }
       ['top', 'right', 'bottom', 'left'].forEach(function (sd) {
         if (parseFloat(c['border' + sd[0].toUpperCase() + sd.slice(1) + 'Width']) > 0 && (k = lineTone(c['border' + sd[0].toUpperCase() + sd.slice(1) + 'Color']))) { e.style.setProperty('border-' + sd + '-color', k, 'important'); set.push('border-' + sd + '-color'); }
