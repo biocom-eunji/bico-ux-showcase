@@ -56,7 +56,7 @@
     var b = document.createElement('div'); b.className = 'bk-bub'; b.setAttribute('role', 'status');
     b.innerHTML = '<b>' + t[0] + '</b><span>' + t[1] + '</span>';
     hero.appendChild(b);
-    b.style.top = Math.max(6, cr.top - hr.top - 8) + 'px'; b.style.left = Math.round((hr.width - b.offsetWidth) / 2) + 'px';
+    b.style.top = Math.max(6, cr.top - hr.top + 2) + 'px'; b.style.left = Math.round((hr.width - b.offsetWidth) / 2) + 'px';
     setTimeout(function () { b.classList.add('on'); }, 30);
     timer = setTimeout(close, 3500);
   }, true);
@@ -95,8 +95,54 @@
     var ck = document.querySelector('.tb-ck') || document.querySelector('.tb-tasks'); if (!ck || ck.parentElement === hero) return;
     var wk = document.querySelector('.tb-wk');
     hero.insertBefore(ck, sc); if (wk && wk.parentElement !== hero) hero.insertBefore(wk, sc);
-    var care = document.querySelector('.tb-care'); if (care && care.parentElement && care.parentElement !== hero) care.parentElement.insertBefore(sc, care);   /* D123: 점수 카드를 반투명 하단 구역(내 목표 자세히 보기가 있는 곳) 안으로 */
+    /* D126: 점수 카드 삭제(CSS)라 하단 구역으로 옮기지 않음 */ void 0;   /* D123: 점수 카드를 반투명 하단 구역(내 목표 자세히 보기가 있는 곳) 안으로 */
   }
   if (document.readyState !== 'loading') setTimeout(swap, 0); else document.addEventListener('DOMContentLoaded', swap);
   setTimeout(swap, 300); setTimeout(swap, 800); setTimeout(swap, 1600);
+})();
+
+/* D139 · ① 점수 카드(지금 피부는 보통이에요) 위, 반투명 구역 안에 제목 「오늘 나의 점수」 ② 맨 위 헤더 로고 옆에 목표 칩 「피부 ⌄」. 칩은 표시만(목표 바꾸기 동작 · 위치는 미정 ▲). 되돌리려면 이 블록과 home-top.css 끝 D139 블록 삭제 */
+(function () {
+  function init() {
+    var care = document.querySelector('.tb-care');
+    if (care && care.parentElement && !document.querySelector('.tb-ttl')) {
+      var t = document.createElement('h2'); t.className = 'tb-ttl'; t.textContent = '오늘 나의 점수';
+      care.parentElement.insertBefore(t, care);
+    }
+    var logo = document.querySelector('.tb-hdr .tb-logo');
+    if (logo && !document.querySelector('.tb-gchip')) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'tb-gchip'; b.setAttribute('aria-label', '내 목표 피부');
+      b.innerHTML = '피부<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>';
+      logo.insertAdjacentElement('afterend', b);
+    }
+  }
+  if (document.readyState !== 'loading') setTimeout(init, 0); else document.addEventListener('DOMContentLoaded', init);
+  setTimeout(init, 600); setTimeout(init, 1500);
+})();
+
+/* D140 · 헤더 목표 칩 「피부 ⌄」을 누르면 목표 선택 시트(다이어트 · 피부 · 장 · 웰니스 · 근육). 고르면 칩 글자가 바뀌고 시트가 닫힘. 저장은 이 브라우저(시안). 목표별로 홈 점수 · 타일 내용이 바뀌는 것은 아직 연동 안 함(▲). 되돌리려면 이 블록과 home-top.css 끝 D140 블록 삭제 */
+(function () {
+  var GOALS = ['다이어트', '피부', '장', '웰니스', '근육'], KEY = 'bico-goal';
+  function get() { try { var v = localStorage.getItem(KEY); if (GOALS.indexOf(v) >= 0) return v; } catch (e) {} return '피부'; }
+  function setChip(g) { var c = document.querySelector('.tb-gchip'); if (!c) return; c.firstChild.nodeValue = g; c.setAttribute('aria-label', '내 목표 ' + g + ', 바꾸기'); }
+  function close() { var s = document.querySelector('.gs-wrap'); if (!s) return; s.classList.remove('on'); setTimeout(function () { s.remove(); }, 220); var c = document.querySelector('.tb-gchip'); if (c) { c.setAttribute('aria-expanded', 'false'); c.focus(); } }
+  function open() {
+    if (document.querySelector('.gs-wrap')) return;
+    var cur = get(), w = document.createElement('div'); w.className = 'gs-wrap';
+    w.innerHTML = '<div class="gs-dim"></div><div class="gs-sheet" role="dialog" aria-modal="true" aria-label="내 목표 선택"><div class="gs-grab" aria-hidden="true"></div><h3>내 목표를 골라 주세요</h3><div class="gs-list" role="radiogroup">' +
+      GOALS.map(function (g) { return '<button type="button" class="gs-it' + (g === cur ? ' sel' : '') + '" role="radio" aria-checked="' + (g === cur) + '" data-g="' + g + '"><span>' + g + '</span><i aria-hidden="true"></i></button>'; }).join('') + '</div></div>';
+    document.body.appendChild(w);
+    var c = document.querySelector('.tb-gchip'); if (c) c.setAttribute('aria-expanded', 'true');
+    requestAnimationFrame(function () { w.classList.add('on'); });
+    var f = w.querySelector('.gs-it.sel'); if (f) f.focus();
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target; if (!t.closest) return;
+    if (t.closest('.tb-gchip')) { e.stopPropagation(); open(); return; }
+    var it = t.closest('.gs-it'); if (it) { var g = it.getAttribute('data-g'); try { localStorage.setItem(KEY, g); } catch (x) {} setChip(g); close(); return; }
+    if (t.closest('.gs-dim')) close();
+  }, true);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  function init() { setChip(get()); }
+  setTimeout(init, 700); setTimeout(init, 1600);
 })();

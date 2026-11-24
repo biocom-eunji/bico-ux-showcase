@@ -980,7 +980,6 @@ button[aria-label*="결과지"],button[aria-label*="보관함"],button[aria-labe
 .tb-state .tb-lvbar,.tb-state>.lvrem{display:none!important}
 .tb-state{grid-template-rows:44px!important;row-gap:0!important;align-content:center!important;padding-top:0!important;padding-bottom:0!important}
 .tb-state>.lvblk{grid-row:1!important;align-self:center!important}
-.tb-care .tb-cg,.tb-care .tb-trend{display:none!important}
 
 /* D112 · 11/23 회의 ① 구조 (2단계) — 체크인: 최대 3문항(home-checkin.js QN) + 카드 높이를 위 점수 카드(169px) 이하로. 되돌리려면 이 블록 삭제 + QN을 4로 */
 .tb-ck{padding-top:14px!important;padding-bottom:14px!important}
@@ -990,7 +989,7 @@ button[aria-label*="결과지"],button[aria-label*="보관함"],button[aria-labe
    B) 위 점수 카드와 아래 상세 카드가 같은 연결색(--tb-link, 민트)을 위쪽 가장자리 선과 목표 칩에 씀
    C) 분석 정확도 구역은 위 카드에서 상세 카드 맨 아래로 이동(HTML에서 옮김) */
 :root{--tb-link:#22c3bc;--tb-link-bg:#e3f6f4;--tb-link-ink:#157d78}
-.tb-score,.tb-care{box-shadow:inset 0 3px 0 var(--tb-link),0 1px 3px rgba(23,23,25,.06)!important}
+.tb-score{box-shadow:inset 0 3px 0 var(--tb-link),0 1px 3px rgba(23,23,25,.06)!important}
 .tb-score .tb-goal .gl,.tb-care .ch .gl{display:inline-block;margin-right:8px;padding:1px 7px;border-radius:6px;background:var(--tb-link-bg);color:var(--tb-link-ink);font-family:'Pretendard-SemiBold',sans-serif;font-size:12px;line-height:18px;vertical-align:1px}
 .tb-care{overflow:hidden}
 .tb-care>.tb-accsec{margin:14px -16px -16px!important;padding:14px 16px 16px!important;border-radius:0 0 16px 16px}
@@ -1078,3 +1077,76 @@ button[aria-label*="결과지"],button[aria-label*="보관함"],button[aria-labe
 .tb-ck [role=radiogroup]>[role=radio]:nth-child(3){background:#c1eae6!important;border-color:#9fdcd6!important}
 .tb-ck [role=radiogroup]>[role=radio]:nth-child(4){background:#aee3de!important;border-color:#86d3cc!important}
 .tb-ck [role=radiogroup]>[role=radio]:nth-child(5){background:#98dbd5!important;border-color:#5fc8c0!important}
+
+/* D126 · 이너뷰티(점수) 카드 삭제 + 하단 「내 목표 자세히 보기」를 「한눈에 보기」 시절로 롤백(제목 · 호 게이지 · 최근 7일 꺾은선 복원, 위쪽 민트 선 · 목표 칩 제거). 분석 정확도 구역은 상세 카드 맨 아래 유지. 되돌리려면 *.before-d126.* 복원 */
+.tb-score{display:none!important}
+
+/* D127 · 분석 정확도 구역을 「최근 7일 점수」 자리(호 게이지 아래 · 관리 타일 위)로 옮기고 최근 7일 점수는 삭제(home-top.html). 되돌리려면 *.before-d127.* 복원 */
+.tb-care>.tb-accsec{margin:14px -16px 14px!important;border-radius:0!important}
+
+/* D128 · 체크인 카드 아래 진행 점(● ○ ○) 삭제. 이전/다음 문항 화살표는 유지. 되돌리려면 이 블록 삭제 */
+.tb-ck [aria-label$="번째 질문"]{display:none!important}
+
+/* D129 · 한눈에 보기 「어제보다 ▲1」 칩 삭제. 되돌리려면 이 블록 삭제 */
+.tb-care .tb-cg .yd{display:none!important}
+
+/* D130 · 관리 타일의 지난 추이 영역 삭제(식단 7일 체크 · 스킨케어 주간 선 · 배변 4주 점 띠 · 회복 7일 막대). 되돌리려면 이 블록 삭제 */
+.tb-care .tl .bt,.tb-care .tl .wb{display:none!important}
+
+/* D132 · 비코 말풍선이 위 헤더에 잘리지 않게 높이 34 → 30px, 위치는 캐릭터 상자 위선 + 2px(헤더 아래). 되돌리려면 이 블록 삭제 + home-res.js의 + 2 를 - 8로 */
+.bk-bub{height:30px!important}
+.bk-bub::after{bottom:-6px!important}
+
+/* D134 · 캐릭터 · 받침판 · 후광 · 레벨 이름표를 14px 아래로(말풍선 위 간격 확보). 결과지 · 보관함은 그대로, 체크인 카드는 14px 아래로 밀어 이름표와 겹치지 않게. + 한눈에 보기 헤더(제목 · 부제) 삭제. 되돌리려면 이 블록 삭제 */
+.tb-char{top:90px!important}
+.tb-stage,.tb-glow{top:36px!important}
+.tb-state{top:256px!important}
+.tb-hero>.tb-ck,.tb-hero>.tb-tasks{margin-top:303px!important}
+.tb-care>.ch{display:none!important}
+
+/* D135 · 「좋음」을 초록 칩으로(위 「보통」 노란 칩과 같은 모양 · 다른 색 = 같은 단계 체계). 호 위 초록 링 점과 같은 계열. 되돌리려면 이 블록 삭제 + before-d135.html 복원 */
+.tb-care .tb-cg .lgs .lvc{flex:none;display:inline-flex;align-items:center;height:22px;padding:0 9px;margin:0 4px 0 0;border-radius:6px;background:#dcf3e4;color:#1d7a45;font-style:normal;font-family:'Pretendard-SemiBold',sans-serif;font-size:14px;line-height:22px}
+.tb-care .tb-cg .lgs li{font-size:13px;line-height:22px}
+
+/* D136 · 캐릭터 · 레벨 이름표 14px 더 아래(말풍선 위 간격 약 30px). 체크인 카드도 14px 더 아래 */
+.tb-char{top:104px!important}
+.tb-stage,.tb-glow{top:50px!important}
+.tb-state{top:270px!important}
+.tb-hero>.tb-ck,.tb-hero>.tb-tasks{margin-top:317px!important}
+.tb-care .tb-cg .lgs li{gap:0!important}
+.tb-care .tb-cg .lgs .lvc{margin:0 2px 0 0!important}
+.tb-care .tb-cg .lgs li b{margin:0 3px!important}
+.tb-care .tb-cg .lgs .lvc{margin:0 3px 0 0!important}
+
+/* D137 · 결과지 · 보관함을 레벨 이름표와 같은 가로선(세로 가운데 맞춤)으로 내림 + 체크인 카드와의 간격 축소(이름표 아래 40 → 약 24px, 버튼 아래 약 8px). 되돌리려면 이 블록 삭제 */
+.tb-res,.tb-box{top:255px!important}
+.tb-hero>.tb-ck,.tb-hero>.tb-tasks{margin-top:303px!important}
+.tb-hero>.tb-ck,.tb-hero>.tb-tasks{margin-top:307px!important}
+
+/* D138 · 레벨 이름표만 6px 더 아래(270 → 276). 되돌리려면 이 줄 삭제 */
+.tb-state{top:276px!important}
+
+/* D139 · 「오늘 나의 점수」 제목(반투명 구역 안, 점수 카드 위) + 헤더 목표 칩 「피부 ⌄」 */
+.tb-ttl{margin:-6px 4px 0;padding:0;font-family:'Pretendard-Bold',sans-serif;font-weight:400;font-size:18px;line-height:26px;color:#171719;letter-spacing:-.3px}
+.tb-gchip{flex:none;display:inline-flex;align-items:center;gap:2px;height:28px;margin:0 0 0 2px;padding:0 8px 0 11px;border:0;border-radius:999px;background:#e3f6f4;color:#157d78;font-family:'Pretendard-SemiBold',sans-serif;font-size:13px;line-height:28px;cursor:pointer;vertical-align:middle}
+.tb-gchip svg{flex:none}
+
+/* D140 · 목표 선택 시트 */
+.gs-wrap{position:fixed;inset:0;z-index:2000;display:flex;align-items:flex-end;justify-content:center;pointer-events:none}
+.gs-wrap.on{pointer-events:auto}
+.gs-dim{position:absolute;inset:0;background:rgba(23,23,25,.42);opacity:0;transition:opacity .2s}
+.gs-wrap.on .gs-dim{opacity:1}
+.gs-sheet{position:relative;box-sizing:border-box;width:100%;max-width:412px;padding:10px 16px 28px;border-radius:20px 20px 0 0;background:#fff;box-shadow:0 -8px 24px rgba(23,23,25,.12);transform:translateY(100%);transition:transform .22s ease-out}
+.gs-wrap.on .gs-sheet{transform:none}
+.gs-grab{width:36px;height:4px;margin:0 auto 14px;border-radius:2px;background:#d4d6db}
+.gs-sheet h3{margin:0 0 10px;font-family:'Pretendard-Bold',sans-serif;font-weight:400;font-size:18px;line-height:26px;color:#171719}
+.gs-list{display:flex;flex-direction:column;gap:8px}
+.gs-it{display:flex;align-items:center;justify-content:space-between;width:100%;height:52px;padding:0 16px;border:1px solid #e4e4e7;border-radius:12px;background:#fff;cursor:pointer;font-family:'Pretendard-SemiBold',sans-serif;font-size:16px;color:#171719;text-align:left}
+.gs-it i{width:20px;height:20px;border-radius:50%;border:2px solid #d4d6db;box-sizing:border-box}
+.gs-it.sel{border-color:#22c3bc;background:#e3f6f4;color:#157d78}
+.gs-it.sel i{border:6px solid #22c3bc;background:#fff}
+.gs-it:focus-visible{outline:2px solid #22c3bc;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.gs-dim,.gs-sheet{transition:none}}
+
+/* D141 · 「오늘 나의 점수」 위 공백 축소(반투명 구역 윗선 → 글자 약 37 → 약 17px). 되돌리려면 이 줄 삭제 */
+.tb-ttl{margin-top:-28px!important}
