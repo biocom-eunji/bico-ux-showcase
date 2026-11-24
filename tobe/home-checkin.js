@@ -9,6 +9,7 @@
   var URL_JSON = 'https://biocom-eunji.github.io/bico-ux-showcase/tobe/home-done.json';
   var NAV = { '23시 30분 전에 잠자리에 들기': '/record/sleep/add', '2주 정제 탄수화물 줄여 보기': '/record/diet/add', '잠들기 전 종이책 읽기': '/record/sleep/add' };
   var data = null, step = 0, done = false;
+  var QN = 3;   /* D112: 체크인 문항은 최대 3개(11/23 회의: 정책으로 개수를 정함). 4번째 문항(건조)은 쇼케이스에서 빼 둠 · 어떤 문항을 남길지는 확인 필요 */
   var quiet = false, instant = /[?&]done=1/.test(location.search);       /* D53: 쇼케이스 「홈(문진 후)」 — 문진 없이 바로 완료 화면 */
   fetch(URL_JSON).then(function (r) { return r.json(); }).then(function (d) { data = d; });
   if (instant) { var tries = 0, iv = setInterval(function () {
@@ -77,7 +78,7 @@
       if (label) label.style.display = 'none';
       if (title) {
         title.style.display = 'none';
-        title.insertAdjacentHTML('afterend', '<div class="tb-ckh"><span class="av"><img src="' + CK_IMG + '" alt=""></span><span class="tx"><b class="tt">체크인하면 비코가 깨어나요</b><span class="sb">4문항에 답해 주세요</span></span><span class="rw" aria-label="완료하면 10포인트"><i></i>+10</span></div>');
+        title.insertAdjacentHTML('afterend', '<div class="tb-ckh"><span class="av"><img src="' + CK_IMG + '" alt=""></span><span class="tx"><b class="tt">체크인하면 비코가 깨어나요</b><span class="sb">' + QN + '문항에 답해 주세요</span></span><span class="rw" aria-label="완료하면 10포인트"><i></i>+10</span></div>');
       }
       var wk = card.querySelector('[aria-label^="트러블 없던 날"]');
       if (wk) { wk.classList.add('tb-wk'); card.parentNode.insertBefore(wk, card.nextSibling); }
@@ -85,6 +86,9 @@
     var pr = card.querySelector('[aria-label$="번째 질문"]');                         // 진행: 점 → 분절 막대(지난 문항 + 지금 문항은 민트)
     if (pr) {
       var m = (pr.getAttribute('aria-label') || '').match(/(\d+)\/(\d+)/), cur = m ? +m[1] : 1;
+      while (pr.children.length > QN) pr.lastElementChild.remove();                     // D112: 진행 점 · 「n/4」 글자 · 설명 라벨을 문항 수(QN)에 맞춤
+      pr.setAttribute('aria-label', cur + '/' + QN + '번째 질문');
+      { var tx = pr.nextElementSibling; if (tx && /^\d+\/\d+$/.test((tx.textContent || '').trim())) tx.textContent = cur + '/' + QN; }
       pr.style.setProperty('flex', 'none', 'important'); pr.style.setProperty('gap', '6px', 'important');
       [].forEach.call(pr.children, function (d, i) {      // D47: 카드 밖 아래 캐러셀 점(지금 = 긴 민트 알약 · 지난 = 연한 민트 · 앞으로 = 회색)
         d.style.setProperty('flex', 'none', 'important'); d.style.setProperty('width', i === cur - 1 ? '18px' : '6px', 'important'); d.style.setProperty('height', '6px', 'important');
@@ -96,7 +100,7 @@
 
   function next() {
     step++;
-    if (step < 4) { var b = block(); if (b) b.outerHTML = data.blocks[step]; addMid(document); setupCheckin(); }
+    if (step < QN) { var b = block(); if (b) b.outerHTML = data.blocks[step]; addMid(document); setupCheckin(); }
     else finish();
   }
   function finishNow() {
@@ -253,7 +257,7 @@
       var CH = function (d) { return '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + d + '"/></svg>'; };
       var oldn = row2.querySelector('.tb-next'); if (oldn) oldn.remove();
       if (step > 0) { var btn = document.createElement('button'); btn.className = 'tb-prev'; btn.type = 'button'; btn.innerHTML = CH('M10 3.5 5.5 8l4.5 4.5'); btn.setAttribute('aria-label', '이전 문항으로'); row2.insertBefore(btn, row2.lastElementChild); }
-      if (step < 3 && answers[step] != null) { var nb2 = document.createElement('button'); nb2.className = 'tb-next'; nb2.type = 'button'; nb2.innerHTML = CH('M6 3.5 10.5 8 6 12.5'); nb2.setAttribute('aria-label', '다음 문항으로'); row2.insertBefore(nb2, row2.lastElementChild); }   // D48: 이 문항에 답한 뒤 이전으로 돌아왔을 때만 보임
+      if (step < QN - 1 && answers[step] != null) { var nb2 = document.createElement('button'); nb2.className = 'tb-next'; nb2.type = 'button'; nb2.innerHTML = CH('M6 3.5 10.5 8 6 12.5'); nb2.setAttribute('aria-label', '다음 문항으로'); row2.insertBefore(nb2, row2.lastElementChild); }   // D48: 이 문항에 답한 뒤 이전으로 돌아왔을 때만 보임
     }
     if (answers[step] != null && rg.children[answers[step]]) rg.children[answers[step]].classList.add('tb-sel');
   }
@@ -306,7 +310,7 @@
     [].forEach.call(g.children, function (c) { c.classList.remove('tb-sel'); }); r.classList.add('tb-sel');
     locked = true;
     setTimeout(function () {
-      var b = block(); if (b && step < 3) b.classList.add('tb-out');   // 마지막 문항은 그대로 두고 완료 연출로 이어짐
+      var b = block(); if (b && step < QN - 1) b.classList.add('tb-out');   // 마지막 문항은 그대로 두고 완료 연출로 이어짐
       setTimeout(function () { next(); locked = false; if (!done) { var nb = block(); if (nb) nb.classList.add('tb-in'); } }, 140);
     }, 260);
   }, true);

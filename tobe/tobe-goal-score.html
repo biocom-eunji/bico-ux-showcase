@@ -122,6 +122,21 @@ main{padding:4px 16px 40px;display:flex;flex-direction:column;gap:12px}
 .wk .d{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;color:var(--mute);width:36px}
 .wk .d s{width:24px;height:24px;border-radius:50%;background:var(--face);border:1px solid var(--line);display:block}
 .wk .d.ok s{background:var(--mint);border-color:var(--mint)}.wk .d.today s{background:#fff;border:1.5px dashed var(--mint)}.wk .d.today{color:var(--fg);font-family:P-SB,sans-serif}
+/* D104 · 11/20 회의: 홈에서 뺀 「트러블 없던 날」 자리 = 내 목표와 가장 가까운 지표 하나의 추이(목표마다 다름) */
+.trd{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.trd .tn{flex:none;font-size:20px;line-height:24px;font-family:P-B,sans-serif;color:var(--mint-d)}.trd .tn small{font-size:12px;font-family:P-M,sans-serif;color:var(--mute);margin-left:2px}
+.t7{display:flex;justify-content:space-between;margin-top:14px}
+.t7 .d{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;color:var(--mute);width:40px}
+.t7 .d s{width:28px;height:28px;border-radius:50%;background:var(--face);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;text-decoration:none}
+.t7 .d.ok s{background:var(--mint);border-color:var(--mint)}.t7 .d.ok s::after{content:"✓"}
+.t7 .d.no s{background:#b4b7bd;border-color:#b4b7bd}.t7 .d.no s::after{content:"–"}
+.t7 .d.today s{background:#fff;border:1.5px dashed var(--mint)}.t7 .d.today{color:var(--fg);font-family:P-SB,sans-serif}
+.t7 .d.fut{opacity:.55}
+.trl{margin-top:12px;font-size:12px;color:var(--mid);line-height:1.5}
+.trl .k{display:inline-block;margin-right:10px;white-space:nowrap}.trl .k::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mint);margin-right:4px;vertical-align:baseline}.trl .k.gy::before{background:#b4b7bd}
+.gtl{margin-top:10px}.gtl svg{display:block;width:100%;height:auto}
+.gtl .ax{display:flex;justify-content:space-between;font-size:11px;color:var(--mute);margin-top:2px;padding:0 6px}
+.tsim{margin-top:8px;font-size:11px;color:var(--mute)}
 /* 올리려면 */
 .ups{margin-top:6px}
 .up1{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 0;border-top:1px solid var(--line);width:100%}
@@ -164,6 +179,13 @@ main{padding:4px 16px 40px;display:flex;flex-direction:column;gap:12px}
   </div>
   <p class="note">이 점수는 검사와 문진, 기록한 실천을 함께 반영해요</p>
   <button class="acc" data-nav="/completeness"><span class="t">분석 정확도 <u>66%</u></span><span class="go">검사로 +10% ›</span></button>
+</section>
+
+<section class="card" id="gtrend">
+  <div class="trd"><div><div class="h" id="trT">트러블 없던 날</div><p class="sub" id="trS">내 목표(피부)와 가장 가까운 기록이에요</p></div><div class="tn" id="trN"></div></div>
+  <div id="trB"></div>
+  <p class="trl" id="trF"></p>
+  <p class="tsim" id="trM"></p>
 </section>
 
 <section class="card" id="ind">
@@ -259,7 +281,7 @@ var GOALS=[
 var curGoal='skin';
 function ownRows(g){var rows=g.rows,min=Math.min.apply(null,rows.map(function(r){return r[2]}));
  return rows.map(function(r){return {k:r[0],n:r[0],q:r[1],v:r[2],b:r[3],d:r[4],f:r[2]===min?1:0,mv:[],logs:[],more:0,ev:['문진','기록'],ph:1}})}
-function applyGoal(k){curGoal=k;var g=GOALS.filter(function(x){return x.k===k})[0];
+function applyGoal(k){curGoal=k;renderTrend(k);var g=GOALS.filter(function(x){return x.k===k})[0];
  document.getElementById('goalname').textContent=g.name;document.getElementById('goalchip').setAttribute('aria-label','내 목표 '+g.name+', 바꾸기');
  renderInd(k==='skin'?IND:ownRows(g));
  document.querySelector('#ind .h').nextElementSibling.textContent=k==='skin'?'가장 낮은 지표가 점수를 가장 크게 움직여요':'이 목표는 시안 값이에요 · 가장 낮은 지표가 점수를 가장 크게 움직여요'}
@@ -274,7 +296,29 @@ document.getElementById('goalchip').onclick=function(){
 };
 document.getElementById('infob').onclick=function(){openS('<h4>이너뷰티 점수</h4><p>목표마다 보는 지표가 달라요. 목표를 바꾸면 점수도 그 목표 기준으로 다시 보여요.</p><p>검사와 문진으로 본 상태에서 출발해요. 꾸준히 하면 오르는 쪽으로 움직여요.</p><p><b>가장 낮은 지표가 점수를 가장 크게 움직여요.</b> 아직 보지 못한 지표는 점수에 넣지 않아요.</p>')};
 document.getElementById('ydb').onclick=function(){openS('<h4>어제보다 1점 올랐어요</h4><div class="rw"><span>식단 · 어제 점심 기록</span><b>+1</b></div><div class="rw"><span>그 밖의 움직임</span><span>0</span></div>')};
+
+/* D104 · 목표 연관 지표 추이(목표마다 한 가지). 피부 = 트러블 없던 날(7칸) · 체중 = 체중 선 · 그 밖은 7칸. 값은 모두 시안 */
+var TREND={
+ skin:{t:'트러블 없던 날',s:'내 목표(피부)와 가장 가까운 기록이에요',type:'dots',days:['ok','ok','no','today','fut','fut','fut'],n:2,u:'일',f:'<span class="k">트러블 없었어요</span><span class="k gy">트러블이 있었어요</span>',foot:'이번 주 지금까지 3일 중 2일은 트러블이 없었어요'},
+ weight:{t:'체중',s:'내 목표(체중 관리)와 가장 가까운 기록이에요',type:'line',vals:[68.9,68.8,68.8,68.6,68.5,68.4,68.3],unit:'kg',n:'68.3',u:'kg',foot:'최근 7일 동안 0.6kg 줄었어요',sim:1},
+ gut:{t:'편안했던 배변',s:'내 목표(장 관리)와 가장 가까운 기록이에요',type:'dots',days:['ok','no','ok','today','fut','fut','fut'],n:2,u:'일',f:'<span class="k">편안했어요</span><span class="k gy">불편했어요</span>',foot:'이번 주 지금까지 3일 중 2일은 편안했어요',sim:1},
+ muscle:{t:'운동한 날',s:'내 목표(근육 관리)와 가장 가까운 기록이에요',type:'dots',days:['ok','','ok','today','fut','fut','fut'],n:2,u:'일',f:'<span class="k">운동했어요</span>',foot:'이번 주 지금까지 2일 운동했어요',sim:1},
+ well:{t:'컨디션이 괜찮았던 날',s:'내 목표(웰니스)와 가장 가까운 기록이에요',type:'dots',days:['ok','ok','ok','today','fut','fut','fut'],n:3,u:'일',f:'<span class="k">괜찮았어요</span>',foot:'이번 주 지금까지 3일 모두 괜찮았어요',sim:1}
+};
+var WD=['월','화','수','목','금','토','일'];
+function renderTrend(k){var c=TREND[k]||TREND.skin,B='';
+ document.getElementById('trT').textContent=c.t;document.getElementById('trS').textContent=c.s;
+ document.getElementById('trN').innerHTML=c.n+'<small>'+c.u+'</small>';
+ if(c.type==='dots'){B='<div class="t7">'+c.days.map(function(d,i){return '<div class="d '+d+'"><s></s>'+WD[i]+'</div>'}).join('')+'</div>'}
+ else{var v=c.vals,mn=Math.min.apply(null,v),mx=Math.max.apply(null,v),W=326,H=86,pad=10,
+   pts=v.map(function(y,i){return [pad+i*(W-2*pad)/(v.length-1),pad+(mx-y)/(mx-mn||1)*(H-2*pad-6)]});
+   B='<div class="gtl"><svg viewBox="0 0 '+W+' '+H+'" aria-hidden="true"><path d="'+pts.map(function(p,i){return (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)}).join(' ')+'" fill="none" stroke="#22c3bc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>'+
+     pts.map(function(p,i){return '<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="'+(i===pts.length-1?5:3)+'" fill="'+(i===pts.length-1?'#fff':'#22c3bc')+'" stroke="#22c3bc" stroke-width="'+(i===pts.length-1?3:0)+'"/>'}).join('')+'</svg><div class="ax"><span>7일 전</span><span>오늘</span></div></div>'}
+ document.getElementById('trB').innerHTML=B;
+ document.getElementById('trF').innerHTML=(c.f?c.f+'<br>':'')+c.foot;
+ document.getElementById('trM').textContent=c.sim?'이 목표의 추이는 시안 값이에요 · 어떤 지표를 보일지는 목표별로 정해야 해요':'어떤 지표를 보일지는 목표별로 정해야 해요(피부는 AS-IS 「트러블 없던 날」 기준)'}
+renderTrend('skin');
 </script>
-<script src="https://biocom-eunji.github.io/bico-ux-showcase/ux-pins.js?v=1795159476"></script>
-<script src="https://biocom-eunji.github.io/bico-ux-showcase/ux-bridge.js?v=1795159476"></script>
+<script src="https://biocom-eunji.github.io/bico-ux-showcase/ux-pins.js?v=1795489182"></script>
+<script src="https://biocom-eunji.github.io/bico-ux-showcase/ux-bridge.js?v=1795489182"></script>
 </body></html>

@@ -934,3 +934,147 @@ button[aria-label*="결과지"],button[aria-label*="보관함"],button[aria-labe
 /* D-카피 · 알로에게 더 물어보기 위 구분선 */
 .tb-tasks .tb-ask-more{position:relative;margin-top:12px!important;height:44px!important;border-radius:0!important}
 .tb-tasks .tb-ask-more::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:#e4e4e7}
+
+/* D103 · 11/20 회의 반영 ① 구조와 위계 (A-1 · A-2 · A-3)
+   A-3 레벨 줄 + 결과지를 캐릭터 위로(같이 이동). 줄 top 222 → 62, 캐릭터 · 받침판 · 후광은 46px 아래로, 점수 카드 margin-top 297 → 285
+   A-1 상단 점수 카드 축소: 게이지 84 → 56px(요약 두 줄 높이), 카드 197 → 약 165px
+   A-2 체크인 카드 확대: 상단 카드보다 크게(표정 44 → 54px · 질문 18px · 여백 늘림) → 위계 1(상단) < 2(체크인) < 3(하단 이너뷰티)
+   되돌리기: tobe/_bak-d71/home-top.before-d103.css · home-res.before-d103.js 를 복사 */
+.tb-state{top:62px!important}
+.tb-res{top:62px!important}
+.tb-char{top:114px!important}
+.tb-stage{top:60px!important}
+.tb-glow{top:60px!important}
+.tb-score{margin-top:285px!important}
+.rs-bub::after{bottom:auto!important;top:-4px!important}
+.tb-charge{width:56px!important;height:56px!important}
+.tb-charge svg{width:56px!important;height:56px!important}
+.tb-charge .c{inset:0!important;padding-top:0!important}
+.tb-charge b{font-size:21px!important;letter-spacing:-.5px!important}
+.tb-body{gap:12px!important}
+.tb-ck{padding-top:18px!important;padding-bottom:18px!important}
+.tb-ck h1{font-size:18px!important;line-height:26px!important}
+.tb-ck [role=radiogroup]>[role=radio]{height:auto!important;aspect-ratio:1/1!important}   /* D107: 표정 버튼 정사각형 */
+.tb-ck [role=radio] svg{width:40px!important;height:40px!important}
+.tb-ck div:has(> h1){gap:18px!important}
+
+/* D108 · 「오늘 4개 중 2개 기록했어요」 진행 줄을 일단 숨김(11/20 회의: 관리 4개가 기록 태스크와 1:1이 아니라 분모가 직관적으로 안 드러남 · 기획자가 태스크 구조 확인 중).
+   되돌리려면 아래 한 줄만 지우면 됨 */
+.tb-care .tb-prog{display:none!important}
+
+/* D109 · 문진 후 첫 카드(오늘 할 일) 높이 압축: 세 할 일이 첫 화면(탭바 위)에 끝까지 보이게. 350 → 약 288px
+   카드 여백 · 제목/부제 간격 · 할 일 행 60 → 52 · 행 간격 8 → 6 · 알로에게 물어보기 줄 44 → 40 (줄 자체는 B-4 결정 전이라 유지) */
+.tb-tasks{padding-top:14px!important;padding-bottom:6px!important}
+.tb-tasks .tb-list{margin-top:-1px!important}
+.tb-tasks .tb-cnt{margin-bottom:-2px!important}
+.tb-tasks .tb-task{padding-top:7px!important;padding-bottom:7px!important}
+.tb-tasks .tb-task+.tb-task{margin-top:-2px!important}
+.tb-tasks .tb-ask-more{margin-top:6px!important;height:40px!important}
+
+/* D110 · 하단 「이너뷰티 점수를 올려보세요」 글자 삭제(구분선만 남김). 되돌리려면 이 블록 삭제 */
+.tb-care .cap2{font-size:0!important;line-height:0!important;height:0!important;margin:14px 0 14px!important;padding:0!important;overflow:hidden}
+
+/* D111 · 11/23 회의 ① 구조 (1단계) — 되돌리려면 이 블록 삭제
+   A) 레벨 카드는 레벨만: 경험치 바 · 「120 XP 남음」 숨김(카드는 한 줄 구성, 이름 · 상태를 세로 가운데로)
+   B) 점수 영역 + 한눈에 보기 합치기: 하단 카드 안의 호 게이지(위 카드와 같은 65 중복)와 최근 7일 꺾은선(추이는 점수 상세로)을 숨겨 점수는 위 카드 한 곳에만 둔다 */
+.tb-state .tb-lvbar,.tb-state>.lvrem{display:none!important}
+.tb-state{grid-template-rows:44px!important;row-gap:0!important;align-content:center!important;padding-top:0!important;padding-bottom:0!important}
+.tb-state>.lvblk{grid-row:1!important;align-self:center!important}
+.tb-care .tb-cg,.tb-care .tb-trend{display:none!important}
+
+/* D112 · 11/23 회의 ① 구조 (2단계) — 체크인: 최대 3문항(home-checkin.js QN) + 카드 높이를 위 점수 카드(169px) 이하로. 되돌리려면 이 블록 삭제 + QN을 4로 */
+.tb-ck{padding-top:14px!important;padding-bottom:14px!important}
+
+/* D113 · 11/23 회의 ① 구조 (3단계) — 되돌리려면 이 블록 삭제 + home-top.html 백업 복원 후 patch-home.js
+   A) 「한눈에 보기」 → 「내 목표 자세히 보기」(위 카드와 같은 「피부 목표」 칩을 붙여 같은 목표의 상세로 읽히게)
+   B) 위 점수 카드와 아래 상세 카드가 같은 연결색(--tb-link, 민트)을 위쪽 가장자리 선과 목표 칩에 씀
+   C) 분석 정확도 구역은 위 카드에서 상세 카드 맨 아래로 이동(HTML에서 옮김) */
+:root{--tb-link:#22c3bc;--tb-link-bg:#e3f6f4;--tb-link-ink:#157d78}
+.tb-score,.tb-care{box-shadow:inset 0 3px 0 var(--tb-link),0 1px 3px rgba(23,23,25,.06)!important}
+.tb-score .tb-goal .gl,.tb-care .ch .gl{display:inline-block;margin-right:8px;padding:1px 7px;border-radius:6px;background:var(--tb-link-bg);color:var(--tb-link-ink);font-family:'Pretendard-SemiBold',sans-serif;font-size:12px;line-height:18px;vertical-align:1px}
+.tb-care{overflow:hidden}
+.tb-care>.tb-accsec{margin:14px -16px -16px!important;padding:14px 16px 16px!important;border-radius:0 0 16px 16px}
+/* D113 보정: 정확도 구역이 빠진 위 점수 카드는 아래 여백을 직접 둔다(호 아래 음수 여백도 해제) */
+.tb-score{padding-bottom:16px!important}
+.tb-score .tb-body{margin-bottom:0!important}
+
+/* D114 · 비코 말풍선(캐릭터를 누르면). 흰 면 + 민트 선 = 비코가 하는 말(결과지 알림 말풍선은 검정 = 시스템 알림). 되돌리려면 이 블록과 home-res.js 끝의 D114 블록 삭제 */
+.bk-bub{position:absolute;z-index:9;box-sizing:border-box;max-width:300px;height:34px;padding:0 14px;display:flex;flex-direction:row;align-items:center;gap:7px;border-radius:12px;background:#fff;border:1.5px solid #9fdcd6;box-shadow:0 6px 16px rgba(23,23,25,.14);opacity:0;transform:translateY(-4px);transition:opacity .25s ease,transform .25s ease;pointer-events:none;white-space:nowrap;text-align:center}
+.bk-bub.on{opacity:1;transform:none}
+.bk-bub b{font-family:'Pretendard-SemiBold',sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#171719}
+.bk-bub span{font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#5a5c63}
+.bk-bub span::before{content:'·';margin-right:7px;color:#9fdcd6}
+.bk-bub::after{content:"";position:absolute;bottom:-7px;left:50%;width:10px;height:10px;margin-left:-5px;background:#fff;border-right:1.5px solid #9fdcd6;border-bottom:1.5px solid #9fdcd6;transform:rotate(45deg);border-radius:0 0 3px 0}
+@media (prefers-reduced-motion:reduce){.bk-bub{transition:none}}
+
+/* D115 · 11/23 회의 ① 구조 (5단계) — 되돌리려면 이 블록과 home-res.js 끝의 D115 블록 삭제
+   A) 위 점수 카드: D113에서 120px로 줄어 체크인(168px)이 더 커졌으므로 게이지 56 → 80px(숫자 28px)
+   B) 칩 정리: 타일 머리에 「집중」 칩이 있으면 「기록 전/완료」 글자는 숨기고 점(○ 기록 전 · ● 완료)만 남김(회의: 회복 · 집중 · 기록 전 세 개가 따다닥)
+   C) 하단 「오늘의 60초」 콘텐츠는 이번 개발에서 제외(11/23 회의): home-res.js가 해당 구역에 .tb-c60을 붙임 */
+.tb-charge{width:80px!important;height:80px!important}
+.tb-charge svg{width:80px!important;height:80px!important}
+.tb-charge b{font-size:28px!important;letter-spacing:-.8px!important}
+.tb-care .tl.f .th2 .st{font-size:0;gap:0}
+.tb-care .tl.f .th2 .st i{width:8px;height:8px}
+.tb-c60{display:none!important}
+
+/* D116 · 캐릭터 섹션 롤백(사용자 요청): D103(결과지·라벨을 캐릭터 위로) 이전 배치(결과지 · 보관함 아래 양쪽, 알약 가운데)와 라벨을 D89 이전의 한 줄 알약(「Lv.6 비코 · 쿨쿨 자는 중」 + 아래 가장자리 성장 막대)으로 되돌림.
+   LV 블록 · 5칸 XP · 「XP 남음」(D91~D99, D111)과 캐릭터 말풍선(D114)은 home-res.js에서 제거(백업 home-res.before-d116.js). 되돌리려면 이 블록 삭제 + home-res.js 백업 복원 */
+.tb-res,.tb-box{top:222px!important}
+.tb-res{left:16px!important;right:auto!important;transform-origin:0 0!important}
+.tb-box{display:block!important;right:16px!important;left:auto!important;transform-origin:100% 0!important}
+.tb-char{top:54px!important}
+.tb-stage,.tb-glow{top:0!important}
+.tb-score{margin-top:297px!important}
+.rs-bub::after{top:auto!important;bottom:-4px!important}
+.tb-state{top:236px!important;left:50%!important;right:auto!important;width:auto!important;height:26px!important;transform:translateX(-50%)!important;padding:0 11px!important;border-radius:999px!important;overflow:hidden!important;
+  display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:6px!important;white-space:nowrap}
+.tb-state>*{grid-column:auto!important;grid-row:auto!important}
+.tb-state>*:nth-child(1){display:flex!important;font-size:14px!important;line-height:20px!important;color:#22c3bc!important}
+.tb-state>*:nth-child(2){display:block!important;font-size:14px!important;line-height:20px!important;color:#171719!important}
+.tb-state>*:nth-child(3){display:block!important;width:6px!important;height:6px!important;margin:0!important;border-radius:50%!important;background:#22c3bc!important;flex:none}
+.tb-state>*:nth-child(4){display:block!important;width:auto!important;height:auto!important;margin:0!important;border-radius:0!important;background:none!important;font-size:14px!important;line-height:20px!important;color:#171719!important}
+.tb-state>*:nth-child(4)::before{display:none!important}
+.tb-state .tb-lvbar{display:block!important;position:absolute!important;left:0!important;right:0!important;bottom:0!important;top:auto!important;width:auto!important;height:3px!important;border-radius:0!important;background:rgba(34,195,188,.16)!important;overflow:hidden!important}
+.tb-state .tb-lvbar i{display:block!important;width:62%!important;height:100%!important;border-radius:0!important;background:var(--tb-teal,#22c3bc)!important}
+
+/* D114 · 비코 말풍선(캐릭터를 누르면). 흰 면 + 민트 선 = 비코가 하는 말(결과지 알림 말풍선은 검정 = 시스템 알림). 되돌리려면 이 블록과 home-res.js 끝의 D114 블록 삭제 */
+.bk-bub{position:absolute;z-index:9;box-sizing:border-box;max-width:300px;height:34px;padding:0 14px;display:flex;flex-direction:row;align-items:center;gap:7px;border-radius:12px;background:#fff;border:1.5px solid #9fdcd6;box-shadow:0 6px 16px rgba(23,23,25,.14);opacity:0;transform:translateY(-4px);transition:opacity .25s ease,transform .25s ease;pointer-events:none;white-space:nowrap;text-align:center}
+.bk-bub.on{opacity:1;transform:none}
+.bk-bub b{font-family:'Pretendard-SemiBold',sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#171719}
+.bk-bub span{font-family:'Pretendard-Medium',sans-serif;font-size:12px;line-height:16px;color:#5a5c63}
+.bk-bub span::before{content:'·';margin-right:7px;color:#9fdcd6}
+.bk-bub::after{content:"";position:absolute;bottom:-7px;left:50%;width:10px;height:10px;margin-left:-5px;background:#fff;border-right:1.5px solid #9fdcd6;border-bottom:1.5px solid #9fdcd6;transform:rotate(45deg);border-radius:0 0 3px 0}
+@media (prefers-reduced-motion:reduce){.bk-bub{transition:none}}
+
+
+/* D117 · 이름표는 Lv.6 비코만, 상태 글자는 비코를 누르면 말풍선으로. 되돌리려면 이 블록과 위 D114 복원 블록, home-res.js 끝 D117 블록 삭제 */
+.tb-state>*:nth-child(3),.tb-state>*:nth-child(4){display:none!important}
+
+/* D118 · 캐릭터 · 받침판 · 후광을 22px 아래로(레벨 이름표와 붙게). 되돌리려면 이 블록 삭제 */
+.tb-char{top:76px!important}
+.tb-stage,.tb-glow{top:22px!important}
+
+/* D119 · 레벨 이름표 6px 아래 + 이름 수정(이름을 누르면 그 자리에서 입력, 연필 표시). 되돌리려면 이 블록과 home-res.js 끝 D119 블록 삭제 */
+.tb-state{top:242px!important}
+.tb-state>*:nth-child(2){cursor:text}
+.tb-state>*:nth-child(2)::after{content:'';display:inline-block;width:11px;height:11px;margin-left:4px;vertical-align:-1px;opacity:.45;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23171719' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z'/%3E%3C/svg%3E") center/contain no-repeat}
+.tb-state input.bk-nm{width:5.5em;height:20px;padding:0 2px;margin:0;border:0;border-bottom:1.5px solid #22c3bc;background:transparent;outline:0;font:inherit;font-size:14px;line-height:20px;color:#171719;text-align:center}
+
+/* D122 · 카드 순서: 체크인이 위, 점수 카드가 아래(home-res.js 끝 D122가 DOM을 옮김). 되돌리려면 이 블록 + JS 블록 삭제 */
+.tb-hero>.tb-ck,.tb-hero>.tb-tasks{margin-top:297px!important}
+.tb-hero>.tb-score{margin:0 0 40px!important}
+
+/* D123 · 이너뷰티 점수 카드는 반투명 하단 구역 안(내 목표 자세히 보기 위)으로, 캐릭터 줄과 체크인 카드 간격 18 → 10px. 되돌리려면 이 블록 + home-res.js D122의 D123 줄 삭제 */
+.tb-hero>.tb-ck,.tb-hero>.tb-tasks{margin-top:289px!important}
+.tb-score{margin:0 0 16px!important}
+.tb-hero>.tb-ck,.tb-hero>.tb-tasks{margin-bottom:46px!important}   /* 하단 반투명 구역이 24px 겹쳐 올라오므로 진행 점이 가려지지 않게 */
+
+/* D124 · 카드 사이 간격 정리: 반투명 구역 윗선 → 이너뷰티 카드 20px, 이너뷰티 → 내 목표 자세히 보기 16px(기존 41 · 28px). 되돌리려면 이 블록 삭제 */
+.tb-score{margin:-21px 0 4px!important}
+
+/* D125 · 체크인 표정 배경: 가장 부정(1번)만 회색 유지, 긍정 쪽으로 갈수록 민트 미색이 단계적으로 진해짐. 되돌리려면 이 블록 삭제 */
+.tb-ck [role=radiogroup]>[role=radio]:nth-child(2){background:#d2f0ec!important;border-color:#b3e3de!important}
+.tb-ck [role=radiogroup]>[role=radio]:nth-child(3){background:#c1eae6!important;border-color:#9fdcd6!important}
+.tb-ck [role=radiogroup]>[role=radio]:nth-child(4){background:#aee3de!important;border-color:#86d3cc!important}
+.tb-ck [role=radiogroup]>[role=radio]:nth-child(5){background:#98dbd5!important;border-color:#5fc8c0!important}
