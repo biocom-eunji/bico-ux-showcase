@@ -1,0 +1,372 @@
+[
+ {
+  "from": "/",
+  "label": "보관함 열기",
+  "added": "보관함은 꾸미기 화면이에요 · 비코 스킨 · 배경 · 말풍선"
+ },
+ {
+  "from": "/",
+  "label": "전혀 아니에요",
+  "added": "2/4 · 어제 트러블이 새로 올라왔어요?"
+ },
+ {
+  "from": "/",
+  "label": "별로 아니에요",
+  "added": "2/4 · 어제 트러블이 새로 올라왔어요?"
+ },
+ {
+  "from": "/",
+  "label": "보통이에요",
+  "added": "2/4 · 어제 트러블이 새로 올라왔어요?"
+ },
+ {
+  "from": "/",
+  "label": "그런 편이에요",
+  "added": "2/4 · 어제 트러블이 새로 올라왔어요?"
+ },
+ {
+  "from": "/",
+  "label": "아주 그래요",
+  "added": "2/4 · 어제 트러블이 새로 올라왔어요?"
+ },
+ {
+  "from": "/",
+  "label": "피부, 목표 바꾸기",
+  "added": "어떤 목표로 볼까요? · 홈 점수와 오늘 할 일이 그 목표로 바뀌어요 · 목표마다 보는 지표가 달라 점수도 달라요"
+ },
+ {
+  "from": "/record",
+  "label": "가이아 행성, 잠김",
+  "added": "가이아 행성은 아직 잠겨 있어요"
+ },
+ {
+  "from": "/record",
+  "label": "글로우 행성, 잠김",
+  "added": "글로우 행성은 아직 잠겨 있어요"
+ },
+ {
+  "from": "/record",
+  "label": "하루 단백질 필요량 채우기 4/7일",
+  "added": "4 · ✓ · 5/7일"
+ },
+ {
+  "from": "/record",
+  "label": "수용성 식이섬유 챙기기 2/7일",
+  "added": "4 · ✓ · 3/7일"
+ },
+ {
+  "from": "/record",
+  "label": "외출할 때 자외선 차단 1/7일",
+  "added": "4 · ✓"
+ },
+ {
+  "from": "/record",
+  "label": "항목 관리",
+  "added": "카드 순서 · 숨기기를 바꿀 수 있어요"
+ },
+ {
+  "from": "/record",
+  "label": "기기 연결",
+  "added": "체중계 · 워치를 연결하면 자동으로 들어와요"
+ },
+ {
+  "from": "/completeness",
+  "label": "어떻게 계산하나요 ›",
+  "added": "분석 정확도는 이렇게 정해져요 · 점수가 내 상태를 얼마나 잘 읽는지예요. 두 갈래를 더해 100이에요. · 검사 · 문진 80"
+ },
+ {
+  "from": "/completeness",
+  "label": "식단 기록하기, 정확도 플러스 1퍼센트",
+  "added": "대사 +1 · 활력 실천 · 오늘의 미션 3 / 5 · +10P"
+ },
+ {
+  "from": "/completeness",
+  "label": "다시 하기",
+  "added": "건강 상태 문진 · 30문항 · 약 3분이면 끝나요"
+ },
+ {
+  "from": "/goal/score",
+  "label": "점수 설명",
+  "added": "검사와 문진으로 본 상태에서 출발해요. 꾸준히 하면 오르는 쪽으로 움직여요 · 아직 보지 못한 지표는 점수에 넣지 않아요"
+ },
+ {
+  "from": "/goal/score",
+  "label": "12주",
+  "added": "12주 전 · 검사 결과"
+ },
+ {
+  "from": "/goal/score",
+  "label": "27일 전",
+  "added": "27일 전 52점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "26일 전",
+  "added": "26일 전 53점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "25일 전",
+  "added": "25일 전 54점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "24일 전",
+  "added": "24일 전 55점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "23일 전",
+  "added": "23일 전 56점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "22일 전",
+  "added": "22일 전 56점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "21일 전",
+  "added": "21일 전 57점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "20일 전",
+  "added": "20일 전 55점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "19일 전",
+  "added": "19일 전 56점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "18일 전",
+  "added": "18일 전 56점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "17일 전",
+  "added": "17일 전 57점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "16일 전",
+  "added": "16일 전 57점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "15일 전",
+  "added": "15일 전 58점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "14일 전",
+  "added": "14일 전 58점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "13일 전",
+  "added": "13일 전 59점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "12일 전",
+  "added": "12일 전 58점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "11일 전",
+  "added": "11일 전 57점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "10일 전",
+  "added": "10일 전 58점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "9일 전",
+  "added": "9일 전 59점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "8일 전",
+  "added": "8일 전 60점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "7일 전",
+  "added": "7일 전 58점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "6일 전",
+  "added": "6일 전 58점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "5일 전",
+  "added": "5일 전 59점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "4일 전",
+  "added": "4일 전 59점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "3일 전",
+  "added": "3일 전 60점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "2일 전",
+  "added": "2일 전 60점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "1일 전",
+  "added": "1일 전 59점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "0일 전",
+  "added": "오늘 60점"
+ },
+ {
+  "from": "/goal/score",
+  "label": "장 73",
+  "added": "장이 편하고 배변이 편안해요? · 배변이 불편한 날이 가끔 있다고 답하셨어요. 7번 중 7번 편안한 모양이에요, 벗어난 모양 25% 안이에요 · 평소보다 높음"
+ },
+ {
+  "from": "/goal/score",
+  "label": "음식 반응 77",
+  "added": "먹고 나서 불편한 반응이 적은 편이에요? · 불편했던 음식이 있었다고 답한 날이 이번 주 0일이에요. 이번 주 과민식품이 든 적이 없었어요 · 평소보다 높음"
+ },
+ {
+  "from": "/goal/score",
+  "label": "진정 56",
+  "added": "트러블이나 붉어짐이 덜 올라와요? · 트러블이 자주 있다고 답하셨어요. 챙길 날 6일 중 4일 챙겼어요, 기준은 매일이에요 · 평소보다 높음"
+ },
+ {
+  "from": "/goal/score",
+  "label": "탄수화물 대사 61",
+  "added": "먹은 것이 당으로 크게 출렁이지 않아요? · 정제 탄수화물을 기록하면 여기서 움직여요. 식후 졸림과 단것 당김이 가끔 있다고 답하셨어요 · 정제 탄수화물"
+ },
+ {
+  "from": "/my",
+  "label": "가입",
+  "added": "멤버십 회원 · 12개월 요금제 · 다음 결제일 2026.11.30 · 관리하기"
+ },
+ {
+  "from": "/planet/allostar",
+  "label": "보상 상자 열림",
+  "added": "7 / 7 · 이미 받은 상자예요 · 의지의 불꽃 2개 · 연속 출석 · 챌린지를 지켜요"
+ },
+ {
+  "from": "/planet/allostar",
+  "label": "보상 상자 잠김",
+  "added": "보상 상자 · 의지의 불꽃 1개 · 7번째 스테이지까지 마치면 열려요"
+ },
+ {
+  "from": "/planet/allostar",
+  "label": "보상 상자 잠김",
+  "added": "보상 상자 · 의지의 불꽃 1개 · 14번째 스테이지까지 마치면 열려요"
+ },
+ {
+  "from": "/planet/allostar",
+  "label": "에너지 2개",
+  "added": "에너지는 · 스테이지를 열 때 1개씩 사용돼요. · · 오늘의 미션 1개를 하면 1개가 차요"
+ },
+ {
+  "from": "/planet/allostar",
+  "label": "단식, 했어요",
+  "added": "단식 · 오늘 했어요 · 에너지 1개 · +10P를 받았어요"
+ },
+ {
+  "from": "/planet/allostar",
+  "label": "수면, 했어요",
+  "added": "수면 · 오늘 했어요 · 에너지 1개 · +10P를 받았어요"
+ },
+ {
+  "from": "/record/checkin",
+  "label": "주",
+  "added": "10/24 – 10/30 · 최근 7일 아침 컨디션은 · 0% 좋은 쪽 답"
+ },
+ {
+  "from": "/record/checkin",
+  "label": "월",
+  "added": "2026년 10월 · 10월 아침 컨디션은 · 0% 좋은 쪽 답"
+ },
+ {
+  "from": "/record/checkin",
+  "label": "이전 기간",
+  "added": "10/29 (목) 아침 · 어제 아침 컨디션은 · 많이 아쉬워요"
+ },
+ {
+  "from": "/record/diet",
+  "label": "주",
+  "added": "10/24 – 10/30 · 최근 7일 하루 평균 열량은 · 1,824 kcal"
+ },
+ {
+  "from": "/record/diet",
+  "label": "월",
+  "added": "2026년 10월 · 10월 식단 균형 지수는 · 날마다 균형 지수"
+ },
+ {
+  "from": "/record/diet",
+  "label": "이전 기간",
+  "added": "10/29 (목) · 어제 · 10/29(목) 식단 균형 지수는 · 71"
+ },
+ {
+  "from": "/record/diet",
+  "label": "계산 방법",
+  "added": "식단 숫자 읽는 법 · 식단 균형 지수 · 단백질 · 식이섬유가 내 기준에 가까울수록 올라가고, 가공 식품 · 내 과민식품(4·5단계)이 있으면 내려가요. 85 이상 매우 좋음 · 75 이상 좋음 · 60 이상 보통 · 60 미만 주의 필요"
+ },
+ {
+  "from": "/record/diet/add",
+  "label": "아침",
+  "added": "아침 기록하기 · 아침은 어떻게 남길까요? · 사진으로 남기기"
+ },
+ {
+  "from": "/record/diet/add",
+  "label": "점심",
+  "added": "점심 기록하기 · 점심은 어떻게 남길까요? · 사진으로 남기기"
+ },
+ {
+  "from": "/record/diet/add",
+  "label": "저녁",
+  "added": "저녁 기록하기 · 저녁은 어떻게 남길까요? · 사진으로 남기기"
+ },
+ {
+  "from": "/record/diet/add",
+  "label": "간식",
+  "added": "간식 기록하기 · 간식은 어떻게 남길까요? · 사진으로 남기기"
+ },
+ {
+  "from": "/record/sleep/add",
+  "label": "잠든 시각 10분 앞으로",
+  "added": "오후 11:30 · 7시간 10분"
+ },
+ {
+  "from": "/record/sleep/add",
+  "label": "잠든 시각 10분 뒤로",
+  "added": "오후 11:50 · 6시간 50분"
+ },
+ {
+  "from": "/record/sleep/add",
+  "label": "일어난 시각 10분 앞으로",
+  "added": "오전 6:30 · 6시간 50분"
+ },
+ {
+  "from": "/record/sleep/add",
+  "label": "일어난 시각 10분 뒤로",
+  "added": "오전 6:50 · 7시간 10분"
+ },
+ {
+  "from": "/report",
+  "label": "분석 서비스 구매하기",
+  "added": "분석 서비스 구매 화면이에요"
+ }
+]

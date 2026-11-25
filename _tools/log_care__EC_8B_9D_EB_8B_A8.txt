@@ -1,0 +1,12 @@
+후보 11
+0 뒤로 → / (+12)
+1 자세히 → /record/diet (+12)
+2 자세히 → /record/diet (+12)
+3 자세히 → /record/diet (+12)
+4 자세히 → /record/diet (+12)
+5 자세히 → /record/diet (+12)
+6 기록하기 → /record/diet (+12)
+7 기록하기 → /record/diet (+12)
+8 자세히 → /record/diet (+12)
+9 자세히 → /record/diet (+12)
+10 자세히 → /record/diet (+12)

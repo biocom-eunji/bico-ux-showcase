@@ -6,10 +6,10 @@
 <title>비코 홈·기록 UX 개선안</title>
 <link rel="icon" href="data:,">
 <style>
-@font-face{font-family:'Pretendard';font-weight:400;src:url('https://biocom-eunji.github.io/assets/assets/fonts/Pretendard-Regular.d6e0de06bff8b7fda2db4682168e3ddf.ttf') format('truetype');font-display:swap}
-@font-face{font-family:'Pretendard';font-weight:500;src:url('https://biocom-eunji.github.io/assets/assets/fonts/Pretendard-Medium.7305f90c923d4409825ec2f4380b63d6.ttf') format('truetype');font-display:swap}
-@font-face{font-family:'Pretendard';font-weight:600;src:url('https://biocom-eunji.github.io/assets/assets/fonts/Pretendard-SemiBold.459eff7ba5380583ccd6eda49c846c85.ttf') format('truetype');font-display:swap}
-@font-face{font-family:'Pretendard';font-weight:700;src:url('https://biocom-eunji.github.io/assets/assets/fonts/Pretendard-Bold.dfb614ebecd405875f50a918ca11c17c.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pretendard';font-weight:400;src:url('https://bico-renewal.expo.app/assets/assets/fonts/Pretendard-Regular.d6e0de06bff8b7fda2db4682168e3ddf.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pretendard';font-weight:500;src:url('https://bico-renewal.expo.app/assets/assets/fonts/Pretendard-Medium.7305f90c923d4409825ec2f4380b63d6.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pretendard';font-weight:600;src:url('https://bico-renewal.expo.app/assets/assets/fonts/Pretendard-SemiBold.459eff7ba5380583ccd6eda49c846c85.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Pretendard';font-weight:700;src:url('https://bico-renewal.expo.app/assets/assets/fonts/Pretendard-Bold.dfb614ebecd405875f50a918ca11c17c.ttf') format('truetype');font-display:swap}
 :root{
   --bg:#f4f5f7; --panel:#fff; --ink:#1c2230; --sub:#6b7385; --line:#e2e5eb;
   --asis:#C4553F; --tobe:#3FAFD3; --brand:#0f9d8a;
@@ -75,7 +75,7 @@ main{display:flex;justify-content:center;gap:40px;padding:22px 24px 60px}
 <div id="bubble" role="tooltip"></div>
 <script>
 (function () {
-  var ASIS = 'https://biocom-eunji.github.io';
+  var ASIS = 'http://localhost:8776';   /* = https://bico-renewal.expo.app 을 서버.py가 프록시(연동 스크립트 주입) */
   var SCREENS = [
     { path: '/', key: 'home', name: '홈(문진 전)', id: 'home', g: '홈', short: '문진 전' },
     { path: '/', key: 'home', name: '홈(문진 전 · 결과지 확인 후)', id: 'home-seen', g: '홈', short: '결과지 확인 후', q: 'res=seen' },

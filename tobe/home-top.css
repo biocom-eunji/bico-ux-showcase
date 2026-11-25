@@ -9,7 +9,7 @@
 .tb-hdr-mid{position:absolute;right:104px;top:10px;height:32px;display:flex;align-items:center;z-index:3}   /* 알림(36) · 마이(36) · 간격(8×2) · 오른쪽 여백(16) 바로 왼쪽 */
 .tb-pt{display:flex;align-items:center;height:32px;border-radius:999px;background:rgba(255,255,255,.78);border:1px solid rgba(20,30,50,.06);box-shadow:0 1px 4px rgba(20,30,50,.06);cursor:pointer;font-family:inherit;color:var(--tb-ink);padding:0}
 .tb-pt{gap:5px;padding:0 11px 0 6px;font-size:14px;font-family:'Pretendard-ExtraBold',sans-serif;font-weight:400}
-.tb-pt .coin{width:22px;height:22px;border-radius:0;background:url(https://biocom-eunji.github.io/bico-ux-showcase/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat;box-shadow:none}   /* D12: v4 포인트 아이콘 */
+.tb-pt .coin{width:22px;height:22px;border-radius:0;background:url(http://localhost:8775/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat;box-shadow:none}   /* D12: v4 포인트 아이콘 */
 
 /* 2) 캐릭터 영역(D10): 캐릭터는 약 78%(높이 약 176px)로 키우고, 그 아래 한 줄에
       「결과지 · [Lv.6 비코 • 상태] · 보관함」을 좌우 대칭으로 둔다. 점수는 약 282px(33%)에서 시작 */
@@ -226,13 +226,13 @@
 @keyframes tbWake{0%{transform:scale(1)}30%{transform:scale(1.12) rotate(-4deg)}60%{transform:scale(1.08) rotate(3deg)}100%{transform:scale(1)}}
 .tb-ckh .av.tb-wake{animation:tbWake .6s ease-out;background:#d9f6ee}
 .tb-coin{position:fixed;z-index:80;display:flex;align-items:center;gap:4px;pointer-events:none;font-family:'Pretendard-Bold',sans-serif;font-size:15px;color:#8a5300;background:#fff;border-radius:999px;padding:3px 9px 3px 4px;box-shadow:0 4px 14px rgba(23,23,25,.18)}
-.tb-coin i{display:block;width:20px;height:20px;background:url(https://biocom-eunji.github.io/bico-ux-showcase/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat}
+.tb-coin i{display:block;width:20px;height:20px;background:url(http://localhost:8775/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat}
 .tb-pt.tb-pop{animation:tbPop .4s}
 @keyframes tbPop{0%{transform:scale(1)}40%{transform:scale(1.14)}100%{transform:scale(1)}}
 
 /* D23) 보상 뱃지 · 트러블 없던 날 축소 */
 .tb-ckh .rw{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 11px 0 6px;border-radius:8px;background:#fff5de;box-shadow:0 0 0 1px #f2e0b4;font-family:'Pretendard-SemiBold',sans-serif;font-size:14px;color:#8a5300;white-space:nowrap}
-.tb-ckh .rw i:not(.uxpin){display:block;width:20px;height:20px;background:url(https://biocom-eunji.github.io/bico-ux-showcase/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat}
+.tb-ckh .rw i:not(.uxpin){display:block;width:20px;height:20px;background:url(http://localhost:8775/tobe/icons/ic-point-circle-soft.svg) center/contain no-repeat}
 .tb-ckh .rw.got{background:#e6f4f0;box-shadow:0 0 0 1px #cdebe8;color:#22c3bc}
 .tb-ckh .rw.got i:not(.uxpin){filter:grayscale(1) opacity(.5)}
 .tb-wk{display:grid!important;grid-template-columns:84px 1fr;grid-template-rows:auto auto;column-gap:14px;row-gap:3px;align-items:end;padding:10px 14px!important;height:auto!important;min-height:0!important}
@@ -543,8 +543,8 @@ button[aria-label*="결과지"],button[aria-label*="보관함"],button[aria-labe
 .tb-tasks .tb-task{background:#f6f8f9!important;border:0!important;box-shadow:none!important;border-radius:12px!important;padding:12px 12px 12px 10px!important;gap:10px!important}
 .tb-tasks .tb-task .tb-ico{display:block!important;flex:none;width:40px!important;height:40px!important;border-radius:0!important;background:center/contain no-repeat!important}
 .tb-tasks .tb-task .tb-ico svg{display:none!important}
-.tb-tasks .tb-task[data-k=sleep] .tb-ico{background-image:url(https://biocom-eunji.github.io/assets/assets/v2/rec_sleep.39f0dbf4f026572e5602dec2bf7ef743.png)!important}
-.tb-tasks .tb-task[data-k=meal] .tb-ico{background-image:url(https://biocom-eunji.github.io/assets/assets/v2/rec_meal.cc91bd7e8010bbd0b459e45c2ee23c61.png)!important}
+.tb-tasks .tb-task[data-k=sleep] .tb-ico{background-image:url(http://localhost:8776/assets/assets/v2/rec_sleep.39f0dbf4f026572e5602dec2bf7ef743.png)!important}
+.tb-tasks .tb-task[data-k=meal] .tb-ico{background-image:url(http://localhost:8776/assets/assets/v2/rec_meal.cc91bd7e8010bbd0b459e45c2ee23c61.png)!important}
 .tb-tasks .tb-task>div:nth-child(2){gap:2px!important}
 .tb-tasks .tb-task div[dir=auto].r-dnmrzs{font-size:14px!important;line-height:21px!important;letter-spacing:-.2px}
 .tb-tasks .tb-task div[dir=auto]:not(.r-dnmrzs){font-size:12px!important;line-height:17px!important;color:#5a5c63!important}

@@ -1,0 +1,814 @@
+{
+ "start": "/goal/score",
+ "cands": [
+  {
+   "cid": 0,
+   "label": "뒤로",
+   "y": 5,
+   "w": 40,
+   "h": 22,
+   "path": "/",
+   "kind": "route",
+   "added": [
+    "Lv",
+    "6",
+    "3,720P",
+    "결과지",
+    "보관함",
+    "비코",
+    "쿨쿨 자는 중",
+    "집중 회복력",
+    "알로에게 묻기",
+    "체크인하면 비코가 깨어나요",
+    "1/4",
+    "일어났을 때 몸이 개운해요?"
+   ],
+   "gone": 54,
+   "shot": "shots/goalscore-0.png"
+  },
+  {
+   "cid": 1,
+   "label": "점수 설명",
+   "y": 57,
+   "w": 18,
+   "h": 18,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "검사와 문진으로 본 상태에서 출발해요. 꾸준히 하면 오르는 쪽으로 움직여요",
+    "아직 보지 못한 지표는 점수에 넣지 않아요"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-1.png"
+  },
+  {
+   "cid": 2,
+   "label": "분석 정확도 66퍼센트, 자세히",
+   "y": 202,
+   "w": 203,
+   "h": 38,
+   "path": "/completeness",
+   "kind": "route",
+   "added": [
+    "어제보다 6 내려갔어요 · 오늘 수면 기록은 내일 아침 반영돼요",
+    "89%",
+    "점수를 믿어도 되는 정도",
+    "어제보다 ▼6",
+    "어떻게 계산하나요 ›",
+    "검사 · 문진",
+    "74 / 80",
+    "꾸준한 기록",
+    "15 / 20",
+    "세부 영역별 채움",
+    "검사",
+    "문진"
+   ],
+   "gone": 66,
+   "shot": "shots/goalscore-2.png"
+  },
+  {
+   "cid": 3,
+   "label": "검사로 +10%, 검사권 보기",
+   "y": 202,
+   "w": 99,
+   "h": 38,
+   "path": "/shop",
+   "kind": "route",
+   "added": [
+    "쇼핑",
+    "1",
+    "모은 포인트로 사요",
+    "3,720P",
+    "= 3,720원 할인",
+    "1P = 1원 · 상품 최대 전액",
+    "도시락은 30%까지",
+    "추천",
+    "분석 서비스",
+    "건강 식품",
+    "박비코님 맞춤",
+    "건강 목표와 결과지 기준"
+   ],
+   "gone": 71,
+   "shot": "shots/goalscore-3.png"
+  },
+  {
+   "cid": 4,
+   "label": "식단 +1.4",
+   "y": 391,
+   "w": 308,
+   "h": 34,
+   "path": "/care/%EC%8B%9D%EB%8B%A8",
+   "kind": "route",
+   "added": [
+    "이너뷰티",
+    "63",
+    "최근 7일",
+    "장, 음식 반응에 반영돼요",
+    "이번 주 이너뷰티 점수에 준 몫",
+    "+1.4점",
+    "이 관리가 닿는 하위 지표",
+    "당류",
+    "중요",
+    "13%",
+    "지난주와 같음",
+    "13"
+   ],
+   "gone": 64,
+   "shot": "shots/goalscore-4.png"
+  },
+  {
+   "cid": 5,
+   "label": "스킨케어 +0.3",
+   "y": 459,
+   "w": 308,
+   "h": 34,
+   "path": "/care/%EC%8A%A4%ED%82%A8%EC%BC%80%EC%96%B4",
+   "kind": "route",
+   "added": [
+    "이너뷰티",
+    "69",
+    "최근 7일",
+    "진정에 반영돼요",
+    "이번 주 이너뷰티 점수에 준 몫",
+    "+0.3점",
+    "이 관리가 닿는 하위 지표",
+    "자외선 차단",
+    "챙길 날 6일 중 4일",
+    "지난주와 같음",
+    "했음",
+    "안 함"
+   ],
+   "gone": 68,
+   "shot": "shots/goalscore-5.png"
+  },
+  {
+   "cid": 6,
+   "label": "배변 상태 +0.1",
+   "y": 493,
+   "w": 308,
+   "h": 34,
+   "path": "/care/%EB%B0%B0%EB%B3%80",
+   "kind": "route",
+   "added": [
+    "배변",
+    "이너뷰티",
+    "86",
+    "최근 7일",
+    "어제와 같음",
+    "장에 반영돼요",
+    "이번 주 이너뷰티 점수에 준 몫",
+    "+0.1점",
+    "이 관리가 닿는 하위 지표",
+    "대변 모양",
+    "7번 중 7번 편안한 모양",
+    "지난주와 같음"
+   ],
+   "gone": 70,
+   "shot": "shots/goalscore-6.png"
+  },
+  {
+   "cid": 7,
+   "label": "회복 −0.9",
+   "y": 527,
+   "w": 308,
+   "h": 34,
+   "path": "/care/%ED%9A%8C%EB%B3%B5",
+   "kind": "route",
+   "added": [
+    "이너뷰티",
+    "최근 7일",
+    "장, 회복력에 반영돼요",
+    "이번 주 이너뷰티 점수에 준 몫",
+    "−0.9점",
+    "이 관리가 닿는 하위 지표",
+    "수면 시간",
+    "오늘 할 일 +1.2",
+    "평균 4시간 20분",
+    "지난주와 같음",
+    "4.3",
+    "4.3"
+   ],
+   "gone": 62,
+   "shot": "shots/goalscore-7.png"
+  },
+  {
+   "cid": 8,
+   "label": "4주",
+   "y": 656,
+   "w": 38,
+   "h": 26,
+   "path": "/goal/score",
+   "kind": "none",
+   "added": [],
+   "gone": 0,
+   "shot": "shots/goalscore-8.png"
+  },
+  {
+   "cid": 9,
+   "label": "12주",
+   "y": 656,
+   "w": 43,
+   "h": 26,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "12주 전",
+    "검사 결과"
+   ],
+   "gone": 1,
+   "shot": "shots/goalscore-9.png"
+  },
+  {
+   "cid": 10,
+   "label": "27일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "27일 전 52점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-10.png"
+  },
+  {
+   "cid": 11,
+   "label": "26일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "26일 전 53점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-11.png"
+  },
+  {
+   "cid": 12,
+   "label": "25일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "25일 전 54점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-12.png"
+  },
+  {
+   "cid": 13,
+   "label": "24일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "24일 전 55점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-13.png"
+  },
+  {
+   "cid": 14,
+   "label": "23일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "23일 전 56점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-14.png"
+  },
+  {
+   "cid": 15,
+   "label": "22일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "22일 전 56점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-15.png"
+  },
+  {
+   "cid": 16,
+   "label": "21일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "21일 전 57점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-16.png"
+  },
+  {
+   "cid": 17,
+   "label": "20일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "20일 전 55점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-17.png"
+  },
+  {
+   "cid": 18,
+   "label": "19일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "19일 전 56점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-18.png"
+  },
+  {
+   "cid": 19,
+   "label": "18일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "18일 전 56점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-19.png"
+  },
+  {
+   "cid": 20,
+   "label": "17일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "17일 전 57점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-20.png"
+  },
+  {
+   "cid": 21,
+   "label": "16일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "16일 전 57점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-21.png"
+  },
+  {
+   "cid": 22,
+   "label": "15일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "15일 전 58점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-22.png"
+  },
+  {
+   "cid": 23,
+   "label": "14일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "14일 전 58점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-23.png"
+  },
+  {
+   "cid": 24,
+   "label": "13일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "13일 전 59점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-24.png"
+  },
+  {
+   "cid": 25,
+   "label": "12일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "12일 전 58점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-25.png"
+  },
+  {
+   "cid": 26,
+   "label": "11일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "11일 전 57점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-26.png"
+  },
+  {
+   "cid": 27,
+   "label": "10일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "10일 전 58점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-27.png"
+  },
+  {
+   "cid": 28,
+   "label": "9일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "9일 전 59점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-28.png"
+  },
+  {
+   "cid": 29,
+   "label": "8일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "8일 전 60점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-29.png"
+  },
+  {
+   "cid": 30,
+   "label": "7일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "7일 전 58점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-30.png"
+  },
+  {
+   "cid": 31,
+   "label": "6일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "6일 전 58점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-31.png"
+  },
+  {
+   "cid": 32,
+   "label": "5일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "5일 전 59점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-32.png"
+  },
+  {
+   "cid": 33,
+   "label": "4일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "4일 전 59점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-33.png"
+  },
+  {
+   "cid": 34,
+   "label": "3일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "3일 전 60점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-34.png"
+  },
+  {
+   "cid": 35,
+   "label": "2일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "2일 전 60점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-35.png"
+  },
+  {
+   "cid": 36,
+   "label": "1일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "1일 전 59점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-36.png"
+  },
+  {
+   "cid": 37,
+   "label": "0일 전",
+   "y": 699,
+   "w": 11,
+   "h": 112,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "오늘 60점"
+   ],
+   "gone": 0,
+   "shot": "shots/goalscore-37.png"
+  },
+  {
+   "cid": 38,
+   "label": "장 73",
+   "y": 959,
+   "w": 308,
+   "h": 52,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "장이 편하고 배변이 편안해요?",
+    "배변이 불편한 날이 가끔 있다고 답하셨어요. 7번 중 7번 편안한 모양이에요, 벗어난 모양 25% 안이에요",
+    "평소보다 높음",
+    "대변 모양",
+    "7번 중 7번 편안한 모양이에요, 벗어난 모양 25% 안이에요",
+    "과민식품",
+    "이번 주 과민식품이 든 적이 없었어요",
+    "배변 횟수",
+    "이번 주 7번, 주 3 ~ 21번 안이에요",
+    "그 밖 2개"
+   ],
+   "gone": 5,
+   "shot": "shots/goalscore-38.png"
+  },
+  {
+   "cid": 39,
+   "label": "음식 반응 77",
+   "y": 1012,
+   "w": 308,
+   "h": 52,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "먹고 나서 불편한 반응이 적은 편이에요?",
+    "불편했던 음식이 있었다고 답한 날이 이번 주 0일이에요. 이번 주 과민식품이 든 적이 없었어요",
+    "평소보다 높음",
+    "기록",
+    "과민식품",
+    "이번 주 과민식품이 든 적이 없었어요",
+    "높을수록 반응이 적은 쪽이에요"
+   ],
+   "gone": 6,
+   "shot": "shots/goalscore-39.png"
+  },
+  {
+   "cid": 40,
+   "label": "진정 56",
+   "y": 1065,
+   "w": 308,
+   "h": 52,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "트러블이나 붉어짐이 덜 올라와요?",
+    "트러블이 자주 있다고 답하셨어요. 챙길 날 6일 중 4일 챙겼어요, 기준은 매일이에요",
+    "평소보다 높음",
+    "자외선 차단",
+    "챙길 날 6일 중 4일 챙겼어요, 기준은 매일이에요",
+    "채소와 과일",
+    "하루 평균 267g, 기준 400g까지 133g 남았어요",
+    "당류와 초가공식품",
+    "당류 13%, 초가공식품 33%로 둘 다 기준보다 높아요",
+    "그 밖 1개"
+   ],
+   "gone": 5,
+   "shot": "shots/goalscore-40.png"
+  },
+  {
+   "cid": 41,
+   "label": "탄수화물 대사 61",
+   "y": 1118,
+   "w": 308,
+   "h": 52,
+   "path": "/goal/score",
+   "kind": "overlay",
+   "added": [
+    "먹은 것이 당으로 크게 출렁이지 않아요?",
+    "정제 탄수화물을 기록하면 여기서 움직여요. 식후 졸림과 단것 당김이 가끔 있다고 답하셨어요",
+    "정제 탄수화물",
+    "기록하면 여기서 움직여요",
+    "기록 없음",
+    "단백질",
+    "하루 평균 46g, 기준 55g까지 9g 남았어요",
+    "당류와 초가공식품",
+    "당류 13%, 초가공식품 33%로 둘 다 기준보다 높아요",
+    "그 밖 2개"
+   ],
+   "gone": 4,
+   "shot": "shots/goalscore-41.png"
+  },
+  {
+   "cid": 42,
+   "label": "회복력 44",
+   "y": 1171,
+   "w": 308,
+   "h": 52,
+   "path": "/goal/score",
+   "kind": "none",
+   "added": [],
+   "gone": 8,
+   "shot": "shots/goalscore-42.png"
+  },
+  {
+   "cid": 43,
+   "label": "아침 체크인 답 아침 체크인 답 ▼",
+   "y": 1443,
+   "w": 280,
+   "h": 50,
+   "path": "/care/%ED%9A%8C%EB%B3%B5",
+   "kind": "route",
+   "added": [
+    "이너뷰티",
+    "최근 7일",
+    "장, 회복력에 반영돼요",
+    "이번 주 이너뷰티 점수에 준 몫",
+    "−0.9점",
+    "이 관리가 닿는 하위 지표",
+    "수면 시간",
+    "오늘 할 일 +1.2",
+    "평균 4시간 20분",
+    "지난주와 같음",
+    "4.3",
+    "4.3"
+   ],
+   "gone": 62,
+   "shot": "shots/goalscore-43.png"
+  },
+  {
+   "cid": 44,
+   "label": "23시 30분 전에 잠자리에 들기 ▲ 집중 회복력",
+   "y": 1621,
+   "w": 308,
+   "h": 74,
+   "path": "/record/sleep/add",
+   "kind": "route",
+   "added": [
+    "어젯밤 수면 수정",
+    "어젯밤 언제 자고 일어났어요?",
+    "− + 로 10분씩 조절해요",
+    "잠든 시각",
+    "10/29 밤",
+    "오후 11:17",
+    "일어난 시각",
+    "10/30 아침",
+    "오전 4:01",
+    "잔 시간",
+    "4시간 44분",
+    "기준 6시간까지 1시간 16분"
+   ],
+   "gone": 72,
+   "shot": "shots/goalscore-44.png"
+  },
+  {
+   "cid": 45,
+   "label": "2주 정제 탄수화물 줄여 보기 탄수화물 대사",
+   "y": 1695,
+   "w": 308,
+   "h": 75,
+   "path": "/record/diet/add",
+   "kind": "route",
+   "added": [
+    "식단 기록하기",
+    "어느 끼니인가요?",
+    "아침",
+    "468kcal 기록 있음",
+    "점심",
+    "643kcal 기록 있음",
+    "지금 시간",
+    "저녁",
+    "502kcal 기록 있음",
+    "간식",
+    "260kcal 기록 있음"
+   ],
+   "gone": 72,
+   "shot": "shots/goalscore-45.png"
+  },
+  {
+   "cid": 46,
+   "label": "잠들기 전 종이책 읽기 +1.2 진정 회복력",
+   "y": 1770,
+   "w": 308,
+   "h": 75,
+   "path": "/record/sleep/add",
+   "kind": "route",
+   "added": [
+    "어젯밤 수면 수정",
+    "어젯밤 언제 자고 일어났어요?",
+    "− + 로 10분씩 조절해요",
+    "잠든 시각",
+    "10/29 밤",
+    "오후 11:17",
+    "일어난 시각",
+    "10/30 아침",
+    "오전 4:01",
+    "잔 시간",
+    "4시간 44분",
+    "기준 6시간까지 1시간 16분"
+   ],
+   "gone": 72,
+   "shot": "shots/goalscore-46.png"
+  }
+ ]
+}

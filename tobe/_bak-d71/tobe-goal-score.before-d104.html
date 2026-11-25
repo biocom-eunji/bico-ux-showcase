@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>이너뷰티 점수 · TO-BE</title>
+<style>
+@font-face{font-family:P-M;src:url(http://localhost:8776/assets/assets/fonts/Pretendard-Medium.7305f90c923d4409825ec2f4380b63d6.ttf)}
+@font-face{font-family:P-SB;src:url(http://localhost:8776/assets/assets/fonts/Pretendard-SemiBold.459eff7ba5380583ccd6eda49c846c85.ttf)}
+@font-face{font-family:P-B;src:url(http://localhost:8776/assets/assets/fonts/Pretendard-Bold.dfb614ebecd405875f50a918ca11c17c.ttf)}
+:root{--fg:#171719;--mid:#5a5c63;--mute:#72747b;--line:#e4e4e7;--face:#f6f8f9;--mint:#22c3bc;--mint-d:#157d78;--mint-bg:#e1f6f5;--org:#b04a00;--org-bg:#fde9d8;--c1:#F28A6A;--c2:#F9C65B;--c3:#6CC189;--c4:#6495DE}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{color:var(--fg);font-family:P-M,'Pretendard',sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;background:linear-gradient(180deg,#e4f3f0 0,#f4f8f8 320px,#f6f8f9 100%)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+.top{position:sticky;top:0;z-index:5;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(238,246,245,.92);backdrop-filter:blur(8px)}
+.top .back{position:absolute;left:4px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:20px;text-align:center}
+.top h1{font-size:16px;font-family:P-SB,sans-serif;font-weight:400}
+main{padding:4px 16px 40px;display:flex;flex-direction:column;gap:12px}
+.card{background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.9);border-radius:16px;box-shadow:0 4px 14px rgba(23,23,25,.06);padding:16px}
+.h{font-size:16px;font-family:P-B,sans-serif;font-weight:400}
+.sub{font-size:12px;color:var(--mute);margin-top:2px;line-height:1.4}
+/* 머리 */
+.goalrow{display:flex;align-items:center;justify-content:space-between;min-height:28px}
+.goalchip{display:inline-flex;align-items:center;min-height:44px;margin:-8px 0 -8px -4px;padding:0 4px;font-size:12px;font-family:P-SB,sans-serif;color:var(--mid)}
+.opt{display:flex;align-items:flex-start;gap:12px;width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin-top:8px;text-align:left}
+.opt.sel{border-color:var(--mint);background:#f1fbfa}
+.opt .rd{width:20px;height:20px;border-radius:50%;border:1.5px solid #c4c7cc;flex:none;margin-top:1px;display:flex;align-items:center;justify-content:center}
+.opt.sel .rd{border-color:var(--mint);background:var(--mint)}
+.opt.sel .rd::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+.opt b{font-size:14px;font-family:P-SB,sans-serif;font-weight:400;display:flex;align-items:center;gap:6px}
+.opt b em{font-style:normal;font-size:11px;padding:2px 6px;border-radius:6px;background:var(--face);color:var(--mid)}
+.opt small{display:block;font-size:12px;color:var(--mute);margin-top:2px;line-height:1.4}
+.sheet .acts{display:flex;gap:8px;margin-top:14px}
+.sheet .acts button{flex:1;height:48px;border-radius:12px;text-align:center;font-family:P-SB,sans-serif;background:var(--face)}
+.sheet .acts .go{background:var(--mint-d);color:#fff}
+.sheet .acts .go[disabled]{opacity:.35;cursor:default}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);z-index:30;background:#171719;color:#fff;border-radius:12px;padding:12px 16px;font-size:12px;line-height:1.5;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;max-width:340px;text-align:left}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast b{display:block;font-family:P-SB,sans-serif;font-weight:400;font-size:14px}
+.goalchip b{font-size:16px;color:var(--fg);font-family:P-SB,sans-serif;font-weight:400;margin-left:6px}
+.info{width:44px;height:44px;margin:-8px -12px -8px 0;display:flex;align-items:center;justify-content:center}
+.info i{width:20px;height:20px;border:1px solid #c4c7cc;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:11px;color:var(--mute)}
+.hero{display:flex;align-items:center;gap:12px;margin-top:0}
+.g{position:relative;width:116px;height:116px;flex:none}
+.g svg{display:block}
+.g .c{position:absolute;inset:0 0 10px 0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.g .c b{font-size:40px;line-height:42px;letter-spacing:-1.5px;font-family:P-B,sans-serif;font-weight:400}
+.g .c span{font-size:12px;font-family:P-SB,sans-serif;color:#8A5C00}
+.hr{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.next{font-size:14px;line-height:20px;white-space:nowrap;font-family:P-SB,sans-serif}
+.next em{font-style:normal;color:var(--mint-d)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:4px;min-height:28px;padding:0 7px;white-space:nowrap;border-radius:6px;font-size:12px;font-family:P-SB,sans-serif;background:var(--face);color:var(--mid)}
+.chip.t{background:var(--mint-bg);color:var(--mint-d)}
+.chip::before{content:"";position:absolute}
+.chipb{position:relative}
+.chipb::after{content:"";position:absolute;inset:-8px -2px}
+.trend{margin-top:8px;padding-top:10px;border-top:1px solid var(--line)}
+.trend .hd{display:flex;align-items:center;justify-content:space-between}
+.trend .hd b{font-size:14px;font-family:P-SB,sans-serif;font-weight:400}
+.seg{display:inline-flex;background:var(--face);border-radius:8px;padding:2px}
+.seg button{height:28px;min-width:40px;padding:0 8px;border-radius:6px;font-size:12px;color:var(--mute);text-align:center}
+.seg button.on{background:#fff;color:var(--fg);font-family:P-SB,sans-serif;box-shadow:0 1px 2px rgba(23,23,25,.08)}
+#chart svg{display:block;width:100%;height:auto;margin-top:6px}
+.tl{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-top:2px}
+.tl b{color:var(--fg);font-family:P-SB,sans-serif;font-weight:400}
+.note{margin-top:10px;font-size:12px;color:var(--mute)}
+.acc{margin:12px -16px -16px;padding:10px 16px;border-top:1px solid var(--line);border-radius:0 0 16px 16px;background:linear-gradient(90deg,#f1fbfa,#fff);display:flex;align-items:center;gap:8px;min-height:48px;width:calc(100% + 32px)}
+.acc .t{flex:1;font-size:14px;font-family:P-SB,sans-serif}.acc .t u{text-decoration:none;color:var(--mint-d)}
+.acc .go{font-size:12px;font-family:P-SB,sans-serif;color:var(--mint-d);text-decoration:underline;text-underline-offset:3px}
+/* 하위 지표 */
+.ihd{display:flex;align-items:flex-start;justify-content:space-between}
+.legend{display:flex;gap:10px;font-size:11px;color:var(--mute);margin-top:4px}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle}
+.legend u{display:inline-block;width:2px;height:10px;background:var(--fg);opacity:.45;margin-right:4px;vertical-align:middle}
+.ind{margin-top:4px}
+.it{border-top:1px solid var(--line)}.it:first-child{border-top:0}
+.rowb{display:grid;grid-template-columns:1fr 84px 40px 14px;align-items:center;gap:8px;min-height:56px;width:100%;padding:6px 0}
+.nm b{font-size:14px;font-family:P-SB,sans-serif;font-weight:400;display:flex;align-items:center;gap:6px}
+.nm small{display:block;font-size:12px;color:var(--mute);margin-top:1px;line-height:1.3}
+.fo{font-size:11px;padding:2px 6px;border-radius:6px;background:var(--org-bg);color:var(--org);font-family:P-SB,sans-serif}
+.nw{font-size:11px;color:var(--mint-d);font-family:P-SB,sans-serif}
+.trk{position:relative;height:8px;border-radius:999px;background:var(--line)}
+.trk i{position:absolute;left:0;top:0;bottom:0;border-radius:999px}
+.trk u{position:absolute;top:-3px;width:2px;height:14px;background:var(--fg);opacity:.45;border-radius:1px}
+.val{text-align:right;font-size:20px;line-height:22px;font-family:P-B,sans-serif}
+.val small{display:block;font-size:11px;line-height:12px;color:var(--mute);font-family:P-M,sans-serif}
+.val small.up{color:var(--mint-d)}
+.ch{color:var(--mute);font-size:13px;text-align:center;transition:transform .2s}
+.it.open .ch{transform:rotate(180deg)}
+.fx{display:flex;align-items:center;gap:6px;margin:-2px 0 8px;padding:8px 10px;border-radius:10px;background:rgba(240,123,42,.07);font-size:12px;font-family:P-SB,sans-serif;width:100%;min-height:36px;text-align:left}
+.fx span:last-child{margin-left:auto;color:var(--mint-d)}
+.det{display:none;padding:2px 0 12px}
+.it.open .det{display:block}
+.reason{font-size:12px;line-height:1.5;color:var(--mid);background:var(--face);border-radius:10px;padding:10px 12px;margin-bottom:10px}
+.dh{font-size:12px;color:var(--mute);margin:10px 0 4px}
+.mvr{display:grid;grid-template-columns:96px 1fr 36px;align-items:center;gap:8px;min-height:28px;font-size:12px}
+.mvr .tr{display:block;height:6px;border-radius:999px;background:var(--face);position:relative}
+.mvr .tr i{position:absolute;top:0;bottom:0;border-radius:999px}
+.mvr .up i{background:var(--mint)}.mvr .dn i{background:#b4b7bd}
+.mvr .v{text-align:right;font-family:P-SB,sans-serif}
+.mvr.up .v{color:var(--mint-d)}.mvr.dn .v{color:var(--mute)}
+.none{font-size:12px;color:var(--mute);padding:4px 0}
+.lg{display:grid;grid-template-columns:18px 1fr;gap:8px;padding:6px 0;font-size:12px;line-height:1.4}
+.lg i{font-style:normal;font-family:P-SB,sans-serif}
+.lg .u{color:var(--mint-d)}.lg .d{color:var(--mute)}
+.lg b{font-family:P-SB,sans-serif;font-weight:400}.lg span{display:block;color:var(--mid)}
+.more{font-size:12px;color:var(--mute);padding:2px 0 0 26px}
+.evs{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.evs span{font-size:11px;padding:3px 7px;border-radius:6px;background:var(--face);color:var(--mid)}
+/* 이번 주 움직임 */
+.mv{margin-top:12px;display:flex;flex-direction:column}
+.mv .r{display:grid;grid-template-columns:100px 1fr 32px;align-items:center;min-height:36px;font-size:14px}
+.mv .tr{position:relative;height:8px}.mv .tr:before{content:"";position:absolute;left:50%;top:-14px;bottom:-14px;width:1px;background:var(--line)}
+.mv .tr i{position:absolute;top:0;height:8px;border-radius:999px}
+.mv .up i{left:50%;background:var(--mint)}.mv .dn i{right:50%;background:#b4b7bd}
+.mv .v{text-align:right;font-family:P-SB,sans-serif}.mv .up .v{color:var(--mint-d)}.mv .dn .v{color:var(--mute)}
+.mv .cap{display:grid;grid-template-columns:100px 1fr 32px;font-size:11px;color:var(--mute);margin-bottom:2px}
+.mv .cap div{display:flex;justify-content:space-between}
+.mv .other{font-size:12px;color:var(--mute);margin-top:8px}
+.wk{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.wk .head{display:flex;justify-content:space-between;font-size:12px}.wk .head b{font-family:P-SB,sans-serif;font-weight:400}.wk .head span{color:var(--mute)}
+.wk .row{display:flex;justify-content:space-between;margin-top:8px}
+.wk .d{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;color:var(--mute);width:36px}
+.wk .d s{width:24px;height:24px;border-radius:50%;background:var(--face);border:1px solid var(--line);display:block}
+.wk .d.ok s{background:var(--mint);border-color:var(--mint)}.wk .d.today s{background:#fff;border:1.5px dashed var(--mint)}.wk .d.today{color:var(--fg);font-family:P-SB,sans-serif}
+/* 올리려면 */
+.ups{margin-top:6px}
+.up1{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 0;border-top:1px solid var(--line);width:100%}
+.ups .up1:first-child{border-top:0}
+.up1 .ic{width:36px;height:36px;border-radius:10px;background:var(--face);display:flex;align-items:center;justify-content:center;font-size:18px}
+.up1 .tx{flex:1}.up1 .tx b{display:block;font-size:14px;font-family:P-SB,sans-serif;font-weight:400}
+.up1 .tx span{display:flex;gap:4px;margin-top:4px;flex-wrap:wrap}
+.up1 .tx span em{font-style:normal;font-size:11px;padding:2px 6px;border-radius:6px;background:var(--face);color:var(--mid)}
+.up1 .tx span em.f{background:var(--org-bg);color:var(--org)}.up1 .tx span em.n{background:var(--mint-bg);color:var(--mint-d)}
+.up1 .gn{font-size:12px;font-family:P-SB,sans-serif;color:var(--mint-d)}.up1 .ar{color:#c4c7cc;font-size:16px}
+/* 시트 */
+.scrim{position:fixed;inset:0;background:rgba(23,23,25,.4);z-index:20;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;max-width:412px;margin:0 auto;background:#fff;border-radius:16px 16px 0 0;padding:12px 20px 28px;transform:translateY(100%);transition:transform .25s}
+.sheet.on{transform:none}
+.sheet .grab{width:36px;height:4px;border-radius:999px;background:var(--line);margin:0 auto 14px}
+.sheet h4{font-size:16px;font-family:P-B,sans-serif;font-weight:400;margin-bottom:10px}
+.sheet p{font-size:14px;line-height:1.55;color:var(--mid);padding:6px 0}
+.sheet p b{color:var(--fg);font-family:P-SB,sans-serif;font-weight:400}
+.sheet .rw{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);font-size:14px}
+.sheet .rw b{font-family:P-SB,sans-serif;font-weight:400;color:var(--mint-d)}
+.sheet .close{width:100%;height:44px;margin-top:12px;border-radius:12px;background:var(--face);text-align:center;font-family:P-SB,sans-serif}
+</style></head><body>
+<div class="top"><button class="back" data-nav="/" aria-label="뒤로">‹</button><h1>이너뷰티 점수</h1></div>
+<main>
+
+<section class="card" id="head">
+  <div class="goalrow"><button class="goalchip" id="goalchip" aria-haspopup="dialog" aria-label="내 목표 피부, 바꾸기">내 목표<b id="goalname">피부</b><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button><button class="info" id="infob" aria-label="점수 설명"><i>i</i></button></div>
+  <div class="hero">
+    <div class="g" id="gauge"><svg width="116" height="116" viewBox="0 0 96 96" aria-hidden="true"><path d="M19.01 76.99 A41 41 0 0 1 65.84 11.09" fill="none" stroke="#F28A6A" stroke-width="8"/><path d="M67.37 11.87 A41 41 0 0 1 85.54 31.52" fill="none" stroke="#F9C65B" stroke-width="8"/><path d="M86.20 33.11 A41 41 0 0 1 88.93 50.36" fill="none" stroke="#6CC189" stroke-width="8"/><path d="M88.80 52.07 A41 41 0 0 1 76.99 76.99" fill="none" stroke="#6495DE" stroke-width="8"/><circle cx="19.01" cy="76.99" r="4.0" fill="#F28A6A"/><circle cx="76.99" cy="76.99" r="4.0" fill="#6495DE"/><circle cx="74.08" cy="16.37" r="6.4" fill="#fff" stroke="#E6AC39" stroke-width="3"/></svg><div class="c"><b>65</b><span>보통</span></div></div>
+    <div class="hr">
+      <div class="next"><em>75점</em>부터 좋음 · <em>10점</em> 남았어요</div>
+      <div class="chips"><button class="chip chipb" id="ydb">어제보다 ▲1</button><span class="chip t">실천이 늘고 있어요</span></div>
+    </div>
+  </div>
+  <div class="trend" id="trend">
+    <div class="hd"><b>점수 흐름</b><div class="seg" id="seg"><button class="on" data-w="4">4주</button><button data-w="12">12주</button></div></div>
+    <div id="chart"></div>
+    <div class="tl"><span id="tl1"></span><span id="tl2"></span></div>
+  </div>
+  <p class="note">이 점수는 검사와 문진, 기록한 실천을 함께 반영해요</p>
+  <button class="acc" data-nav="/completeness"><span class="t">분석 정확도 <u>66%</u></span><span class="go">검사로 +10% ›</span></button>
+</section>
+
+<section class="card" id="ind">
+  <div class="ihd"><div><div class="h">하위 지표</div><p class="sub">가장 낮은 지표가 점수를 가장 크게 움직여요</p></div></div>
+  <div class="legend"><span><i style="background:var(--c1)"></i>개선 필요</span><span><i style="background:var(--c2)"></i>보통</span><span><i style="background:var(--c3)"></i>좋음</span><span><i style="background:var(--c4)"></i>매우 좋음</span><span><u></u>평소</span></div>
+  <div class="ind" id="indl"></div>
+</section>
+
+<section class="card" id="move">
+  <div class="sub" style="margin:0">이번 주 움직임</div>
+  <div class="h" style="margin-top:2px;font-size:20px">지난주보다 1점 올랐어요</div>
+  <p class="sub">무엇이 점수를 움직였는지 나눠 봤어요</p>
+  <div class="mv">
+    <div class="cap"><span></span><div><span>내린 것</span><span>올린 것</span></div><span></span></div>
+    <div class="r up"><span>식단</span><div class="tr"><i style="width:40%"></i></div><span class="v">+1</span></div>
+    <div class="r up"><span>새로 확인된 지표</span><div class="tr"><i style="width:40%"></i></div><span class="v">+1</span></div>
+    <div class="r dn"><span>회복</span><div class="tr"><i style="width:40%"></i></div><span class="v">−1</span></div>
+  </div>
+  <p class="other">그 밖의 기록은 점수에 거의 영향이 없었어요</p>
+  <div class="wk" id="wk">
+    <div class="head"><b>이번 주 체크인</b><span>3일 했어요</span></div>
+    <div class="row"><div class="d ok"><s></s>월</div><div class="d ok"><s></s>화</div><div class="d ok"><s></s>수</div><div class="d today"><s></s>목</div><div class="d"><s></s>금</div><div class="d"><s></s>토</div><div class="d"><s></s>일</div></div>
+  </div>
+</section>
+
+<section class="card" id="todo">
+  <div class="h">올리려면</div>
+  <p class="sub">오늘 하면 내일 아침 점수에 들어가요</p>
+  <div class="ups">
+    <button class="up1"><span class="ic">🌙</span><span class="tx"><b>23시 30분 전에 잠자리에 들기</b><span><em class="f">집중</em><em>회복력</em></span></span><span class="gn">+1점</span><span class="ar">›</span></button>
+    <button class="up1"><span class="ic">🍚</span><span class="tx"><b>2주 정제 탄수화물 줄여 보기</b><span><em class="n">밤에 확정</em><em>탄수화물 대사</em></span></span><span class="ar">›</span></button>
+    <button class="up1"><span class="ic">📖</span><span class="tx"><b>잠들기 전 종이책 읽기</b><span><em>진정</em><em>회복력</em></span></span><span class="gn">+1점</span><span class="ar">›</span></button>
+  </div>
+</section>
+</main>
+<div class="scrim" id="scrim"></div>
+<div class="toast" id="toast" role="status"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
+<script>
+/* 구간 색: 85 매우 좋음 · 75 좋음 · 60 보통 · 그 아래 개선 필요 (홈 호 게이지와 같은 색) */
+function band(v){return v>=85?'#6495DE':v>=75?'#6CC189':v>=60?'#F9C65B':'#F28A6A'}
+/* 시안 값: 하위 지표 5개(정책 10-3 이너뷰티 줄 순서 · 이름 · 쉬운 질문) */
+var IND=[
+ {k:'gut',n:'장',q:'장이 편하고 배변이 편안해요?',v:73,b:68,d:0,mv:[['식단',1]],logs:[['u','식단 · 식이섬유','하루 평균 22g, 기준 25g까지 3g 남았어요'],['u','식단 · 발효식품','하루 평균 1회, 기준 1회를 채웠어요'],['d','배변 · 배변 만족도','평균 3.4, 기준 4보다 낮아요']],more:1,ev:['검사','문진','기록']},
+ {k:'food',n:'음식 반응',nw:'새로 확인됐어요',q:'먹고 나서 불편한 반응이 적은 편이에요?',v:77,b:72,d:0,mv:[['새로 확인된 지표',1]],logs:[['u','식단 · 과민식품','이번 주 과민식품을 두 번 드셨어요']],more:0,ev:['검사','문진']},
+ {k:'calm',n:'진정',q:'트러블이나 붉어짐이 덜 올라와요?',v:56,b:57,d:0,mv:[],logs:[['d','스킨케어 · 자외선 차단','차단제 사용 주 평균 3회, 기준 매일보다 적어요']],more:2,ev:['검사','문진','기록']},
+ {k:'carb',n:'탄수화물 대사',q:'먹은 것이 당으로 크게 출렁이지 않아요?',v:61,b:62,d:-1,mv:[],logs:[['u','식단 · 탄수화물 비율','평균 58%, 기준 50~65% 안이에요']],more:1,ev:['문진','기록']},
+ {k:'rec',n:'회복력',f:1,q:'쉬고 나면 다시 기운이 차요?',v:44,b:50,d:3,mv:[['회복',-1]],reason:'잠을 설치는 날이 많다고 답하셨어요. 평균 2시 10분에 잠들었어요.',logs:[['d','회복 · 수면','평균 2시 10분에 잠들었어요, 기준 1시 37분보다 33분 늦어요'],['d','아침 체크인','개운함 낮은 답 2일']],more:0,ev:['문진','기록']}
+];
+function esc(s){return String(s)}
+function renderInd(IND){var html='';IND.forEach(function(x){
+  var dl=x.d>0?'<small class="up">▲'+x.d+'</small>':x.d<0?'<small>▼'+(-x.d)+'</small>':'';
+  var det='';
+  if(x.ph){det='<div class="reason">시안 값이에요. 이 목표의 지표 상세(움직인 관리 · 평소와 비교한 기록)는 이너뷰티와 같은 틀로 채워요.</div><div class="evs">'+x.ev.map(function(e){return "<span>"+e+"</span>"}).join('')+'</div>';}else{
+if(x.reason)det+='<div class="reason">'+x.reason+'</div>';
+  det+='<div class="dh">이번 주 이 지표를 움직인 관리</div>';
+  if(x.mv.length){x.mv.forEach(function(m){var up=m[1]>0;det+='<div class="mvr '+(up?'up':'dn')+'"><span>'+m[0]+'</span><span class="tr"><i style="'+(up?'left:0':'left:0')+';width:'+Math.min(100,Math.abs(m[1])*40)+'%"></i></span><span class="v">'+(up?'+':'−')+Math.abs(m[1])+'</span></div>'})}
+  else det+='<div class="none">이번 주 점수에 닿은 움직임이 없어요</div>';
+  det+='<div class="dh">평소와 비교한 기록</div>';
+  x.logs.forEach(function(l){det+='<div class="lg"><i class="'+l[0]+'">'+(l[0]=='u'?'▲':'▼')+'</i><div><b>'+l[1]+'</b><span>'+l[2]+'</span></div></div>'});
+  if(x.more)det+='<div class="more">그 밖 '+x.more+'개</div>';
+  det+='<div class="evs">'+x.ev.map(function(e){return '<span>'+e+'</span>'}).join('')+'</div>';}
+  html+='<div class="it'+'" data-k="'+x.k+'"><button class="rowb" aria-expanded="false"><span class="nm"><b>'+x.n+(x.f?'<span class="fo">집중</span>':'')+(x.nw?'<span class="nw">'+x.nw+'</span>':'')+'</b><small>'+x.q+'</small></span><span class="trk"><i style="width:'+x.v+'%;background:'+band(x.v)+'"></i><u style="left:'+x.b+'%"></u></span><span class="val">'+x.v+dl+'</span><span class="ch">⌄</span></button>'+
+   (x.f?'<button class="fx"><span class="fo">집중</span><span>'+(x.ph?x.n+'을 올리는 오늘 할 일':'23시 30분 전에 잠자리에 들기')+'</span><span>+1점</span></button>':'')+'<div class="det">'+det+'</div></div>';
+});
+document.getElementById('indl').innerHTML=html;}
+renderInd(IND);
+document.getElementById('indl').addEventListener('click',function(e){var b=e.target.closest('.rowb');if(!b)return;var it=b.parentElement,open=!it.classList.contains('open');[].forEach.call(this.children,function(c){c.classList.remove('open');c.querySelector('.rowb').setAttribute('aria-expanded','false')});if(open){it.classList.add('open');b.setAttribute('aria-expanded','true')}});
+/* 점수 흐름 */
+function series(n,s0,e0){var a=[],s=7;for(var i=0;i<n;i++){s=(s*9301+49297)%233280;var t=i/(n-1);a.push(Math.round(s0+(e0-s0)*t+(s/233280-.5)*3))}a[n-1]=e0;return a}
+function draw(w){var d=w==4?series(28,57,65):series(84,49,65),W=340,H=64,pl=4,pr=28,pt=6,pb=6,lo=40,hi=90;
+ var x=function(i){return pl+(W-pl-pr)*i/(d.length-1)},y=function(v){return pt+(H-pt-pb)*(1-(v-lo)/(hi-lo))};
+ var p=d.map(function(v,i){return(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)}).join('');
+ var g=[[60,'#F9C65B'],[75,'#6CC189']].map(function(a){return '<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+y(a[0])+'" y2="'+y(a[0])+'" stroke="'+a[1]+'" stroke-opacity=".6" stroke-dasharray="3 3"/><text x="'+(W-pr+6)+'" y="'+(y(a[0])+4)+'" font-size="11" fill="#72747b">'+a[0]+'</text>'}).join('');
+ document.getElementById('chart').innerHTML='<svg viewBox="0 0 '+W+' '+H+'">'+g+'<path d="'+p+'" fill="none" stroke="#22c3bc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="'+x(d.length-1)+'" cy="'+y(d[d.length-1])+'" r="5" fill="#22c3bc" stroke="#fff" stroke-width="2"/></svg>';
+ document.getElementById('tl1').innerHTML=w+'주 전 <b>'+d[0]+'</b>';document.getElementById('tl2').innerHTML='오늘 <b>'+d[d.length-1]+'</b>'}
+draw(4);
+document.getElementById('seg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(this.children,function(c){c.classList.toggle('on',c===b)});draw(+b.dataset.w)});
+/* 시트: ⓘ 점수 설명 · 어제 대비 하루 몫 */
+var sheet=document.getElementById('sheet'),scrim=document.getElementById('scrim');
+function openS(h,nc){sheet.innerHTML='<div class="grab"></div>'+h+(nc?'':'<button class="close">닫기</button>');if(!nc)sheet.onclick=function(e){if(e.target.closest('.close'))closeS()};sheet.classList.add('on');scrim.classList.add('on')}
+function closeS(){sheet.classList.remove('on');scrim.classList.remove('on')}
+scrim.onclick=closeS;
+
+/* 목표 5개(정책 10-3 목표 줄: 지표 이름 · 쉬운 질문). 이너뷰티(피부) 외 값과 상세는 시안 */
+var GOALS=[
+ {k:'skin',label:'피부',name:'피부',sub:'장 · 음식 반응 · 진정 · 탄수화물 대사 · 회복력'},
+ {k:'weight',label:'체중 관리',name:'체중 관리',sub:'탄수화물 대사 · 근육 대사 · 지방 대사 · 에너지 대사 · 컨디션 균형',rows:[['탄수화물 대사','먹은 탄수화물을 고르게 쓰고 있어요?',66,64,2],['근육 대사','줄여 먹는 동안 단백질을 잘 쓰고 있어요?',58,58,0],['지방 대사','지방을 에너지로 쓰고 있어요?',71,69,-1],['에너지 대사','줄여 먹어도 기운이 이어져요?',49,52,1],['컨디션 균형','마음이 편안하게 관리를 이어 가고 있어요?',63,60,0]]},
+ {k:'gut',label:'장 관리',name:'장 관리',sub:'소화 · 배변 활동 · 장 환경 · 회복력',rows:[['소화','먹고 나서 배가 편해요?',70,68,1],['배변 활동','배변이 편하고 모양과 횟수가 편안해요?',55,57,-2],['장 환경','배가 편하고 먹은 것이 잘 맞는 편이에요?',62,60,0],['회복력','쉬고 나면 다시 기운이 차요?',74,70,3]]},
+ {k:'muscle',label:'근육 관리',name:'근육 관리',sub:'근육 합성 · 근력 · 에너지 대사 · 컨디션 균형',rows:[['근육 합성','운동한 만큼 근육 쪽으로 잘 이어지고 있어요?',64,62,1],['근력','같은 운동에서 드는 무게가 오르고 있어요?',52,55,0],['에너지 대사','운동할 기운이 있고 자고 나면 회복돼요?',68,66,2],['컨디션 균형','마음이 편안하게 관리를 이어 가고 있어요?',61,60,0]]},
+ {k:'well',label:'웰니스',name:'웰니스',sub:'대사 · 장 · 자극 반응 · 회복력',rows:[['대사','먹은 것을 기운으로 잘 쓰고 있어요?',67,65,1],['장','먹은 것을 편하게 소화하고 내보내요?',72,72,0],['자극 반응','햇빛, 먼지 같은 생활 환경에 덜 지치는 편이에요?',59,61,-1],['회복력','쉬고 나면 다시 채워져요?',63,60,2]]}
+];
+var curGoal='skin';
+function ownRows(g){var rows=g.rows,min=Math.min.apply(null,rows.map(function(r){return r[2]}));
+ return rows.map(function(r){return {k:r[0],n:r[0],q:r[1],v:r[2],b:r[3],d:r[4],f:r[2]===min?1:0,mv:[],logs:[],more:0,ev:['문진','기록'],ph:1}})}
+function applyGoal(k){curGoal=k;var g=GOALS.filter(function(x){return x.k===k})[0];
+ document.getElementById('goalname').textContent=g.name;document.getElementById('goalchip').setAttribute('aria-label','내 목표 '+g.name+', 바꾸기');
+ renderInd(k==='skin'?IND:ownRows(g));
+ document.querySelector('#ind .h').nextElementSibling.textContent=k==='skin'?'가장 낮은 지표가 점수를 가장 크게 움직여요':'이 목표는 시안 값이에요 · 가장 낮은 지표가 점수를 가장 크게 움직여요'}
+var toastT;function toast(a,b){var t=document.getElementById('toast');t.innerHTML='<b>'+a+'</b>'+b;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on')},3200)}
+document.getElementById('goalchip').onclick=function(){
+ var pick=curGoal;
+ function paint(){openS('<h4>목표 바꾸기</h4><p style="padding-top:0">목표를 바꾸면 점수도 그 목표 기준으로 다시 보여요.</p>'+GOALS.map(function(g){return '<button class="opt'+(g.k===pick?' sel':'')+'" data-k="'+g.k+'"><span class="rd"></span><span><b>'+g.label+(g.k===curGoal?'<em>지금 목표</em>':'')+'</b><small>'+g.sub+'</small></span></button>'}).join('')+'<div class="acts"><button class="cancel">취소</button><button class="go"'+(pick===curGoal?' disabled':'')+'>바꾸기</button></div>',true)}
+ paint();
+ sheet.onclick=function(e){var o=e.target.closest('.opt');if(o){pick=o.dataset.k;paint();return}
+  if(e.target.closest('.cancel')){closeS();return}
+  var go=e.target.closest('.go');if(go&&!go.disabled){closeS();applyGoal(pick);var g=GOALS.filter(function(x){return x.k===pick})[0];toast(g.label+'로 바꿨어요','점수를 이 목표 기준으로 다시 보여 드려요')}}
+};
+document.getElementById('infob').onclick=function(){openS('<h4>이너뷰티 점수</h4><p>목표마다 보는 지표가 달라요. 목표를 바꾸면 점수도 그 목표 기준으로 다시 보여요.</p><p>검사와 문진으로 본 상태에서 출발해요. 꾸준히 하면 오르는 쪽으로 움직여요.</p><p><b>가장 낮은 지표가 점수를 가장 크게 움직여요.</b> 아직 보지 못한 지표는 점수에 넣지 않아요.</p>')};
+document.getElementById('ydb').onclick=function(){openS('<h4>어제보다 1점 올랐어요</h4><div class="rw"><span>식단 · 어제 점심 기록</span><b>+1</b></div><div class="rw"><span>그 밖의 움직임</span><span>0</span></div>')};
+</script>
+<script src="http://localhost:8775/ux-pins.js"></script>
+<script src="http://localhost:8775/ux-bridge.js"></script>
+</body></html>

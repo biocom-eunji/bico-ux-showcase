@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="ko"><head><base href="http://localhost:8776/"><meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta httpequiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GoalScore</title>
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    
+  <link rel="icon" href="/favicon.ico"><style>[stylesheet-group="0"] { }
+html { text-size-adjust: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+body { margin: 0px; }
+input::-webkit-search-cancel-button, input::-webkit-search-decoration, input::-webkit-search-results-button, input::-webkit-search-results-decoration { display: none; }
+[stylesheet-group="1"] { }
+.css-g5y9jx { align-content: flex-start; align-items: stretch; background-color: rgba(0, 0, 0, 0); border: 0px solid black; box-sizing: border-box; display: flex; flex-basis: auto; flex-direction: column; flex-shrink: 0; list-style: none; margin: 0px; min-height: 0px; min-width: 0px; padding: 0px; position: relative; text-decoration: none; z-index: 0; }
+.css-146c3p1 { background-color: rgba(0, 0, 0, 0); border: 0px solid black; box-sizing: border-box; color: rgb(0, 0, 0); display: inline; font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; list-style: none; margin: 0px; padding: 0px; position: relative; text-align: start; text-decoration: none; white-space: pre-wrap; overflow-wrap: break-word; }
+.css-1jxf684 { background-color: rgba(0, 0, 0, 0); border: 0px solid black; box-sizing: border-box; color: inherit; display: inline; font: inherit; list-style: none; margin: 0px; padding: 0px; position: relative; text-align: inherit; text-decoration: none; white-space: inherit; overflow-wrap: break-word; }
+.css-9pa8cd { inset: 0px; height: 100%; opacity: 0; position: absolute; width: 100%; z-index: -1; }
+.css-11aywtz { appearance: none; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border: 0px solid black; box-sizing: border-box; font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; resize: none; }
+[stylesheet-group="2"] { }
+.r-xoduu5 { display: inline-flex; }
+.r-1udh08x { overflow: hidden; }
+.r-krxsd3 { display: -webkit-box; }
+.r-1qsk4np { overflow: clip; }
+.r-13awgt0 { flex: 1 1 0%; }
+.r-fx7oqy { border-color: rgb(0, 0, 255); }
+.r-rs99b7 { border-width: 1px; }
+.r-60ke3l { border-color: rgb(0, 128, 0); }
+.r-d045u9 { border-width: 2px; }
+.r-4a18lf { border-color: rgb(255, 0, 0); }
+.r-6t2glc { border-radius: 40px; }
+.r-1dzdj1l { border-radius: 10px; }
+.r-1bq2mok { margin: 3px; }
+.r-edyy15 { padding: 8px; }
+.r-1uu6nss { padding: 5px; }
+.r-1sp51qo { padding: 10px; }
+.r-11mg6pl { border-color: rgb(255, 255, 255); }
+.r-z2wwpe { border-radius: 4px; }
+.r-1rf8fdq { border-width: 1.5px; }
+.r-cpet4d { border-radius: 999px; }
+.r-cdmcib { border-radius: 3px; }
+.r-1fuqb1j { border-radius: 24px; }
+.r-d23pfw { padding: 24px; }
+.r-1pcd2l5 { padding: 20px; }
+.r-1f0042m { border-radius: 5px; }
+.r-1pajgtx { border-color: rgb(221, 217, 210); }
+.r-omhkgu { border-color: rgb(99, 220, 212); }
+.r-1mxhqmb { border-radius: 11px; }
+.r-42olwf { border-color: rgba(0, 0, 0, 0); }
+.r-whuqzp { padding: 18px; }
+.r-t23y2h { border-radius: 14px; }
+.r-3eox7y { border-color: rgb(236, 233, 227); }
+.r-y47klf { border-radius: 20px; }
+.r-1a0tsw4 { border-color: rgb(196, 191, 183); }
+.r-eg6o18 { border-style: dashed; }
+.r-1867qdf { border-radius: 16px; }
+.r-xyw6el { padding: 12px; }
+.r-v3zo9w { border-radius: 52px; }
+.r-1d6rzhh { border-width: 3px; }
+.r-1dedoh8 { border-radius: 9px; }
+.r-1jkafct { border-radius: 2px; }
+.r-1slz7xr { padding: 14px; }
+.r-1q9bdsx { border-radius: 12px; }
+.r-1qtehb9 { border-color: rgba(255, 255, 255, 0.95); }
+.r-1ojx0r { border-color: rgba(255, 255, 255, 0.9); }
+.r-6ncur5 { border-radius: 18px; }
+.r-2dha18 { border-color: rgba(45, 212, 191, 0.25); }
+.r-1likckc { border-color: rgb(157, 235, 229); }
+.r-v0w889 { border-color: rgba(22, 35, 43, 0.06); }
+.r-uh6pds { border-color: rgba(20, 184, 166, 0.55); }
+.r-16fc5cy { border-color: rgb(22, 35, 43); }
+.r-ql4itl { border-color: rgba(255, 255, 255, 0.8); }
+.r-dt4309 { border-color: rgba(22, 35, 43, 0.1); }
+.r-1ylenci { border-radius: 15px; }
+.r-qpntkw { padding: 6px; }
+.r-1mx9ush { flex: 1.05 1 0%; }
+.r-tuq35u { padding: 4px; }
+.r-1g9jpl7 { border-color: rgba(245, 158, 11, 0.45); }
+.r-kdyh1x { border-radius: 6px; }
+.r-146eth8 { padding: 3px; }
+.r-1xfd6ze { border-radius: 8px; }
+.r-5t7aoe { border-radius: 17px; }
+.r-pfk1gr { border-color: rgba(22, 35, 43, 0.08); }
+.r-4zvafu { border-radius: 26px; }
+.r-1c91kl6 { flex: 2.1 1 0%; }
+.r-x2bzcr { border-color: rgba(22, 35, 43, 0.18); }
+.r-12kx4ge { flex: 1.2 1 0%; }
+.r-1dmp1wv { border-color: rgba(20, 184, 166, 0.18); }
+.r-6mzjlw { flex: 1.3 1 0%; }
+.r-323w9t { border-color: rgb(79, 107, 237); }
+.r-19vt7tw { border-color: rgba(22, 35, 43, 0.35); }
+.r-isbqh5 { border-color: rgba(22, 35, 43, 0.14); }
+.r-1txcine { border-radius: 13px; }
+.r-1rccn9a { border-color: rgba(22, 35, 43, 0.2); }
+.r-1b9emub { border-color: rgba(22, 35, 43, 0.25); }
+.r-17kx6ax { border-color: rgba(22, 35, 43, 0.12); }
+.r-1h3o2sy { border-color: rgb(14, 124, 114); }
+.r-1dtln6q { border-color: rgba(22, 35, 43, 0.15); }
+.r-1px6drs { border-radius: 7px; }
+.r-1yb55fl { border-color: rgb(20, 184, 166); }
+.r-1iabw5z { border-color: rgb(242, 196, 107); }
+.r-a1yn9n { border-radius: 28px; }
+.r-19e3961 { border-color: rgb(20, 168, 161); }
+.r-xa2vdj { border-width: 2.5px; }
+.r-1bbty6m { border-color: rgb(254, 215, 170); }
+.r-qwd59z { border-radius: 1px; }
+.r-1idfib4 { padding: 22px; }
+.r-1h84pjw { border-radius: 25px; }
+.r-nsbfu8 { padding: 16px; }
+.r-qxtw8h { border-radius: 27px; }
+.r-bp2lcr { border-color: rgba(22, 35, 43, 0.22); }
+.r-ukjltj { border-color: rgba(20, 184, 166, 0.35); }
+.r-8t1df7 { border-color: rgba(255, 255, 255, 0.16); }
+.r-16uyjmq { border-radius: 22px; }
+.r-jdnsjj { border-color: rgba(16, 185, 129, 0.6); }
+.r-1ewvkcz { border-color: rgba(240, 160, 0, 0.6); }
+.r-1udnf30 { border-radius: 48px; }
+.r-1llaxt6 { border-radius: 30px; }
+.r-xd0y5s { border-color: rgba(22, 35, 43, 0.07); }
+.r-1wgcgn0 { border-color: rgb(110, 79, 214); }
+.r-1mn29yb { border-color: rgb(20, 191, 170); }
+.r-10i9vjc { border-color: rgba(109, 91, 208, 0.16); }
+.r-lrdzvv { border-color: rgba(94, 154, 46, 0.33); }
+.r-zhp00w { padding: 2px; }
+.r-z6oodd { border-color: rgb(94, 154, 46); }
+.r-1m7mu0x { border-radius: 36px; }
+.r-14f9gny { border-width: 4px; }
+.r-1c8yatt { border-color: rgb(201, 210, 214); }
+.r-4302f8 { border-color: rgba(240, 123, 42, 0.35); }
+.r-zmcx4b { border-color: rgb(232, 98, 44); }
+.r-ywh22c { border-color: rgb(242, 201, 76); }
+.r-1dd6zmg { border-color: rgb(240, 123, 42); }
+.r-1uf23xb { border-color: rgb(230, 235, 236); }
+.r-159ov5z { border-color: rgba(233, 194, 122, 0.45); }
+.r-1n10cws { border-color: rgba(139, 234, 229, 0.35); }
+.r-1it8qch { border-color: rgb(204, 245, 242); }
+.r-1sqmqjm { border-color: rgb(34, 195, 188); }
+.r-1rp9prg { border-color: rgb(233, 194, 122); }
+.r-k9912p { border-color: rgb(225, 227, 232); }
+.r-gtirh7 { border-color: rgb(63, 191, 143); }
+.r-1660mfm { border-color: rgba(124, 92, 230, 0.18); }
+.r-4iqdns { border-radius: 84px; }
+.r-12c4dqi { border-color: rgba(242, 169, 59, 0.35); }
+.r-jp2mtx { border-color: rgba(255, 246, 218, 0.18); }
+.r-xeruh9 { border-color: rgba(20, 184, 166, 0.16); }
+.r-1tc8tc6 { border-color: rgb(192, 131, 0); }
+.r-nrru08 { border-color: rgba(20, 184, 166, 0.45); }
+.r-10jnvle { border-radius: 21px; }
+.r-sdzlij { border-radius: 9999px; }
+.r-rsf8d3 { border-color: rgba(40, 32, 24, 0.06); }
+.r-1g868lv { border-color: rgba(255, 255, 255, 0.14); }
+.r-4mkfoz { border-radius: 60px; }
+.r-1tw7wh { border-radius: 50px; }
+.r-q343qr { border-color: rgba(40, 32, 24, 0.1); }
+.r-1ozwntb { border-color: rgb(172, 174, 181); }
+[stylesheet-group="2.1"] { }
+.r-n7gxbd { padding-left: 4px; padding-right: 4px; }
+.r-ytbthy { padding-bottom: 10px; padding-top: 10px; }
+.r-cxgwc0 { padding-left: 24px; padding-right: 24px; }
+.r-is05cd { padding-left: 8px; padding-right: 8px; }
+.r-n5f61p { margin-bottom: 3px; margin-top: 3px; }
+.r-jdiy1a { margin-left: 11px; margin-right: 11px; }
+.r-1e084wi { padding-left: 0px; padding-right: 0px; }
+.r-184id4b { margin-bottom: 12px; margin-top: 12px; }
+.r-jusfrs { margin-left: 12px; margin-right: 12px; }
+.r-1rsorjc { padding-left: 36px; padding-right: 36px; }
+.r-17q4wm6 { margin-left: 5px; margin-right: 5px; }
+.r-1yd117h { padding-bottom: 7px; padding-top: 7px; }
+.r-1ntr0p { padding-left: 5px; padding-right: 5px; }
+.r-1d7mnkm { padding-bottom: 15px; padding-top: 15px; }
+.r-c6ipad { padding-left: 7px; padding-right: 7px; }
+.r-3o4zer { padding-left: 12px; padding-right: 12px; }
+.r-1mmae3n { padding-bottom: 12px; padding-top: 12px; }
+.r-u9wvl5 { padding-left: 20px; padding-right: 20px; }
+.r-1ubuhtd { padding-left: 10px; padding-right: 10px; }
+.r-11f147o { padding-bottom: 8px; padding-top: 8px; }
+.r-3pj75a { padding-left: 16px; padding-right: 16px; }
+.r-gu64tb { padding-left: 14px; padding-right: 14px; }
+.r-cnw61z { padding-bottom: 4px; padding-top: 4px; }
+.r-18c5d7m { padding-left: 6px; padding-right: 6px; }
+.r-1s5swlz { padding-bottom: 9px; padding-top: 9px; }
+.r-1dhf81w { margin-bottom: -6px; margin-top: -6px; }
+.r-1apnidv { margin-bottom: 14px; margin-top: 14px; }
+.r-1ezpcd1 { padding-left: 9px; padding-right: 9px; }
+.r-bhtmuz { margin-left: 20px; margin-right: 20px; }
+.r-vuvdlw { padding-bottom: 6px; padding-top: 6px; }
+.r-1559e4e { padding-bottom: 2px; padding-top: 2px; }
+.r-11gswi8 { padding-left: 3px; padding-right: 3px; }
+.r-w7s2jr { padding-bottom: 16px; padding-top: 16px; }
+.r-284m6k { padding-left: 18px; padding-right: 18px; }
+.r-bplmwz { margin-bottom: 10px; margin-top: 10px; }
+.r-11o76bp { padding-bottom: 1px; padding-top: 1px; }
+.r-xjggfu { padding-bottom: 3px; padding-top: 3px; }
+.r-1ml3abn { padding-bottom: 14px; padding-top: 14px; }
+.r-1m1l54l { padding-left: 11px; padding-right: 11px; }
+.r-1qrrd7t { padding-bottom: 28px; padding-top: 28px; }
+.r-zo2zu6 { padding-bottom: 24px; padding-top: 24px; }
+.r-1xpp3t0 { margin-left: 16px; margin-right: 16px; }
+.r-kritb0 { padding-bottom: 11px; padding-top: 11px; }
+.r-lzsi8w { padding-left: 2px; padding-right: 2px; }
+.r-8dgmk1 { margin-left: 8px; margin-right: 8px; }
+.r-1537yvj { margin-left: 4px; margin-right: 4px; }
+.r-rehuqn { padding-bottom: 5px; padding-top: 5px; }
+.r-5o2xco { margin-bottom: 5px; margin-top: 5px; }
+.r-u4gi5m { padding-left: 13px; padding-right: 13px; }
+.r-1fkl15p { padding-left: 32px; padding-right: 32px; }
+.r-1wci7jc { padding-left: 28px; padding-right: 28px; }
+[stylesheet-group="2.2"] { }
+.r-1e97lx8 { margin-right: 3px; }
+.r-1sqnqi2 { margin-left: 3px; }
+.r-1lhn9r { margin-left: -14.5px; }
+.r-1g4tz6n { margin-right: -14.5px; }
+.r-vpmibe { right: -3px; }
+.r-c59us2 { left: -3px; }
+.r-1vl2501 { padding-right: 24px; }
+.r-1euzeng { padding-left: 24px; }
+.r-w67my2 { padding-left: 16px; }
+.r-1h31txp { padding-right: 16px; }
+.r-1cwvpvk { margin-left: 12px; }
+.r-1a11zyx { margin-right: 12px; }
+.r-uhung1 { margin-left: 10px; }
+.r-9mo606 { margin-right: 10px; }
+.r-wizibn { margin-left: 5px; }
+.r-qb41rp { margin-right: 5px; }
+[stylesheet-group="3"] { }
+.r-1p0dtai { bottom: 0px; }
+.r-1d2f490 { left: 0px; }
+.r-u8s1d { position: absolute; }
+.r-zchlnj { right: 0px; }
+.r-ipm5af { top: 0px; }
+.r-105ug2t { pointer-events: auto !important; }
+.r-12vffkv > * { pointer-events: auto; }
+.r-12vffkv { pointer-events: none !important; }
+.r-ah5dr5 > * { pointer-events: none; }
+.r-ah5dr5 { pointer-events: auto !important; }
+.r-633pao > * { pointer-events: none; }
+.r-633pao { pointer-events: none !important; }
+.r-dnmrzs { max-width: 100%; }
+.r-1udbk01 { text-overflow: ellipsis; }
+.r-3s2u2q { white-space: nowrap; }
+.r-1iln25a { overflow-wrap: normal; }
+.r-8akbws { -webkit-box-orient: vertical; }
+.r-lrvibr { user-select: none; }
+.r-1xnzce8 { user-select: text; }
+.r-1loqt21 { cursor: pointer; }
+.r-11yh6sk { overflow-x: hidden; }
+.r-buy8e9 { overflow-y: hidden; }
+.r-19z077z { touch-action: none; }
+.r-2eszeu::-webkit-scrollbar { display: none; }
+.r-2eszeu { scrollbar-width: none; }
+.r-150rngu { }
+.r-eqz5dr { flex-direction: column; }
+.r-16y2uox { flex-grow: 1; }
+.r-1wbh5a2 { flex-shrink: 1; }
+.r-1rnoaur { overflow-y: auto; }
+.r-agouwx { transform: translateZ(0px); }
+.r-18u37iz { flex-direction: row; }
+.r-lltvgl { overflow-x: auto; }
+.r-1777fci { justify-content: center; }
+.r-gtdqiz { position: sticky; }
+.r-mhe3cw { z-index: 10; }
+.r-mfh4gg { scroll-snap-type: x mandatory; }
+.r-1ocf4r9 { scroll-snap-type: y mandatory; }
+.r-cpa5s6 { scroll-snap-align: start; }
+.r-1euycsn { flex-direction: row-reverse; }
+.r-1d5kdc7 { flex-direction: column-reverse; }
+.r-173mzie { transform: scaleY(-1); }
+.r-10v3vxq { transform: scaleX(-1); }
+.r-19wmn03 { width: 20px; }
+.r-u92y06 { background-color: rgb(255, 165, 0); }
+.r-1mlwlqe { flex-basis: auto; }
+.r-417010 { z-index: 0; }
+.r-1niwhzg { background-color: rgba(0, 0, 0, 0); }
+.r-vvn4in { background-position: center center; }
+.r-u6sd8q { background-repeat: no-repeat; }
+.r-4gszlv { background-size: cover; }
+.r-1pi2tsx { height: 100%; }
+.r-13qz1uu { width: 100%; }
+.r-1wyyakw { z-index: -1; }
+.r-1sxrcry { background-size: auto; }
+.r-ehq7j7 { background-size: contain; }
+.r-1mrlafo { background-position: 0px center; }
+.r-17leim2 { background-repeat: repeat; }
+.r-x3cy2q { background-size: 100% 100%; }
+.r-173mn98 { align-self: flex-end; }
+.r-fdjqy7 { text-align: left; }
+.r-1ff274t { text-align: right; }
+.r-q4m81j { text-align: center; }
+.r-1otgn73 { touch-action: manipulation; }
+.r-1onu96p { }
+.r-1b43r93 { font-size: 14px; }
+.r-8ay8q1 { letter-spacing: 0.1px; }
+.r-rjixqe { line-height: 20px; }
+.r-1awozwy { align-items: center; }
+.r-icoktb { opacity: 0.5; }
+.r-1472mwg { height: 24px; }
+.r-lrsllp { width: 24px; }
+.r-60vfwk { min-width: 1px; }
+.r-1inkyih { font-size: 17px; }
+.r-356f0p { letter-spacing: 0.35px; }
+.r-1habvwh { align-items: flex-start; }
+.r-kemksi { background-color: rgb(0, 0, 0); }
+.r-1kihuf0 { align-self: center; }
+.r-76blku { height: 21px; }
+.r-1xzupcd { width: 13px; }
+.r-qklmqi { border-bottom-width: 1px; }
+.r-6taxm2::-webkit-input-placeholder { color: var(--placeholderTextColor); opacity: 1; }
+.r-6taxm2::placeholder { color: var(--placeholderTextColor); opacity: 1; }
+.r-van48c { caret-color: transparent; }
+.r-1oszu61 { align-items: stretch; }
+.r-ws9h79 { left: 4px; }
+.r-12f6czt { top: 17px; }
+.r-3mc0re { right: 8px; }
+.r-vboj7i { top: -7px; }
+.r-10ptun7 { height: 16px; }
+.r-1janqcz { width: 16px; }
+.r-1ld3bg { top: -4px; }
+.r-1i10wst { font-size: 18px; }
+.r-5oul0u { margin-bottom: 8px; }
+.r-1kb76zh { margin-right: 8px; }
+.r-knv0ih { margin-top: 8px; }
+.r-1h0z5md { justify-content: flex-start; }
+.r-17s6mgv { justify-content: flex-end; }
+.r-1iusvr4 { flex-basis: 0px; }
+.r-qfi6ny { top: 30000px; }
+.r-184en5c { z-index: 1; }
+.r-h0d30l { height: 28px; }
+.r-726pan { width: 31px; }
+.r-z80fyv { height: 20px; }
+.r-o4n3w5 { width: 23px; }
+.r-18nhz7w { top: -3px; }
+.r-10x49cs { font-size: 10px; }
+.r-135wba7 { line-height: 24px; }
+.r-n6v787 { font-size: 13px; }
+.r-1enofrn { font-size: 12px; }
+.r-rxcuwo { height: 50%; }
+.r-ojf8lh { gap: 6px; }
+.r-7zxjxo { background-color: rgb(198, 42, 47); }
+.r-3da1kt { height: 8px; }
+.r-1jg9483 { width: 8px; }
+.r-1029d6i { top: -24px; }
+.r-z5qs1h { gap: 2px; }
+.r-sga3zk { height: 64px; }
+.r-h3s6tt { height: 48px; }
+.r-1yxedwg { top: 8px; }
+.r-18tzken { width: 56px; }
+.r-3sxh79 { top: -1px; }
+.r-15d164r { margin-bottom: 10px; }
+.r-o29g2o { height: 30%; }
+.r-obd0qt { align-items: flex-end; }
+.r-1cmwbt1 { gap: 8px; }
+.r-6gpygo { margin-bottom: 12px; }
+.r-1xcajam { position: fixed; }
+.r-sfbmgh { z-index: 9999; }
+.r-9daxd3 { animation-duration: 250ms; }
+.r-leqjx2 { animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+.r-s62m2j { animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715); }
+.r-xx3c9p { animation-name: r-imtty0; }
+@-webkit-keyframes r-imtty0 { 
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes r-imtty0 { 
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.r-6dt33c { opacity: 1; }
+.r-g3mlsw { animation-name: r-t2lo5v; }
+@-webkit-keyframes r-t2lo5v { 
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes r-t2lo5v { 
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.r-orgf3d { opacity: 0; }
+.r-1qulhi1 { animation-name: r-1pzkwqh; }
+@-webkit-keyframes r-1pzkwqh { 
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0%); }
+}
+@keyframes r-1pzkwqh { 
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0%); }
+}
+.r-ghxds0 { transform: translateY(0%); }
+.r-13aq9py { animation-name: r-1iq689l; }
+@-webkit-keyframes r-1iq689l { 
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(100%); }
+}
+@keyframes r-1iq689l { 
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(100%); }
+}
+.r-bi4vy9 { transform: translateY(100%); }
+.r-14lw9ot { background-color: rgb(255, 255, 255); }
+.r-1ny4l3l { outline-style: none; }
+.r-5863hi { background-color: rgb(252, 251, 248); }
+.r-1xhec65 { border-top-left-radius: 32px; }
+.r-1y08a0c { border-top-right-radius: 32px; }
+.r-nlm231 { box-shadow: rgba(40, 32, 24, 0.1) 0px -6px 28px; }
+.r-t9dsei { max-width: 412px; }
+.r-1lx6x3m { background-color: rgb(221, 217, 210); }
+.r-4v7adb { height: 5px; }
+.r-1acpoxo { width: 36px; }
+.r-vdqesa { min-height: 54px; }
+.r-kzbkwu { padding-bottom: 12px; }
+.r-m611by { padding-top: 10px; }
+.r-cylz2f { box-shadow: rgba(40, 32, 24, 0.06) 0px 4px 8px, rgba(40, 32, 24, 0.14) 0px 16px 40px; }
+.r-f4gmv6 { gap: 16px; }
+.r-1w2pmg { height: 0px; }
+.r-1h2t8mc { width: 0px; }
+.r-5m7kqp { box-shadow: rgba(40, 32, 24, 0.04) 0px 2px 4px, rgba(40, 32, 24, 0.08) 0px 8px 24px; }
+.r-17h3xhb { background-color: rgb(236, 233, 227); }
+.r-1or9b2r { height: 10px; }
+.r-17ox5tf { background-color: rgb(34, 195, 188); }
+.r-1r8g8re { height: 36px; }
+.r-mpwp9f { background-color: rgb(234, 251, 250); }
+.r-1gg6uyq { top: -30px; }
+.r-136ojw6 { z-index: 2; }
+.r-12tjpc6 { background-color: rgb(43, 45, 62); }
+.r-18yzcnr { height: 22px; }
+.r-855088 { border-left-color: rgba(0, 0, 0, 0); }
+.r-jjeupf { border-left-width: 5px; }
+.r-114ovsg { border-right-color: rgba(0, 0, 0, 0); }
+.r-1ytx3yt { border-right-width: 5px; }
+.r-5vvpuv { border-top-color: rgb(43, 45, 62); }
+.r-15tvil0 { border-top-width: 5px; }
+.r-ltgprq { margin-left: 14px; }
+.r-g5juex { box-shadow: rgba(40, 32, 24, 0.04) 0px 1px 2px, rgba(40, 32, 24, 0.05) 0px 2px 8px; }
+.r-1xbve24 { height: 6px; }
+.r-156q2ks { margin-top: 10px; }
+.r-eu3ka { height: 40px; }
+.r-1s2bzr4 { margin-top: 12px; }
+.r-9aw3ui { gap: 4px; }
+.r-mipnz4 { min-height: 58px; }
+.r-8hc5te { width: 6px; }
+.r-5kkj8d { border-top-width: 1px; }
+.r-vrdy5x { background-color: rgb(246, 244, 239); }
+.r-mabqd8 { height: 32px; }
+.r-1yvhtrz { width: 32px; }
+.r-l71dzp { margin-top: 14px; }
+.r-e1k2in { right: 16px; }
+.r-me5xia { height: 104px; }
+.r-1w0ad5y { width: 104px; }
+.r-1ss6j8a { padding-left: 6px; }
+.r-n3sdqm { padding-right: 14px; }
+.r-1yvj64i { box-shadow: rgb(15, 138, 133) 0px 2px 0px; }
+.r-18ctlrj { transform: rotate(0deg); }
+.r-1iww7jx { width: 28px; }
+.r-1xv8qyr { background-color: rgba(30, 31, 43, 0.1); }
+.r-7a29px { width: 64px; }
+.r-580adz { gap: 5px; }
+.r-1g7fiml { height: 30px; }
+.r-hdaws3 { height: 4px; }
+.r-duq9be { background-color: rgba(30, 31, 43, 0.42); }
+.r-1ws546s { background-color: rgba(255, 255, 255, 0.7); }
+.r-1hlnpa { height: 3px; }
+.r-432wen { width: 3px; }
+.r-1ssbvtb { gap: 12px; }
+.r-1w6e6rj { flex-wrap: wrap; }
+.r-fuasvu { width: 47.5%; }
+.r-15zivkp { margin-bottom: 4px; }
+.r-l4nmg1 { padding-bottom: 2px; }
+.r-9rh5za { height: 184px; }
+.r-1irem4e { width: 124px; }
+.r-1t68eob { left: 10px; }
+.r-1ki14p2 { top: 10px; }
+.r-o1t6rw { background-color: rgba(255, 255, 255, 0.88); }
+.r-1v1z2uz { margin-top: 32px; }
+.r-15uob9q { backdrop-filter: blur(18px) saturate(140%); }
+.r-a1cw4y { background-color: rgba(255, 255, 255, 0.66); }
+.r-1f30a7q { box-shadow: rgba(20, 60, 70, 0.08) 0px 10px 32px, rgba(20, 60, 70, 0.04) 0px 1px 2px; }
+.r-1laap1c { background-color: rgba(255, 255, 255, 0.55); }
+.r-1wzrnnt { margin-top: 16px; }
+.r-1es941q { background-color: rgb(255, 244, 214); }
+.r-zb5ffd { background-color: rgba(45, 212, 191, 0.1); }
+.r-1444osr { margin-top: 18px; }
+.r-1wtj0ep { justify-content: space-between; }
+.r-1x0uki6 { margin-top: 20px; }
+.r-1dzvdtw { background-color: rgba(255, 255, 255, 0.6); }
+.r-1hjwoze { height: 18px; }
+.r-13nqf9o { right: 6px; }
+.r-1677hl4 { top: 6px; }
+.r-12ym1je { width: 18px; }
+.r-1aockid { width: 40px; }
+.r-1tjv1om { background-color: rgba(255, 255, 255, 0.75); }
+.r-zx9znk { height: 34px; }
+.r-1nanytk { border-top-color: rgba(22, 35, 43, 0.06); }
+.r-14gqq1x { margin-top: 4px; }
+.r-13gvty3 { padding-top: 6px; }
+.r-1gbrr0k { background-color: rgba(255, 255, 255, 0.62); }
+.r-1qq4jgk { box-shadow: rgba(20, 60, 70, 0.06) 0px 6px 18px; }
+.r-7r4507 { height: 150px; }
+.r-3ew84i { width: 160px; }
+.r-8eqzbf { right: 10px; }
+.r-1yukp4t { top: 36px; }
+.r-1r4mrgy { box-shadow: rgba(20, 184, 166, 0.16) 0px 10px 30px; }
+.r-1j408jt { box-shadow: rgba(45, 212, 191, 0.28) 0px 6px 16px; }
+.r-rwqe4o { width: 48px; }
+.r-1wtsa8k { box-shadow: rgba(20, 60, 70, 0.06) 0px 2px 8px; }
+.r-1jud28t { background-color: rgb(22, 35, 43); }
+.r-1g0lpak { background-color: rgba(20, 184, 166, 0.08); }
+.r-1ryybdm { background-color: rgba(20, 184, 166, 0.1); }
+.r-slr29l { background-color: rgb(20, 184, 166); }
+.r-tn79kl { background-color: rgba(255, 255, 255, 0.5); }
+.r-5t7p9m { padding-top: 14px; }
+.r-1599tul { gap: 3px; }
+.r-a5pmau { margin-right: 2px; }
+.r-1l3pe9z { background-color: rgba(22, 35, 43, 0.1); }
+.r-1mcorv5 { width: 14px; }
+.r-n7aj9u { background-color: rgba(255, 255, 255, 0.8); }
+.r-1ugchlj { height: 44px; }
+.r-usgzl9 { width: 44px; }
+.r-102gzdx { height: 52px; }
+.r-1kz6sp { width: 52px; }
+.r-ky29hr { bottom: 2px; }
+.r-1c7ggc8 { right: -2px; }
+.r-199wky7 { width: 30px; }
+.r-1hxbrd1 { gap: 1px; }
+.r-11dcagt { background-color: rgba(255, 255, 255, 0.72); }
+.r-1nspd18 { box-shadow: rgba(20, 60, 70, 0.1) 0px 10px 28px; }
+.r-ctyi22 { left: 20px; }
+.r-1ff5aok { right: 20px; }
+.r-wiqbqh { background-color: rgba(20, 184, 166, 0.09); }
+.r-1omf37f { background-color: rgba(22, 35, 43, 0.07); }
+.r-92ng3h { width: 1px; }
+.r-y90kgq { box-shadow: rgba(45, 212, 191, 0.28) 0px 4px 12px; }
+.r-175ul89 { box-shadow: rgba(20, 60, 70, 0.08) 0px 6px 16px; }
+.r-10g5efv { width: 4px; }
+.r-1gd7gm8 { background-color: rgba(22, 35, 43, 0.05); }
+.r-1a8msfu { height: 38px; }
+.r-zl2h9q { margin-bottom: 2px; }
+.r-18kcblu { background-color: rgba(245, 158, 11, 0.14); }
+.r-1i71y14 { gap: 14px; }
+.r-i03k3n { padding-bottom: 14px; }
+.r-11c0sde { margin-top: 24px; }
+.r-1imganj { border-top-color: rgba(22, 35, 43, 0.07); }
+.r-1csm0kw { background-color: rgba(251, 191, 36, 0.18); }
+.r-1rngwi6 { margin-left: 6px; }
+.r-58zr8j { background-color: rgba(20, 184, 166, 0.07); }
+.r-1mnsbye { background-color: rgba(22, 35, 43, 0.06); }
+.r-kc8jnq { margin-top: 6px; }
+.r-15avf5y { background-color: rgba(124, 92, 230, 0.08); }
+.r-uaa2di { gap: 10px; }
+.r-18jsjv8 { background-color: rgb(124, 92, 230); }
+.r-5orghg { width: 34px; }
+.r-xd6kpl { padding-bottom: 8px; }
+.r-5ljxz0 { box-shadow: rgba(20, 40, 50, 0.1) 0px 1px 4px; }
+.r-lhjcfo { box-shadow: rgba(20, 40, 50, 0.05) 0px 2px 12px; }
+.r-iphfwy { padding-bottom: 4px; }
+.r-htfu76 { margin-left: -8px; }
+.r-1ujkv8a { aspect-ratio: 1 / 1; }
+.r-d1ft7z { border-top-color: rgba(22, 35, 43, 0.08); }
+.r-1vwolk8 { padding-left: 30px; }
+.r-1o79hvu { border-top-width: 1.5px; }
+.r-5soawk { width: 10px; }
+.r-1pz39u2 { align-self: stretch; }
+.r-1hvjb8t { padding-right: 4px; }
+.r-1h2cal0 { background-color: rgba(255, 255, 255, 0.86); }
+.r-gmdvlt { width: 70%; }
+.r-1cvj4g8 { margin-top: 1px; }
+.r-m2pi6t { padding-left: 4px; }
+.r-9aemit { padding-right: 0px; }
+.r-brtyop { background-color: rgba(14, 159, 110, 0.1); }
+.r-yc9v9c { width: 22px; }
+.r-c3b7nh { background-color: rgba(22, 35, 43, 0.04); }
+.r-1yu32zb { background-color: rgba(240, 123, 42, 0.1); }
+.r-109y4c4 { height: 1px; }
+.r-3yu8bk { background-color: rgba(22, 35, 43, 0.03); }
+.r-k200y { align-self: flex-start; }
+.r-1bymd8e { margin-top: 2px; }
+.r-6st0mw { background-color: rgba(255, 255, 255, 0.9); }
+.r-tbmifm { height: 12px; }
+.r-12ubb6f { margin-left: -6px; }
+.r-16eto9q { width: 12px; }
+.r-q6myw3 { background-color: rgba(240, 123, 42, 0.12); }
+.r-f1odvy { margin-bottom: 6px; }
+.r-1v8razd { background-color: rgba(79, 107, 237, 0.09); }
+.r-18n52cv { background-color: rgb(240, 123, 42); }
+.r-z2qzgk { width: 5px; }
+.r-t8wl0g { box-shadow: rgba(22, 35, 43, 0.08) 0px 2px 8px; }
+.r-tskmnb { padding-top: 8px; }
+.r-1d4mawv { margin-right: 4px; }
+.r-6026j { background-color: rgba(255, 255, 255, 0.85); }
+.r-xk8hg5 { background-color: rgba(14, 159, 110, 0.08); }
+.r-1nts94k { background-color: rgba(20, 184, 166, 0.12); }
+.r-1k25im9 { height: 26px; }
+.r-k5y9r7 { height: 9px; }
+.r-dcwkvy { background-color: rgb(14, 124, 114); }
+.r-15ysp7h { min-height: 32px; }
+.r-peo1c { min-height: 44px; }
+.r-96jqvi { color: rgb(22, 35, 43); }
+.r-1glkqn6 { width: 80px; }
+.r-1mwlp6a { height: 56px; }
+.r-b5h31w { padding-left: 20px; }
+.r-10gryf7 { min-height: 56px; }
+.r-19tr8jt { border-top-color: rgb(221, 217, 210); }
+.r-h7jq50 { border-top-color: rgba(22, 35, 43, 0.12); }
+.r-r6l3g7 { width: 46px; }
+.r-1wukzpo { box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.r-v8435y { background-color: rgba(246, 248, 250, 0.94); }
+.r-ttdzmv { padding-top: 12px; }
+.r-uskppk { border-left-width: 6px; }
+.r-1vaxdpq { border-right-width: 6px; }
+.r-1gt8b4j { border-top-width: 7px; }
+.r-19i43ro { margin-top: -1px; }
+.r-12p90e { width: 30.5%; }
+.r-q8j3ys { aspect-ratio: 0.8 / 1; }
+.r-1i9qp3d { bottom: 6px; }
+.r-113wkv2 { height: 62%; }
+.r-187fuq8 { width: 62%; }
+.r-e4vmuz { background-color: rgba(22, 35, 43, 0.38); }
+.r-1815qxl { background-color: rgb(110, 79, 214); }
+.r-wqs5d5 { background-color: rgba(22, 35, 43, 0.45); }
+.r-109xzkb { background-color: rgba(231, 127, 163, 0.14); }
+.r-164w75q { box-shadow: rgba(20, 60, 70, 0.06) 0px 6px 20px; }
+.r-11wg9zk { width: 31%; }
+.r-ot627b { background-color: rgb(255, 243, 214); }
+.r-1qcuu04 { background-color: rgb(242, 169, 59); }
+.r-1d4yvf4 { bottom: -6px; }
+.r-3psxfr { right: -6px; }
+.r-erd55g { height: 300px; }
+.r-zz8wa8 { bottom: 14px; }
+.r-1atfiou { background-color: rgba(20, 184, 166, 0.14); }
+.r-yivrw8 { height: 62px; }
+.r-bxiggj { width: 58px; }
+.r-bnwqim { position: relative; }
+.r-100sdzr { background-color: rgb(139, 92, 246); }
+.r-yhgbp1 { background-color: rgb(255, 241, 230); }
+.r-95jzfe { padding-top: 16px; }
+.r-1qct17c { background-color: rgba(139, 92, 246, 0.08); }
+.r-1ozsyd3 { height: 7px; }
+.r-12rgx7y { width: 7px; }
+.r-1pexk7n { height: 14px; }
+.r-1x5g5r8 { margin-left: -7px; }
+.r-h7qcla { background-color: rgba(22, 35, 43, 0.55); }
+.r-lqms97 { margin-left: -1px; }
+.r-m5arl1 { width: 2px; }
+.r-jmzhmk { background-color: rgba(22, 35, 43, 0.08); }
+.r-f727ji { padding-left: 12px; }
+.r-1qfoi16 { padding-right: 10px; }
+.r-fo3ijl { background-color: rgba(15, 23, 30, 0.35); }
+.r-1uv9fpa { border-top-left-radius: 28px; }
+.r-92sni { border-top-right-radius: 28px; }
+.r-rabhyy { padding-bottom: 28px; }
+.r-1iud8zs { height: 50px; }
+.r-19tjxh9 { width: 26px; }
+.r-nr111b { background-color: rgb(20, 163, 139); }
+.r-1pnwn9g { gap: 18px; }
+.r-1v6e3re { min-width: 48px; }
+.r-slt9an { background-color: rgba(22, 35, 43, 0.15); }
+.r-19yznuf { min-height: 52px; }
+.r-9o7li6 { max-width: 32px; }
+.r-1ul06mb { margin-left: 32px; }
+.r-1iefiy2 { min-height: 76px; }
+.r-vqgaj3 { width: 47.8%; }
+.r-vli0x7 { background-color: rgba(246, 248, 250, 0.92); }
+.r-1sn7ly2 { height: 54px; }
+.r-9x86tz { background-color: rgba(255, 255, 255, 0.94); }
+.r-12tufrq { box-shadow: rgba(20, 60, 70, 0.06) 0px -6px 20px; }
+.r-b7jicq { background-color: rgb(240, 90, 90); }
+.r-1tl9yi8 { height: 17px; }
+.r-xegap4 { min-width: 17px; }
+.r-1ptriwd { right: 2px; }
+.r-o9xkwf { top: 2px; }
+.r-1hpxcsk { padding-right: 7px; }
+.r-qpl8lv { height: 13px; }
+.r-b6ed6s { border-top-color: rgba(22, 35, 43, 0.1); }
+.r-ss4zfz { height: 260px; }
+.r-yen7m { height: 76px; }
+.r-z2g584 { width: 76px; }
+.r-1mr2fcz { background-color: rgb(30, 31, 43); }
+.r-drfeu3 { background-color: rgba(0, 0, 0, 0.5); }
+.r-1fwr1gf { background-color: rgba(20, 24, 32, 0.55); }
+.r-68dbde { background-color: rgba(110, 79, 214, 0.08); }
+.r-r0x25o { background-color: rgba(110, 79, 214, 0.12); }
+.r-11vfo88 { font-family: Pretendard-Medium; }
+.r-a023e6 { font-size: 15px; }
+.r-4d76ec { height: 200px; }
+.r-19lq7b1 { top: 16px; }
+.r-1urfncx { height: 210px; }
+.r-1pgswnq { right: 12px; }
+.r-1qd7xl { top: 12px; }
+.r-8skrfr { background-color: rgba(110, 79, 214, 0.1); }
+.r-9zvdko { height: 220px; }
+.r-14n71q7 { background-color: rgba(255, 255, 255, 0.92); }
+.r-mw4fk6 { background-color: rgba(255, 255, 255, 0.35); }
+.r-1f12m5q { left: 14px; }
+.r-dukzhd { right: 14px; }
+.r-161ttwi { left: 12px; }
+.r-18v59z3 { background-color: rgba(16, 185, 129, 0.08); }
+.r-v264y1 { background-color: rgba(255, 244, 214, 0.7); }
+.r-tceitz { left: 16px; }
+.r-1exl8l4 { top: 26px; }
+.r-12rqra3 { padding-bottom: 6px; }
+.r-1ah4tor { padding-right: 20px; }
+.r-1liledf { left: 15px; }
+.r-gc4qy6 { top: 23px; }
+.r-1t7zxhp { width: 9px; }
+.r-izyxko { background-color: rgba(124, 92, 230, 0.1); }
+.r-oja97k { background-color: rgba(255, 255, 255, 0.45); }
+.r-17b9qp5 { box-shadow: none; }
+.r-8xar1p { background-color: rgb(255, 95, 95); }
+.r-x46dho { margin-left: 48px; }
+.r-c4bzc { background-color: rgba(156, 156, 196, 0.18); }
+.r-1njcn02 { height: 96px; }
+.r-7bouqp { width: 96px; }
+.r-1a1dyw { min-height: 50px; }
+.r-jah4h5 { font-family: Pretendard-Regular; }
+.r-bcqeeo { min-width: 0px; }
+.r-1el8sus { min-height: 72px; }
+.r-3mtglp { row-gap: 16px; }
+.r-b8tw3c { width: 33.33%; }
+.r-uvuy5l { height: 60px; }
+.r-cfp7ip { width: 60px; }
+.r-ymb2bz { background-color: rgba(22, 35, 43, 0.4); }
+.r-1by1ycs { bottom: -2px; }
+.r-mju97r { background-color: rgba(61, 139, 255, 0.08); }
+.r-1qy525r { background-color: rgba(242, 169, 59, 0.14); }
+.r-ero68b { min-height: 40px; }
+.r-13yce4e { border-top-width: 0px; }
+.r-1ii58gl { min-height: 34px; }
+.r-1dpl46z { border-bottom-right-radius: 4px; }
+.r-q5oqfz { max-width: 80%; }
+.r-kicko2 { border-top-left-radius: 4px; }
+.r-1aiv68t { min-height: 132px; }
+.r-bfyox3 { background-color: rgba(124, 92, 230, 0.06); }
+.r-1pl7oy7 { min-height: 48px; }
+.r-1cad53l { margin-bottom: 14px; }
+.r-wy61xf { height: 72px; }
+.r-1blnp2b { width: 72px; }
+.r-1sxmub1 { background-color: rgba(20, 191, 170, 0.1); }
+.r-wowrgg { border-top-left-radius: 24px; }
+.r-oho8x9 { border-top-right-radius: 24px; }
+.r-1b4july { background-color: rgb(109, 91, 208); }
+.r-jfqlqc { background-color: rgba(109, 91, 208, 0.06); }
+.r-w66pwp { background-color: rgba(109, 91, 208, 0.1); }
+.r-8jfcpp { top: -2px; }
+.r-3wo2vq { box-shadow: rgba(20, 40, 50, 0.1) 0px 1px 3px; }
+.r-nqvlx3 { background-color: rgb(30, 42, 48); }
+.r-rub58a { background-color: rgb(94, 154, 46); }
+.r-8br3cv { width: 54px; }
+.r-vy5dpa { background-color: rgba(94, 154, 46, 0.08); }
+.r-1sz40an { background-color: rgb(42, 147, 224); }
+.r-epq5cr { height: 2px; }
+.r-bqhs8p { background-color: rgba(42, 147, 224, 0.14); }
+.r-vegsy3 { background-color: rgba(42, 147, 224, 0.12); }
+.r-xz0uhw { background-color: rgba(232, 98, 44, 0.08); }
+.r-srfdww { color: rgb(91, 107, 115); }
+.r-1vql1iw { background-color: rgba(232, 98, 44, 0.06); }
+.r-1d07w5a { background-color: rgb(232, 98, 44); }
+.r-pmk5zc { background-color: rgba(232, 98, 44, 0.1); }
+.r-1asz9cs { margin-left: 34px; }
+.r-174vidy { min-height: 28px; }
+.r-4ukpa0 { min-width: 96px; }
+.r-o8yidv { border-top-left-radius: 6px; }
+.r-1fxoj37 { background-color: rgba(22, 35, 43, 0.25); }
+.r-1wyvozj { left: 50%; }
+.r-ohpm7q { margin-left: -0.75px; }
+.r-fxjlkv { width: 1.5px; }
+.r-1965nfw { background-color: rgb(241, 236, 255); }
+.r-1i9mljd { background-color: rgb(247, 244, 255); }
+.r-195d4m8 { height: 46px; }
+.r-1mhb1uw { width: 42px; }
+.r-oucylx { border-bottom-color: rgba(0, 0, 0, 0); }
+.r-wgabs5 { border-bottom-width: 2px; }
+.r-5ycac0 { border-bottom-color: rgb(22, 35, 43); }
+.r-1q8c80s { height: 190px; }
+.r-xl3lkw { background-color: rgba(0, 0, 0, 0.45); }
+.r-rki7wi { bottom: 12px; }
+.r-6fme6q { background-color: rgb(244, 154, 62); }
+.r-1m8wmbt { background-color: rgb(42, 36, 104); }
+.r-9njtsq { height: 130px; }
+.r-h7zev3 { top: 14px; }
+.r-ge9izo { width: 130px; }
+.r-legojq { background-color: rgba(255, 255, 255, 0.18); }
+.r-cdu7y4 { width: 58%; }
+.r-vb83pc { background-color: rgb(94, 224, 200); }
+.r-c8f5pn { background-color: rgba(255, 255, 255, 0.1); }
+.r-wchn2d { min-height: 138px; }
+.r-1t01tom { margin-top: auto; }
+.r-bt1l66 { min-height: 20px; }
+.r-s8bhmr { min-width: 56px; }
+.r-1c7c99w { background-color: rgb(238, 242, 242); }
+.r-1kxynqz { border-top-color: rgb(230, 235, 236); }
+.r-1hfyk0a { padding-left: 10px; }
+.r-j2kj52 { padding-right: 12px; }
+.r-4u9vol { background-color: rgb(255, 246, 218); }
+.r-1tswrmp { background-color: rgba(16, 24, 58, 0.78); }
+.r-13hce6t { margin-left: 4px; }
+.r-1jkjb { margin-left: 8px; }
+.r-1ifxtd0 { margin-bottom: 16px; }
+.r-1x6tx0e { margin-left: -5px; }
+.r-r6hvp4 { top: 31px; }
+.r-4wgw6l { min-width: 32px; }
+.r-crvab5 { background-color: rgb(236, 230, 255); }
+.r-maa5i5 { background-color: rgb(255, 230, 220); }
+.r-1lorjx1 { min-height: 84px; }
+.r-1d09ksm { align-items: baseline; }
+.r-1no09lo { margin-top: 28px; }
+.r-1w2t34x { color: rgb(23, 23, 25); }
+.r-1fekieh { font-family: Pretendard-Bold; }
+.r-1iczk1v { color: rgb(172, 174, 181); }
+.r-ceyshp { font-family: Pretendard-SemiBold; }
+.r-1gkfh8e { font-size: 11px; }
+.r-1wfhzrg { height: 120px; }
+.r-17uablt { height: 668px; }
+.r-162vize { top: -260px; }
+.r-1kjq87h { width: 376px; }
+.r-1932crc { color: rgb(159, 240, 227); }
+.r-1ws2f5x { font-size: 11.5px; }
+.r-jwli3a { color: rgb(255, 255, 255); }
+.r-yy2aun { font-size: 26px; }
+.r-91ejfr { background-color: rgba(255, 255, 255, 0.08); }
+.r-aft9o2 { color: rgb(255, 212, 92); }
+.r-np636n { margin-top: 64px; }
+.r-163syo8 { left: 104px; }
+.r-1iwq5xf { top: -44px; }
+.r-1jvr48z { color: rgb(185, 198, 211); }
+.r-hjklzo { line-height: 19px; }
+.r-1grwqd5 { font-size: 12.5px; }
+.r-116b78n { color: rgba(255, 255, 255, 0.85); }
+.r-q773ft { background-color: rgba(255, 255, 255, 0.07); }
+.r-1diydf2 { font-size: 14.5px; }
+.r-10yl4k { line-height: 21px; }
+.r-it0ggq { background-color: rgb(20, 191, 170); }
+.r-ubezar { font-size: 16px; }
+.r-1eoj8my { margin-top: 26px; }
+.r-58xgd4 { background-color: rgba(255, 255, 255, 0.05); }
+.r-dzsc0f { background-color: rgba(63, 191, 143, 0.12); }
+.r-2fo70v { color: rgb(201, 232, 220); }
+.r-14yzgew { line-height: 18px; }
+.r-1fpi9eo { background-color: rgba(255, 255, 255, 0.12); }
+.r-25ta2z { background-color: rgba(255, 212, 92, 0.35); }
+.r-9r4rsd { background-color: rgba(255, 255, 255, 0.06); }
+.r-1ozpbmi { font-size: 10.5px; }
+.r-hjiurw { color: rgb(140, 155, 170); }
+.r-f5cfds { min-height: 160px; }
+.r-v2u3o6 { right: 4px; }
+.r-30qeir { bottom: -4px; }
+.r-kquydp { right: -4px; }
+.r-98c09q { height: 68px; }
+.r-1kesqaa { width: 84px; }
+.r-1juvh4t { right: 9px; }
+.r-jv1ppg { margin-top: 36px; }
+.r-hir68u { background-color: rgba(20, 184, 166, 0.06); }
+.r-16edfaa { background-color: rgba(251, 191, 36, 0.16); }
+.r-h10h58 { min-height: 60px; }
+.r-1hp0nrl { background-color: rgba(255, 122, 92, 0.18); }
+.r-lpb231 { height: 168px; }
+.r-1kneemv { width: 168px; }
+.r-15yyo8t { background-color: rgba(251, 191, 36, 0.14); }
+.r-1gziegg { background-color: rgba(18, 20, 43, 0.96); }
+.r-1tsoen8 { border-bottom-color: rgba(255, 255, 255, 0.12); }
+.r-1scqhg5 { height: 35%; }
+.r-19h14dv { bottom: 28px; }
+.r-1sfqw5l { background-color: rgb(28, 31, 69); }
+.r-vbeyc1 { background-color: rgba(255, 246, 218, 0.08); }
+.r-1j90ih9 { height: 38%; }
+.r-1u8kdu { bottom: 24px; }
+.r-1vz1evm { border-bottom-color: rgba(22, 35, 43, 0.08); }
+.r-q4dy3q { margin-right: 64px; }
+.r-8qlqml { width: 48.4%; }
+.r-131xog0 { width: 38px; }
+.r-13rxa73 { color: rgb(30, 31, 43); }
+.r-1slx73v { width: 49%; }
+.r-1n911dg { color: rgb(90, 88, 86); }
+.r-17w48nw { max-width: 380px; }
+.r-1ake6j { background-color: rgba(246, 244, 239, 0.55); }
+.r-1e5xcbq { background-color: rgb(255, 241, 199); }
+.r-1l7z4oj { padding-bottom: 16px; }
+.r-ir6n1k { border-top-right-radius: 6px; }
+.r-gvqjz4 { max-width: 78%; }
+.r-1hoxq83 { background-color: rgba(22, 35, 43, 0.12); }
+.r-ur6pnr { height: 42px; }
+.r-eafdt9 { transition-duration: 0.15s; }
+.r-1i6wzkk { transition-property: opacity; }
+.r-2tavb8 { background-color: rgba(0, 0, 0, 0.6); }
+.r-17c3jg3 { background-color: rgba(0, 0, 0, 0.8); }
+.r-1f69krl { box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 16px 8px; }
+.r-1ipicw7 { width: 300px; }
+.r-1jufkeu { color: rgb(44, 46, 50); }
+.r-1kfrs79 { font-weight: 600; }
+.r-oxtfae { letter-spacing: 0px; }
+.r-a3ded0 { color: rgb(90, 92, 99); }
+.r-16dba41 { font-weight: 400; }
+.r-i0j7gm { letter-spacing: 0.14px; }
+.r-r5x6eb { line-height: 22.5px; }
+.r-1k03i2p { background-color: rgb(243, 245, 247); }
+.r-majxgm { font-weight: 500; }
+.r-7l9xyp { background-color: rgba(255, 255, 255, 0.2); }
+.r-1097gw1 { background-color: rgb(225, 227, 232); }
+.r-sqtsar { border-bottom-right-radius: 9999px; }
+.r-waaub4 { border-top-right-radius: 9999px; }
+.r-4mshu { margin-left: -12px; }
+.r-1wqppn6 { letter-spacing: 0.09px; }
+.r-1oec5bt { opacity: 0.2; }
+.r-1ghxqbu { font-variant: tabular-nums; }
+.r-l0gwng { width: 200px; }
+.r-atnv13 { height: 160px; }
+.r-17tloay { opacity: 0.6; }
+.r-1i1biic { box-shadow: rgba(139, 234, 229, 0.25) 0px 0px 16px; }
+.r-2ambs8 { color: rgb(139, 234, 229); }
+.r-1q142lx { flex-shrink: 0; }
+.r-n21d5q { letter-spacing: 0.302px; }
+.r-1cwl3u0 { line-height: 16px; }
+.r-angfs3 { color: rgba(255, 255, 255, 0.55); }
+.r-1a7l8x0 { color: rgba(255, 255, 255, 0.6); }
+.r-1xg5ym7 { line-height: 18.7px; }
+.r-om1m38 { box-shadow: rgb(20, 168, 161) 0px 3px 0px; }
+.r-1j4nbi { background-color: rgba(34, 195, 188, 0.18); }
+.r-fpsnan { background-color: rgb(11, 16, 38); }
+.r-1k83b8i { background-color: rgba(11, 12, 30, 0.55); }
+.r-l7h49o { z-index: 150; }
+.r-l13dpy { z-index: 200; }
+.r-m7rbdw { z-index: 120; }
+.r-5zqcb5 { color: rgba(255, 255, 255, 0.7); }
+.r-adyw6z { font-size: 20px; }
+.r-qoi5vj { letter-spacing: -0.24px; }
+.r-vrz42v { line-height: 28px; }
+.r-3cx7t5 { color: rgb(34, 195, 188); }
+.r-7ptqe7 { line-height: 23px; }
+.r-1moh23t { bottom: 16px; }
+.r-163k3iq { z-index: 130; }
+.r-1s5nyi { height: 84px; }
+.r-1xhxu1c { box-shadow: rgba(99, 220, 212, 0.7) 0px 0px 18px; }
+.r-xifl00 { left: -4px; }
+.r-1c4mltk { width: 112px; }
+.r-144uupt { left: 2px; }
+.r-b8lwoo { width: 100px; }
+.r-1r74h94 { left: 8px; }
+.r-17e4thx { right: 56px; }
+.r-uxrrfj { height: 58px; }
+.r-w9i882 { background-color: rgba(40, 32, 24, 0.18); }
+.r-d9jaho { left: 6px; }
+.r-1h3ijdo { height: 53px; }
+.r-c9eks5 { padding-right: 18px; }
+.r-s5r7i3 { top: 4px; }
+.r-y8nl5v { padding-left: 14px; }
+.r-2eclcj { background-color: rgba(40, 32, 24, 0.1); }
+.r-1ph75f1 { height: 80px; }
+.r-8pmjsq { width: 92px; }
+.r-fa8cl9 { background-color: rgba(255, 214, 120, 0.55); }
+.r-170w6zn { bottom: 4px; }
+.r-12atlq6 { left: -6px; }
+.r-9azuoe { opacity: 0.55; }
+.r-cscj68 { background-color: rgba(40, 32, 24, 0.22); }
+.r-1lh3azm { height: 74px; }
+.r-1s8p59h { background-color: rgba(40, 32, 24, 0.28); }
+.r-tumt6t { height: 66px; }
+.r-1kv6naz { width: 66px; }
+.r-duaggd { border-bottom-width: 5px; }
+.r-25zp69 { border-right-color: rgb(43, 45, 62); }
+.r-139lwf2 { border-right-width: 7px; }
+.r-1c1gj4h { border-top-color: rgba(0, 0, 0, 0); }
+.r-de1ba6 { margin-right: -1px; }
+.r-a3s3pi { border-left-color: rgb(43, 45, 62); }
+.r-s7w71x { border-left-width: 7px; }
+.r-uvgr71 { background-color: rgba(255, 250, 238, 0.98); }
+.r-1epnjoi { box-shadow: rgba(40, 32, 24, 0.22) 0px 2px 5px; }
+.r-1nj16ve { left: -10px; }
+.r-1w59yr1 { top: -10px; }
+.r-dngjjt { left: -8px; }
+.r-1wghi3f { top: -8px; }
+.r-152x73g { box-shadow: rgba(40, 32, 24, 0.1) 0px -6px 24px; }
+.r-1kr7lsr { z-index: 12; }
+.r-k7sw5r { background-color: rgba(30, 31, 43, 0.05); }
+.r-a3noxc { background-color: rgba(242, 168, 0, 0.16); }
+.r-1ufr4wv { z-index: 9; }
+.r-11rt8av { background-color: rgba(16, 17, 34, 0.6); }
+.r-bta5j5 { right: 40px; }
+.r-wc24c3 { z-index: 20; }
+.r-1av598c { background-color: rgba(255, 214, 120, 0.28); }
+.r-w3nz9v { box-shadow: rgba(255, 214, 120, 0.55) 0px 0px 28px; }
+.r-1pmudt1 { height: 124px; }
+.r-1bnj3bk { bottom: 176px; }
+.r-132bva { height: 180px; }
+.r-dqa1tq { width: 180px; }
+.r-m8vjnb { bottom: 300px; }
+.r-dt1pgg { opacity: 0.28; }
+.r-o1l667 { top: 52px; }
+.r-13w96dm { background-color: rgba(0, 0, 0, 0.3); }
+.r-19q92be { color: rgb(14, 124, 114); }
+.r-fd4yh7 { padding-top: 32px; }
+.r-1rd2zbf { min-height: 120px; }
+.r-1x35g6 { font-size: 24px; }
+.r-b88u0q { font-weight: 700; }
+.r-1sxt7yo { letter-spacing: -0.55px; }
+.r-37tt59 { line-height: 32px; }
+.r-pisyjt { text-shadow: rgba(0, 0, 0, 0.15) 0px 4px 16px; }
+.r-11rk87y { padding-bottom: 32px; }
+.r-k8qxaj { padding-bottom: 20px; }
+.r-gkjtq3 { height: 51px; }
+.r-4m99jg { max-width: 320px; }
+.r-1b3n738 { background-color: rgb(15, 138, 133); }
+.r-14eup4l { top: 3px; }
+.r-i5z22w { box-shadow: rgba(34, 195, 188, 0.3) 0px 6px 16px; }
+.r-giplnh { box-shadow: rgb(139, 234, 229) 0px 0px 16px; }
+.r-15sv8ft { background-color: rgb(255, 253, 242); }
+.r-sw94s4 { top: 46%; }
+html, body { height: 100%; }
+body { overflow: hidden; }
+#root { display: flex; height: 100%; flex: 1 1 0%; }
+[data-expoimage] .cross-dissolve { transition-property: opacity; animation-fill-mode: forwards; }
+[data-expoimage] .cross-dissolve-start:not(.transitioning) { opacity: 0; }
+[data-expoimage] .cross-dissolve-active { opacity: 1; }
+[data-expoimage] .cross-dissolve-end { opacity: 0; }
+[data-expoimage] .flip-from-left { transition-property: transform, opacity; transform-origin: center center; transition-timing-function: var(--expo-image-timing,linear), steps(2, jump-none) !important; }
+[data-expoimage] .flip-from-left-container { width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; perspective: 1000px; }
+[data-expoimage] .flip-from-left-start:not(.transitioning) { transform: translateZ(calc(var(--expo-image-width,1000px) * -1.25)) rotateY(-180deg); opacity: 0; }
+[data-expoimage] .flip-from-left-active { transform: translateZ(0px) rotateY(0deg); opacity: 1; }
+[data-expoimage] .flip-from-left-end { transform: translateZ(calc(var(--expo-image-width,1000px) * -1.25)) rotateY(180deg); opacity: 0; }
+[data-expoimage] .flip-from-right { transition-property: transform, opacity; transform-origin: center center; transition-timing-function: var(--expo-image-timing,linear), steps(2, jump-none) !important; }
+[data-expoimage] .flip-from-right-container { width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; perspective: 1000px; }
+[data-expoimage] .flip-from-right-start:not(.transitioning) { transform: translateZ(calc(var(--expo-image-width,1000px) * -1.25)) rotateY(180deg); opacity: 0; }
+[data-expoimage] .flip-from-right-active { transform: translateZ(0px) rotateY(0deg); opacity: 1; }
+[data-expoimage] .flip-from-right-end { transform: translateZ(calc(var(--expo-image-width,1000px) * -1.25)) rotateY(-180deg); opacity: 0; }
+[data-expoimage] .flip-from-top { transition-property: transform, opacity; transform-origin: center center; transition-timing-function: var(--expo-image-timing,linear), steps(2, jump-none) !important; }
+[data-expoimage] .flip-from-top-container { width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; perspective: 1000px; }
+[data-expoimage] .flip-from-top-start:not(.transitioning) { transform: translateZ(calc(var(--expo-image-height,1000px) * -1.5)) rotateX(180deg); opacity: 0; }
+[data-expoimage] .flip-from-top-active { transform: translateZ(0px) rotateX(0deg); opacity: 1; }
+[data-expoimage] .flip-from-top-end { transform: translateZ(calc(var(--expo-image-height,1000px) * -1.5)) rotateX(-180deg); opacity: 0; }
+[data-expoimage] .flip-from-bottom { transition-property: transform, opacity; transform-origin: center center; transition-timing-function: var(--expo-image-timing,linear), steps(2, jump-none) !important; }
+[data-expoimage] .flip-from-bottom-container { width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; perspective: 1000px; }
+[data-expoimage] .flip-from-bottom-start:not(.transitioning) { transform: translateZ(calc(var(--expo-image-height,1000px) * -1.25)) rotateX(-180deg); opacity: 0; }
+[data-expoimage] .flip-from-bottom-active { transform: translateZ(0px) rotateX(0deg); opacity: 1; }
+[data-expoimage] .flip-from-bottom-end { transform: translateZ(calc(var(--expo-image-height,1000px) * -1.25)) rotateX(180deg); opacity: 0; }
+[data-expoimage] .image-timing-linear { --expo-image-timing: linear; }
+[data-expoimage] .image-timing-ease-in { --expo-image-timing: ease-in; }
+[data-expoimage] .image-timing-ease-out { --expo-image-timing: ease-out; }
+[data-expoimage] .image-timing-ease-in-out { --expo-image-timing: ease-in-out; }
+div, span { word-break: keep-all; overflow-wrap: anywhere; }
+@font-face { font-family: Pretendard-Regular; src: url("/assets/assets/fonts/Pretendard-Regular.d6e0de06bff8b7fda2db4682168e3ddf.ttf"); font-display: auto; }
+@font-face { font-family: Pretendard-Medium; src: url("/assets/assets/fonts/Pretendard-Medium.7305f90c923d4409825ec2f4380b63d6.ttf"); font-display: auto; }
+@font-face { font-family: Pretendard-SemiBold; src: url("/assets/assets/fonts/Pretendard-SemiBold.459eff7ba5380583ccd6eda49c846c85.ttf"); font-display: auto; }
+@font-face { font-family: Pretendard-Bold; src: url("/assets/assets/fonts/Pretendard-Bold.dfb614ebecd405875f50a918ca11c17c.ttf"); font-display: auto; }
+@font-face { font-family: Pretendard-ExtraBold; src: url("/assets/assets/fonts/Pretendard-ExtraBold.332e9b673b0c1709e93fee01e4543f1d.ttf"); font-display: auto; }
+@font-face { font-family: PretendardVariable; src: url("/assets/assets/fonts/Pretendard-Regular.d6e0de06bff8b7fda2db4682168e3ddf.ttf"); font-display: auto; }</style></head>
+
+  <body>
+    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
+    
+    <!-- The root element for your Expo app. -->
+    <div id="root"><div class="css-g5y9jx r-13awgt0"><div class="css-g5y9jx" style="flex: 1 1 0%; width: 100%; max-width: 412px; align-self: center; background-color: rgb(255, 255, 255);"><div style="position: absolute; inset: 0px; pointer-events: none; visibility: hidden;"></div><div class="css-g5y9jx r-13awgt0"><div class="css-g5y9jx r-13awgt0 r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af" style="background-color: rgb(242, 242, 242); display: flex;"><div class="css-g5y9jx r-13awgt0"><div class="css-g5y9jx r-13awgt0" style="background-color: rgb(255, 255, 255);"><div class="css-g5y9jx" style="flex: 1 1 0%; background-color: rgb(246, 248, 250);"><div class="css-g5y9jx r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-633pao"><div class="css-g5y9jx r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af" style="background-image: linear-gradient(rgb(238, 245, 244), rgb(246, 248, 250) 60%, rgb(241, 238, 251) 100%);"></div><svg width="420" height="420" style="position: absolute; top: 8%; left: -170px;"><defs><radialGradient cx="50%" cy="50%" r="50%" id="mb2DD4BF"><stop offset="0" stop-color="#2DD4BF" stop-opacity="0.22"></stop><stop offset="1" stop-color="#2DD4BF" stop-opacity="0"></stop></radialGradient></defs><circle cx="210" cy="210" r="210" fill="url(#mb2DD4BF)"></circle></svg><svg width="420" height="420" style="position: absolute; top: 42%; right: -190px;"><defs><radialGradient cx="50%" cy="50%" r="50%" id="mb6C7BFF"><stop offset="0" stop-color="#6C7BFF" stop-opacity="0.16"></stop><stop offset="1" stop-color="#6C7BFF" stop-opacity="0"></stop></radialGradient></defs><circle cx="210" cy="210" r="210" fill="url(#mb6C7BFF)"></circle></svg><svg width="420" height="420" style="position: absolute; top: 78%; left: -140px;"><defs><radialGradient cx="50%" cy="50%" r="50%" id="mbC084FC"><stop offset="0" stop-color="#C084FC" stop-opacity="0.14"></stop><stop offset="1" stop-color="#C084FC" stop-opacity="0"></stop></radialGradient></defs><circle cx="210" cy="210" r="210" fill="url(#mbC084FC)"></circle></svg></div><div class="css-g5y9jx r-1awozwy r-18u37iz r-xd6kpl r-u9wvl5" style="padding-top: 4px;"><button aria-label="뒤로" role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" type="button" data-nav="/" style="width: 40px; cursor: pointer;"><svg class="caret-left-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="22" height="22" color="#16232B" data-testid="phosphor-react-native-caret-left-undefined"><g fill="#16232B"><path d="M165.66 202.34a8 8 0 0 1-11.32 11.32l-80-80a8 8 0 0 1 0-11.32l80-80a8 8 0 0 1 11.32 11.32L91.31 128Z"></path></g></svg></button><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 17px; line-height: 24px; letter-spacing: -0.2px; color: rgb(22, 35, 43); flex: 1 1 0%; text-align: center;">이너뷰티 점수</div><div class="css-g5y9jx" style="min-width: 40px; align-items: flex-end;"></div></div><div class="css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx r-2eszeu"><div class="css-g5y9jx" style="padding-right: 20px; padding-left: 20px; padding-bottom: 40px; gap: 14px;"><div class="css-g5y9jx" style="gap: 12px;"><div class="css-g5y9jx r-6st0mw r-1qtehb9 r-1fuqb1j r-rs99b7 r-1pcd2l5"><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 6px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Medium; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(91, 107, 115); flex: 1 1 0%;">장과 진정, 회복을 함께 봐요</div><button aria-label="점수 설명" role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" type="button"><svg class="info-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="18" height="18" color="#93A2A9" data-testid="phosphor-react-native-info-undefined"><g fill="#93A2A9"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88 88.1 88.1 0 0 1-88 88m16-40a8 8 0 0 1-8 8 16 16 0 0 1-16-16v-40a8 8 0 0 1 0-16 16 16 0 0 1 16 16v40a8 8 0 0 1 8 8m-32-92a12 12 0 1 1 12 12 12 12 0 0 1-12-12"></path></g></svg></button></div><div class="css-g5y9jx r-18u37iz" style="align-items: flex-end; gap: 8px; margin-top: 4px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Bold; font-size: 40px; line-height: 44px; letter-spacing: -1px; font-variant: tabular-nums; color: rgb(22, 35, 43);">60<span class="css-1jxf684" style="font-family: Pretendard-SemiBold; font-size: 24px; letter-spacing: 0px; color: rgb(147, 162, 169);"> / 100</span></div><div class="css-g5y9jx" style="flex-flow: wrap; gap: 6px; margin-bottom: 6px; flex: 1 1 0%; align-items: center;"><div class="css-g5y9jx r-kdyh1x r-1472mwg r-1777fci r-is05cd" style="background-color: rgba(22, 35, 43, 0.05);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(91, 107, 115);">보통</div></div><div class="css-g5y9jx r-1awozwy r-1q9bdsx r-rs99b7 r-1472mwg r-1777fci r-is05cd" style="background-color: rgba(14, 159, 110, 0.1); border-color: rgba(0, 0, 0, 0);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(11, 122, 88); font-variant: tabular-nums;">▲1</div></div><div class="css-g5y9jx r-kdyh1x r-z80fyv r-1777fci r-c6ipad" style="background-color: rgba(20, 184, 166, 0.12);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(14, 124, 114);">실천이 늘고 있어요</div></div></div></div><div class="css-g5y9jx" style="margin-top: 10px;"><div class="css-g5y9jx" style="flex-direction: row; gap: 2px; height: 6px;"><div class="css-g5y9jx" style="flex: 60 1 0%; border-radius: 3px; background-color: rgba(22, 35, 43, 0.08);"></div><div class="css-g5y9jx" style="flex: 15 1 0%; border-radius: 3px; background-color: rgb(79, 107, 237);"></div><div class="css-g5y9jx" style="flex: 10 1 0%; border-radius: 3px; background-color: rgba(22, 35, 43, 0.08);"></div><div class="css-g5y9jx" style="flex: 15 1 0%; border-radius: 3px; background-color: rgba(22, 35, 43, 0.08);"></div></div><div class="css-g5y9jx r-14lw9ot r-323w9t r-kdyh1x r-1d6rzhh r-tbmifm r-12ubb6f r-u8s1d r-18nhz7w r-16eto9q" style="left: 60%;"></div><div class="css-g5y9jx" style="height: 14px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169); font-variant: tabular-nums; position: absolute; left: 60%; transform: translateX(-7px); top: 2px;">60</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169); font-variant: tabular-nums; position: absolute; left: 75%; transform: translateX(-7px); top: 2px;">75</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169); font-variant: tabular-nums; position: absolute; left: 85%; transform: translateX(-7px); top: 2px;">85</div></div></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Medium; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(147, 162, 169); margin-top: 8px;">이 점수는 검사와 문진, 기록한 실천을 함께 반영해요</div><div class="css-g5y9jx" style="margin-top: 8px; margin-right: -8px; margin-left: -8px;"><div class="css-g5y9jx r-1awozwy r-1imganj r-5kkj8d r-18u37iz r-1a8msfu r-14gqq1x r-is05cd"><button aria-label="분석 정확도 66퍼센트, 자세히" role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-13awgt0 r-18u37iz r-ojf8lh r-1a8msfu" type="button" data-nav="/completeness" style="cursor: pointer;"><svg width="20" height="20"><circle cx="10" cy="10" r="8" stroke="rgba(20,184,166,0.16)" stroke-width="3" fill="none"></circle><circle cx="10" cy="10" r="8" stroke="#14A38B" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="33.17521842190822 50.26548245743669" transform="rotate(-90 10 10)"></circle></svg><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Medium; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(91, 107, 115);">분석 정확도</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 14px; line-height: 20px; letter-spacing: 0px; color: rgb(22, 35, 43); font-variant: tabular-nums;">66%</div><div class="css-g5y9jx" style="flex: 1 1 0%;"></div></button><button aria-label="검사로 +10%, 검사권 보기" role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-ojf8lh r-1a8msfu r-1rngwi6" type="button" data-nav="/shop" style="cursor: pointer;"><div class="css-g5y9jx r-1mxhqmb r-1wbh5a2 r-18yzcnr r-1777fci r-is05cd" style="background-color: rgba(124, 92, 230, 0.1);"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(109, 40, 217); font-variant: tabular-nums;">검사로 +10%</div></div><svg class="caret-right-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="13" height="13" color="#93A2A9" data-testid="phosphor-react-native-caret-right-undefined"><g fill="#93A2A9"><path d="m181.66 133.66-80 80a8 8 0 0 1-11.32-11.32L164.69 128 90.34 53.66a8 8 0 0 1 11.32-11.32l80 80a8 8 0 0 1 0 11.32"></path></g></svg></button></div></div></div><div class="css-g5y9jx r-6st0mw r-1qtehb9 r-1fuqb1j r-rs99b7 r-1pcd2l5"><div class="css-g5y9jx"><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 6px;"><div class="css-g5y9jx" style="flex: 1 1 0%;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 17px; line-height: 24px; letter-spacing: -0.2px; color: rgb(22, 35, 43);">점수 흐름</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Medium; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(147, 162, 169);">날마다 아침에 매긴 점수예요</div></div><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1txcine r-1k25im9 r-1777fci r-1ubuhtd r-1mnsbye" type="button"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(22, 35, 43);">4주</div></button><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1txcine r-1k25im9 r-1777fci r-1ubuhtd" type="button"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(147, 162, 169);">12주</div></button></div><div class="css-g5y9jx" style="height: 112px; margin-top: 10px;"><svg width="308" height="112"><rect x="0" width="308" y="8" height="9.55555555555556" fill="rgba(79,107,237,0.07)"></rect><rect x="0" width="308" y="17.55555555555556" height="19.11111111111111" fill="rgba(79,107,237,0.04)"></rect><rect x="0" width="308" y="36.66666666666667" height="28.66666666666667" fill="rgba(22,35,43,0.02)"></rect><line x1="0" x2="290" y1="65.33333333333334" y2="65.33333333333334" stroke="rgba(22,35,43,0.10)" stroke-dasharray="3 4"></line><line x1="0" x2="290" y1="36.66666666666667" y2="36.66666666666667" stroke="rgba(22,35,43,0.10)" stroke-dasharray="3 4"></line><line x1="0" x2="290" y1="17.55555555555556" y2="17.55555555555556" stroke="rgba(22,35,43,0.10)" stroke-dasharray="3 4"></line><text x="308" y="68.33333333333334" fill="rgba(22,35,43,0.4)" text-anchor="end" style="font-size: 9px;">60</text><text x="308" y="39.66666666666667" fill="rgba(22,35,43,0.4)" text-anchor="end" style="font-size: 9px;">75</text><text x="308" y="20.55555555555556" fill="rgba(22,35,43,0.4)" text-anchor="end" style="font-size: 9px;">85</text><path d="M6.0,80.6 L16.3,78.7 L26.6,76.8 L36.9,74.9 L47.2,73.0 L57.5,73.0 L67.8,71.1 L78.1,74.9 L88.4,73.0 L98.7,73.0 L109.0,71.1 L119.3,71.1 L129.6,69.2 L139.9,69.2 L150.1,67.2 L160.4,69.2 L170.7,71.1 L181.0,69.2 L191.3,67.2 L201.6,65.3 L211.9,69.2 L222.2,69.2 L232.5,67.2 L242.8,67.2 L253.1,65.3 L263.4,65.3 L273.7,67.2 L284.0,65.3" stroke="#4F6BED" stroke-width="2" fill="none" stroke-linejoin="round"></path><circle cx="284" cy="65.33333333333334" r="4" fill="#4F6BED" stroke="#4F6BED" stroke-width="1.5"></circle></svg><div class="css-g5y9jx r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af" style="flex-direction: row;"><div aria-label="27일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="26일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="25일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="24일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="23일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="22일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="21일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="20일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="19일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="18일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="17일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="16일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="15일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="14일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="13일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="12일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="11일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="10일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="9일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="8일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="7일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="6일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="5일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="4일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="3일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="2일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="1일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div><div aria-label="0일 전" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73" style="flex: 1 1 0%;"></div></div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="position: absolute; left: 0px; right: 0px; bottom: 0px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169); flex: 1 1 0%;">4주 전</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">오늘</div></div></div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 10px; margin-top: 8px; flex-wrap: wrap;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169); font-variant: tabular-nums;">85 이상 매우 좋음</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169); font-variant: tabular-nums;">75 이상 좋음</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169); font-variant: tabular-nums;">60 이상 보통</div></div></div></div><div class="css-g5y9jx r-6st0mw r-1qtehb9 r-1fuqb1j r-rs99b7 r-1pcd2l5"><div class="css-g5y9jx"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Medium; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(91, 107, 115);">이번 주 움직임</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Bold; font-size: 19px; line-height: 26px; letter-spacing: -0.3px; color: rgb(22, 35, 43); font-variant: tabular-nums; margin-top: 4px;">지난주보다 1.5점 올랐어요</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Medium; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(147, 162, 169); margin-top: 4px;">무엇이 점수를 움직였는지 나눠 봤어요</div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="margin-top: 14px; margin-bottom: 2px;"><div class="css-g5y9jx" style="width: 96px;"></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169); flex: 1 1 0%; text-align: center;">내린 것</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169); flex: 1 1 0%; text-align: center;">올린 것</div><div class="css-g5y9jx" style="width: 44px;"></div></div><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-1cmwbt1 r-zx9znk" type="button" data-nav="/care/식단" style="cursor: pointer;"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-Medium; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(22, 35, 43); width: 96px;">식단</div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="flex: 1 1 0%; align-self: stretch;"><div class="css-g5y9jx" style="flex: 1 1 0%; align-items: flex-end; justify-content: center;"></div><div class="css-g5y9jx r-1pz39u2 r-slt9an r-92ng3h"></div><div class="css-g5y9jx" style="flex: 1 1 0%; justify-content: center;"><div class="css-g5y9jx r-1f0042m r-1or9b2r" style="width: 100%; background-color: rgb(14, 159, 110);"></div></div></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(11, 122, 88); font-variant: tabular-nums; width: 44px; text-align: right;">+1.4</div></button><div aria-disabled="true" tabindex="-1" class="css-g5y9jx r-12vffkv r-1awozwy r-18u37iz r-1cmwbt1 r-zx9znk"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-Medium; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(22, 35, 43); width: 96px;">새로 확인된 지표</div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="flex: 1 1 0%; align-self: stretch;"><div class="css-g5y9jx" style="flex: 1 1 0%; align-items: flex-end; justify-content: center;"></div><div class="css-g5y9jx r-1pz39u2 r-slt9an r-92ng3h"></div><div class="css-g5y9jx" style="flex: 1 1 0%; justify-content: center;"><div class="css-g5y9jx r-1f0042m r-1or9b2r" style="width: 64.2857%; background-color: rgb(14, 159, 110);"></div></div></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(11, 122, 88); font-variant: tabular-nums; width: 44px; text-align: right;">+0.9</div></div><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-1cmwbt1 r-zx9znk" type="button" data-nav="/care/스킨케어" style="cursor: pointer;"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-Medium; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(22, 35, 43); width: 96px;">스킨케어</div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="flex: 1 1 0%; align-self: stretch;"><div class="css-g5y9jx" style="flex: 1 1 0%; align-items: flex-end; justify-content: center;"></div><div class="css-g5y9jx r-1pz39u2 r-slt9an r-92ng3h"></div><div class="css-g5y9jx" style="flex: 1 1 0%; justify-content: center;"><div class="css-g5y9jx r-1f0042m r-1or9b2r" style="width: 21.4286%; background-color: rgb(14, 159, 110);"></div></div></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(11, 122, 88); font-variant: tabular-nums; width: 44px; text-align: right;">+0.3</div></button><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-1cmwbt1 r-zx9znk" type="button" data-nav="/care/배변" style="cursor: pointer;"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-Medium; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(22, 35, 43); width: 96px;">배변 상태</div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="flex: 1 1 0%; align-self: stretch;"><div class="css-g5y9jx" style="flex: 1 1 0%; align-items: flex-end; justify-content: center;"></div><div class="css-g5y9jx r-1pz39u2 r-slt9an r-92ng3h"></div><div class="css-g5y9jx" style="flex: 1 1 0%; justify-content: center;"><div class="css-g5y9jx r-1f0042m r-1or9b2r" style="width: 7.14286%; background-color: rgb(14, 159, 110);"></div></div></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(11, 122, 88); font-variant: tabular-nums; width: 44px; text-align: right;">+0.1</div></button><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-1cmwbt1 r-zx9znk" type="button" data-nav="/care/회복" style="cursor: pointer;"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-Medium; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(22, 35, 43); width: 96px;">회복</div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="flex: 1 1 0%; align-self: stretch;"><div class="css-g5y9jx" style="flex: 1 1 0%; align-items: flex-end; justify-content: center;"><div class="css-g5y9jx r-1f0042m r-1or9b2r" style="width: 64.2857%; background-color: rgba(22, 35, 43, 0.28);"></div></div><div class="css-g5y9jx r-1pz39u2 r-slt9an r-92ng3h"></div><div class="css-g5y9jx" style="flex: 1 1 0%; justify-content: center;"></div></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(91, 107, 115); font-variant: tabular-nums; width: 44px; text-align: right;">−0.9</div></button><div aria-disabled="true" tabindex="-1" class="css-g5y9jx r-12vffkv r-1awozwy r-18u37iz r-1cmwbt1 r-zx9znk"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-Medium; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(22, 35, 43); width: 96px;">아침 체크인</div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="flex: 1 1 0%; align-self: stretch;"><div class="css-g5y9jx" style="flex: 1 1 0%; align-items: flex-end; justify-content: center;"><div class="css-g5y9jx r-1f0042m r-1or9b2r" style="width: 21.4286%; background-color: rgba(22, 35, 43, 0.28);"></div></div><div class="css-g5y9jx r-1pz39u2 r-slt9an r-92ng3h"></div><div class="css-g5y9jx" style="flex: 1 1 0%; justify-content: center;"></div></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(91, 107, 115); font-variant: tabular-nums; width: 44px; text-align: right;">−0.3</div></div></div></div><div class="css-g5y9jx r-6st0mw r-1qtehb9 r-1fuqb1j r-rs99b7 r-1pcd2l5"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 17px; line-height: 24px; letter-spacing: -0.2px; color: rgb(22, 35, 43);">하위 지표</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Medium; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(147, 162, 169); margin-top: 2px;">가장 낮은 지표가 점수를 가장 크게 움직여요</div><div class="css-g5y9jx" style="margin-top: 10px;"><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 12px;"><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 4px;"><div class="css-g5y9jx" style="width: 14px; height: 6px; border-radius: 3px; background-color: rgb(79, 107, 237);"></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">지금 값</div></div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 4px;"><div class="css-g5y9jx" style="width: 2px; height: 10px; border-radius: 1px; background-color: rgba(22, 35, 43, 0.45);"></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">평소</div></div></div></div><div class="css-g5y9jx" style="margin-top: 6px;"><div class="css-g5y9jx"><button aria-label="장 73" role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-1cmwbt1 r-19yznuf" type="button"><div class="css-g5y9jx" style="width: 92px;"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-SemiBold; font-size: 14px; line-height: 20px; letter-spacing: 0px; color: rgb(22, 35, 43);">장</div></div><div class="css-g5y9jx" style="flex: 1 1 0%;"><div class="css-g5y9jx r-1mnsbye r-cdmcib r-1xbve24"><div class="css-g5y9jx" style="width: 73%; height: 100%; border-radius: 3px; background-color: rgb(79, 107, 237);"></div><div class="css-g5y9jx r-wqs5d5 r-qwd59z r-tbmifm r-lqms97 r-u8s1d r-18nhz7w r-m5arl1" style="left: 67%;"></div></div></div><div class="css-g5y9jx" style="width: 44px; align-items: flex-end; gap: 2px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Bold; font-size: 20px; line-height: 24px; letter-spacing: -0.3px; color: rgb(22, 35, 43); font-variant: tabular-nums;">73</div></div><svg class="caret-down-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="12" height="12" color="#93A2A9" data-testid="phosphor-react-native-caret-down-undefined"><g fill="#93A2A9"><path d="m213.66 101.66-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32"></path></g></svg></button></div><div class="css-g5y9jx r-1imganj r-5kkj8d"><button aria-label="음식 반응 77" role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-1cmwbt1 r-19yznuf" type="button"><div class="css-g5y9jx" style="width: 92px;"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-SemiBold; font-size: 14px; line-height: 20px; letter-spacing: 0px; color: rgb(22, 35, 43);">음식 반응</div><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(14, 124, 114);">새로 확인됐어요</div></div><div class="css-g5y9jx" style="flex: 1 1 0%;"><div class="css-g5y9jx r-1mnsbye r-cdmcib r-1xbve24"><div class="css-g5y9jx" style="width: 77%; height: 100%; border-radius: 3px; background-color: rgb(79, 107, 237);"></div><div class="css-g5y9jx r-wqs5d5 r-qwd59z r-tbmifm r-lqms97 r-u8s1d r-18nhz7w r-m5arl1" style="left: 64%;"></div></div></div><div class="css-g5y9jx" style="width: 44px; align-items: flex-end; gap: 2px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Bold; font-size: 20px; line-height: 24px; letter-spacing: -0.3px; color: rgb(22, 35, 43); font-variant: tabular-nums;">77</div></div><svg class="caret-down-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="12" height="12" color="#93A2A9" data-testid="phosphor-react-native-caret-down-undefined"><g fill="#93A2A9"><path d="m213.66 101.66-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32"></path></g></svg></button></div><div class="css-g5y9jx r-1imganj r-5kkj8d"><button aria-label="진정 56" role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-1cmwbt1 r-19yznuf" type="button"><div class="css-g5y9jx" style="width: 92px;"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-SemiBold; font-size: 14px; line-height: 20px; letter-spacing: 0px; color: rgb(22, 35, 43);">진정</div></div><div class="css-g5y9jx" style="flex: 1 1 0%;"><div class="css-g5y9jx r-1mnsbye r-cdmcib r-1xbve24"><div class="css-g5y9jx" style="width: 56%; height: 100%; border-radius: 3px; background-color: rgb(79, 107, 237);"></div><div class="css-g5y9jx r-wqs5d5 r-qwd59z r-tbmifm r-lqms97 r-u8s1d r-18nhz7w r-m5arl1" style="left: 49%;"></div></div></div><div class="css-g5y9jx" style="width: 44px; align-items: flex-end; gap: 2px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Bold; font-size: 20px; line-height: 24px; letter-spacing: -0.3px; color: rgb(22, 35, 43); font-variant: tabular-nums;">56</div></div><svg class="caret-down-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="12" height="12" color="#93A2A9" data-testid="phosphor-react-native-caret-down-undefined"><g fill="#93A2A9"><path d="m213.66 101.66-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32"></path></g></svg></button></div><div class="css-g5y9jx r-1imganj r-5kkj8d"><button aria-label="탄수화물 대사 61" role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-1cmwbt1 r-19yznuf" type="button"><div class="css-g5y9jx" style="width: 92px;"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-SemiBold; font-size: 14px; line-height: 20px; letter-spacing: 0px; color: rgb(22, 35, 43);">탄수화물 대사</div></div><div class="css-g5y9jx" style="flex: 1 1 0%;"><div class="css-g5y9jx r-1mnsbye r-cdmcib r-1xbve24"><div class="css-g5y9jx" style="width: 61%; height: 100%; border-radius: 3px; background-color: rgb(79, 107, 237);"></div><div class="css-g5y9jx r-wqs5d5 r-qwd59z r-tbmifm r-lqms97 r-u8s1d r-18nhz7w r-m5arl1" style="left: 61%;"></div></div></div><div class="css-g5y9jx" style="width: 44px; align-items: flex-end; gap: 2px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Bold; font-size: 20px; line-height: 24px; letter-spacing: -0.3px; color: rgb(22, 35, 43); font-variant: tabular-nums;">61</div><div class="css-g5y9jx r-1awozwy r-rs99b7 r-1777fci r-1dzdj1l r-z80fyv r-18c5d7m" style="background-color: rgba(22, 35, 43, 0.05); border-color: rgba(0, 0, 0, 0);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(91, 107, 115); font-variant: tabular-nums;">▼1</div></div></div><svg class="caret-down-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="12" height="12" color="#93A2A9" data-testid="phosphor-react-native-caret-down-undefined"><g fill="#93A2A9"><path d="m213.66 101.66-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32"></path></g></svg></button></div><div class="css-g5y9jx r-1imganj r-5kkj8d"><button aria-label="회복력 44" role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-1cmwbt1 r-19yznuf" type="button"><div class="css-g5y9jx" style="width: 92px;"><div dir="auto" class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a" style="font-family: Pretendard-SemiBold; font-size: 14px; line-height: 20px; letter-spacing: 0px; color: rgb(22, 35, 43);">회복력</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(194, 87, 12);">집중</div></div><div class="css-g5y9jx" style="flex: 1 1 0%;"><div class="css-g5y9jx r-1mnsbye r-cdmcib r-1xbve24"><div class="css-g5y9jx" style="width: 44%; height: 100%; border-radius: 3px; background-color: rgb(79, 107, 237);"></div><div class="css-g5y9jx r-wqs5d5 r-qwd59z r-tbmifm r-lqms97 r-u8s1d r-18nhz7w r-m5arl1" style="left: 43%;"></div></div></div><div class="css-g5y9jx" style="width: 44px; align-items: flex-end; gap: 2px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Bold; font-size: 20px; line-height: 24px; letter-spacing: -0.3px; color: rgb(22, 35, 43); font-variant: tabular-nums;">44</div><div class="css-g5y9jx r-1awozwy r-rs99b7 r-1777fci r-1dzdj1l r-z80fyv r-18c5d7m" style="background-color: rgba(14, 159, 110, 0.1); border-color: rgba(0, 0, 0, 0);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(11, 122, 88); font-variant: tabular-nums;">▲3</div></div></div><svg class="caret-up-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="12" height="12" color="#93A2A9" data-testid="phosphor-react-native-caret-up-undefined"><g fill="#93A2A9"><path d="M213.66 165.66a8 8 0 0 1-11.32 0L128 91.31l-74.34 74.35a8 8 0 0 1-11.32-11.32l80-80a8 8 0 0 1 11.32 0l80 80a8 8 0 0 1 0 11.32"></path></g></svg></button><div class="css-g5y9jx r-c3b7nh r-t23y2h r-6gpygo r-1slz7xr"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 14px; line-height: 20px; letter-spacing: 0px; color: rgb(22, 35, 43);">쉬고 나면 다시 기운이 차요?</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Regular; font-size: 15px; line-height: 22px; letter-spacing: -0.05px; color: rgb(91, 107, 115); margin-top: 6px;">잠을 설치는 날이 자주 있다고 답하셨어요. 평균 2시 10분에 잠들었어요, 기준 1시 37분에서 하루 평균 1시간 40분 벗어났어요</div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 6px; flex-wrap: wrap; margin-top: 10px;"><div class="css-g5y9jx r-kdyh1x r-1hjwoze r-1777fci r-18c5d7m" style="background-color: rgba(0, 0, 0, 0); border-width: 1px; border-color: rgba(22, 35, 43, 0.14);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">평소 범위</div></div><div class="css-g5y9jx r-kdyh1x r-1hjwoze r-1777fci r-18c5d7m" style="background-color: rgba(22, 35, 43, 0.05);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(91, 107, 115);">문진 +1</div></div></div><div class="css-g5y9jx" style="margin-top: 14px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(91, 107, 115);">이번 주 이 지표를 움직인 관리</div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 6px; flex-wrap: wrap; margin-top: 6px;"><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 3px;"><div class="css-g5y9jx" style="width: 12.4px; height: 4px; border-radius: 2px; background-color: rgb(14, 159, 110);"></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(11, 122, 88);">회복</div></div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 3px;"><div class="css-g5y9jx" style="width: 5.2px; height: 4px; border-radius: 2px; background-color: rgba(22, 35, 43, 0.22);"></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">아침 체크인</div></div></div></div><div class="css-g5y9jx" style="margin-top: 14px;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(91, 107, 115);">평소와 비교한 기록</div><div class="css-g5y9jx" style="margin-top: 6px; gap: 6px;"><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-18u37iz r-6st0mw r-1dzdj1l r-1cmwbt1 r-11f147o r-1ubuhtd" type="button" data-nav="/care/회복" style="cursor: pointer;"><svg class="moon-stars-fill__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="14" height="14" color="#5B6B73" data-testid="phosphor-react-native-moon-stars-fill"><g fill="#5B6B73"><path d="M240 96a8 8 0 0 1-8 8h-16v16a8 8 0 0 1-16 0v-16h-16a8 8 0 0 1 0-16h16V72a8 8 0 0 1 16 0v16h16a8 8 0 0 1 8 8m-96-40h8v8a8 8 0 0 0 16 0v-8h8a8 8 0 0 0 0-16h-8v-8a8 8 0 0 0-16 0v8h-8a8 8 0 0 0 0 16m65.14 94.33A88.07 88.07 0 0 1 105.67 46.86a8 8 0 0 0-10.6-9.06A96 96 0 1 0 218.2 160.93a8 8 0 0 0-9.06-10.6"></path></g></svg><div class="css-g5y9jx" style="flex: 1 1 0%;"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 13px; line-height: 18px; letter-spacing: 0px; color: rgb(22, 35, 43);">아침 체크인 답</div><div dir="auto" class="css-146c3p1 r-8akbws r-krxsd3 r-dnmrzs r-1qsk4np r-1udbk01" style="-webkit-line-clamp: 2; font-family: Pretendard-Medium; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(91, 107, 115);">아침 체크인 답</div></div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">▼</div><svg class="caret-right-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="11" height="11" color="#93A2A9" data-testid="phosphor-react-native-caret-right-undefined"><g fill="#93A2A9"><path d="m181.66 133.66-80 80a8 8 0 0 1-11.32-11.32L164.69 128 90.34 53.66a8 8 0 0 1 11.32-11.32l80 80a8 8 0 0 1 0 11.32"></path></g></svg></button></div></div></div></div></div></div><div class="css-g5y9jx r-6st0mw r-1qtehb9 r-1fuqb1j r-rs99b7 r-1pcd2l5"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 17px; line-height: 24px; letter-spacing: -0.2px; color: rgb(22, 35, 43);">올리려면</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-Medium; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(147, 162, 169); margin-top: 2px;">오늘 하면 내일 아침 점수에 들어가요</div><div class="css-g5y9jx" style="margin-top: 6px;"><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-z5qs1h r-1ml3abn" type="button" data-nav="/record/sleep/add" style="cursor: pointer;"><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 8px;"><div class="css-g5y9jx r-1awozwy r-1rccn9a r-1dedoh8 r-1rf8fdq r-1hjwoze r-1777fci r-12ym1je"></div><div dir="auto" class="css-146c3p1 r-8akbws r-krxsd3 r-dnmrzs r-1qsk4np r-1udbk01" style="-webkit-line-clamp: 2; font-family: Pretendard-SemiBold; font-size: 15px; line-height: 22px; letter-spacing: -0.05px; color: rgb(22, 35, 43); flex: 1 1 0%; text-decoration-line: none;">23시 30분 전에 잠자리에 들기</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(14, 124, 114); font-variant: tabular-nums;">▲</div><svg class="caret-right-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="11" height="11" color="#93A2A9" data-testid="phosphor-react-native-caret-right-undefined"><g fill="#93A2A9"><path d="m181.66 133.66-80 80a8 8 0 0 1-11.32-11.32L164.69 128 90.34 53.66a8 8 0 0 1 11.32-11.32l80 80a8 8 0 0 1 0 11.32"></path></g></svg></div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 6px; flex-wrap: wrap; margin-top: 4px;"><div class="css-g5y9jx r-q6myw3 r-kdyh1x r-1hjwoze r-1777fci r-18c5d7m"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(194, 87, 12);">집중</div></div><div class="css-g5y9jx r-kdyh1x r-1hjwoze r-1777fci r-18c5d7m" style="background-color: rgba(0, 0, 0, 0); border-width: 1px; border-color: rgba(22, 35, 43, 0.14);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">회복력</div></div></div></button><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-z5qs1h r-1ml3abn r-1imganj r-5kkj8d" type="button" data-nav="/record/diet/add" style="cursor: pointer;"><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 8px;"><div class="css-g5y9jx r-1awozwy r-1rccn9a r-1dedoh8 r-1rf8fdq r-1hjwoze r-1777fci r-12ym1je"></div><div dir="auto" class="css-146c3p1 r-8akbws r-krxsd3 r-dnmrzs r-1qsk4np r-1udbk01" style="-webkit-line-clamp: 2; font-family: Pretendard-SemiBold; font-size: 15px; line-height: 22px; letter-spacing: -0.05px; color: rgb(22, 35, 43); flex: 1 1 0%; text-decoration-line: none;">2주 정제 탄수화물 줄여 보기</div><svg class="caret-right-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="11" height="11" color="#93A2A9" data-testid="phosphor-react-native-caret-right-undefined"><g fill="#93A2A9"><path d="m181.66 133.66-80 80a8 8 0 0 1-11.32-11.32L164.69 128 90.34 53.66a8 8 0 0 1 11.32-11.32l80 80a8 8 0 0 1 0 11.32"></path></g></svg></div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 6px; flex-wrap: wrap; margin-top: 4px;"><div class="css-g5y9jx r-kdyh1x r-1hjwoze r-1777fci r-18c5d7m" style="background-color: rgba(0, 0, 0, 0); border-width: 1px; border-color: rgba(22, 35, 43, 0.14);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">탄수화물 대사</div></div></div></button><button role="button" tabindex="0" class="css-g5y9jx r-1loqt21 r-1otgn73 r-z5qs1h r-1ml3abn r-1imganj r-5kkj8d" type="button" data-nav="/record/sleep/add" style="cursor: pointer;"><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 8px;"><div class="css-g5y9jx r-1awozwy r-1rccn9a r-1dedoh8 r-1rf8fdq r-1hjwoze r-1777fci r-12ym1je"></div><div dir="auto" class="css-146c3p1 r-8akbws r-krxsd3 r-dnmrzs r-1qsk4np r-1udbk01" style="-webkit-line-clamp: 2; font-family: Pretendard-SemiBold; font-size: 15px; line-height: 22px; letter-spacing: -0.05px; color: rgb(22, 35, 43); flex: 1 1 0%; text-decoration-line: none;">잠들기 전 종이책 읽기</div><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 12px; line-height: 16px; letter-spacing: 0.1px; color: rgb(14, 124, 114); font-variant: tabular-nums;">+1.2</div><svg class="caret-right-undefined__svg-icon-phosphor" fill="currentColor" viewBox="0 0 256 256" width="11" height="11" color="#93A2A9" data-testid="phosphor-react-native-caret-right-undefined"><g fill="#93A2A9"><path d="m181.66 133.66-80 80a8 8 0 0 1-11.32-11.32L164.69 128 90.34 53.66a8 8 0 0 1 11.32-11.32l80 80a8 8 0 0 1 0 11.32"></path></g></svg></div><div class="css-g5y9jx r-1awozwy r-18u37iz" style="gap: 6px; flex-wrap: wrap; margin-top: 4px;"><div class="css-g5y9jx r-kdyh1x r-1hjwoze r-1777fci r-18c5d7m" style="background-color: rgba(0, 0, 0, 0); border-width: 1px; border-color: rgba(22, 35, 43, 0.14);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">진정</div></div><div class="css-g5y9jx r-kdyh1x r-1hjwoze r-1777fci r-18c5d7m" style="background-color: rgba(0, 0, 0, 0); border-width: 1px; border-color: rgba(22, 35, 43, 0.14);"><div dir="auto" class="css-146c3p1" style="font-family: Pretendard-SemiBold; font-size: 11px; line-height: 14px; letter-spacing: 0.2px; color: rgb(147, 162, 169);">회복력</div></div></div></button></div></div></div></div></div></div></div></div></div></div></div></div></div>
+  
+
+
+<div style="position: fixed; left: 0px; top: 0px; width: 0px; height: 0px; z-index: -1; overflow: hidden; visibility: hidden; transition-duration: 0.05s; transition-property: padding; transition-delay: 0s; padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);"></div><script src="http://localhost:8775/ux-pins.js"></script><script src="http://localhost:8775/ux-bridge.js"></script></body></html>

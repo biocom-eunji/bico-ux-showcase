@@ -1,0 +1,7 @@
+후보 6
+0 뒤로 → /record (+12)
+1 잠든 시각 10분 앞으로 → /record/sleep/add (+2)
+2 잠든 시각 10분 뒤로 → /record/sleep/add (+2)
+3 일어난 시각 10분 앞으로 → /record/sleep/add (+2)
+4 일어난 시각 10분 뒤로 → /record/sleep/add (+2)
+5 저장 → /record/sleep?tab=0 (+12)

@@ -6,7 +6,7 @@
    - D5: 완료 상태에서 「트러블 없던 날」 7칸은 할 일 카드 아래로 내린다.
    - D4: 완료 상태의 「알로에게 묻기」 칩은 빼고, 할 일 카드 아래에 「알로에게 더 물어보기 ›」를 둔다. */
 (function () {
-  var URL_JSON = 'https://biocom-eunji.github.io/bico-ux-showcase/tobe/home-done.json';
+  var URL_JSON = 'http://localhost:8775/tobe/home-done.json';
   var NAV = { '23시 30분 전에 잠자리에 들기': '/record/sleep/add', '2주 정제 탄수화물 줄여 보기': '/record/diet/add', '잠들기 전 종이책 읽기': '/record/sleep/add' };
   var data = null, step = 0, done = false;
   var QN = 3;   /* D112: 체크인 문항은 최대 3개(11/23 회의: 정책으로 개수를 정함). 4번째 문항(건조)은 쇼케이스에서 빼 둠 · 어떤 문항을 남길지는 확인 필요 */
@@ -62,7 +62,7 @@
 
   /* D21 · 체크인 카드를 bico-renewal-v4 구조로: 아바타 + 제목 + 「4문항 · 완료하면 +10 P」 → 분절 진행 막대 → 질문 → 표정 5개.
      「아침 체크인」 라벨과 구분선은 뺀다. 「트러블 없던 날」은 카드 밖 아래 별도 카드로 뺀다(정책 10-2 유지, 체크인 카드는 v4처럼 컴팩트). */
-  var CK_IMG = 'https://biocom-eunji.github.io/bico-ux-showcase/tobe/icons/bico2_still_sleep.png';
+  var CK_IMG = 'http://localhost:8775/tobe/icons/bico2_still_sleep.png';
   function findCkCard() {
     var r = document.querySelector('[role=radio]');
     for (var e = r, n = 0; e && n < 14; n++, e = e.parentElement) { if ((e.innerText || '').indexOf('아침 체크인') >= 0 && getComputedStyle(e).borderTopWidth !== '0px') return e; }
@@ -240,7 +240,7 @@
     ['아주 그래요', '그래요', '조금 그래요', '거의 아니에요', '전혀 아니에요'],
     ['아주 그래요', '그래요', '조금 그래요', '거의 아니에요', '전혀 아니에요']
   ];
-  var AWAKE_IMG = 'https://biocom-eunji.github.io/assets/assets/cell/bico3_idle.48349d69146c60ca6cc024310447e714.webp';
+  var AWAKE_IMG = 'http://localhost:8776/assets/assets/cell/bico3_idle.48349d69146c60ca6cc024310447e714.webp';
   var locked = false, answers = [];
   function leafOf(n) { while (n && n.children.length) n = n.children[0]; return n; }
   function enhanceBlock(card) {

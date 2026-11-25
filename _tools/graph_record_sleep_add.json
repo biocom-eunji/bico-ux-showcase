@@ -1,0 +1,115 @@
+{
+ "start": "/record/sleep/add",
+ "cands": [
+  {
+   "cid": 0,
+   "label": "뒤로",
+   "y": 6,
+   "w": 40,
+   "h": 40,
+   "path": "/record",
+   "kind": "route",
+   "added": [
+    "기록",
+    "3,720P",
+    "6일 연속",
+    "수",
+    "목",
+    "금",
+    "토",
+    "일",
+    "월",
+    "화",
+    "모험",
+    "입장하기"
+   ],
+   "gone": 17,
+   "shot": "shots/recordsleepadd-0.png"
+  },
+  {
+   "cid": 1,
+   "label": "잠든 시각 10분 앞으로",
+   "y": 185,
+   "w": 44,
+   "h": 44,
+   "path": "/record/sleep/add",
+   "kind": "overlay",
+   "added": [
+    "오후 11:30",
+    "7시간 10분"
+   ],
+   "gone": 2,
+   "shot": "shots/recordsleepadd-1.png"
+  },
+  {
+   "cid": 2,
+   "label": "잠든 시각 10분 뒤로",
+   "y": 185,
+   "w": 44,
+   "h": 44,
+   "path": "/record/sleep/add",
+   "kind": "overlay",
+   "added": [
+    "오후 11:50",
+    "6시간 50분"
+   ],
+   "gone": 2,
+   "shot": "shots/recordsleepadd-2.png"
+  },
+  {
+   "cid": 3,
+   "label": "일어난 시각 10분 앞으로",
+   "y": 323,
+   "w": 44,
+   "h": 44,
+   "path": "/record/sleep/add",
+   "kind": "overlay",
+   "added": [
+    "오전 6:30",
+    "6시간 50분"
+   ],
+   "gone": 2,
+   "shot": "shots/recordsleepadd-3.png"
+  },
+  {
+   "cid": 4,
+   "label": "일어난 시각 10분 뒤로",
+   "y": 323,
+   "w": 44,
+   "h": 44,
+   "path": "/record/sleep/add",
+   "kind": "overlay",
+   "added": [
+    "오전 6:50",
+    "7시간 10분"
+   ],
+   "gone": 2,
+   "shot": "shots/recordsleepadd-4.png"
+  },
+  {
+   "cid": 5,
+   "label": "저장",
+   "y": 775,
+   "w": 350,
+   "h": 55,
+   "path": "/record/sleep?tab=0",
+   "kind": "route",
+   "added": [
+    "수면",
+    "기록",
+    "일",
+    "주",
+    "월",
+    "10/29 밤 → 10/30 아침",
+    "어젯밤 잔 시간은",
+    "7:00",
+    "기준 6시간",
+    "기준 안",
+    "평소보다 2시간 38분 더 잤어요",
+    "밤 사이"
+   ],
+   "gone": 12,
+   "shot": "shots/recordsleepadd-5.png"
+  }
+ ]
+}

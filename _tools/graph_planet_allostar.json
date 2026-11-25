@@ -1,0 +1,580 @@
+{
+ "start": "/planet/allostar",
+ "cands": [
+  {
+   "cid": 0,
+   "label": "챕터 1 : 별빛 숲 입구 오프닝 다시보기",
+   "y": 1822,
+   "w": 129,
+   "h": 58,
+   "path": "/story/1/0",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "챕터 1 : 별빛 숲 입구",
+    "알로스타의 별빛 숲 입구.",
+    "작은 발자국 하나가 이야기를 시작했다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-0.png"
+  },
+  {
+   "cid": 1,
+   "label": "스테이지 1 완료",
+   "y": 1731,
+   "w": 104,
+   "h": 84,
+   "path": "/story/1/1",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 입구, 1번째 이야기를",
+    "다시 펼쳐 보았다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-1.png"
+  },
+  {
+   "cid": 2,
+   "label": "스테이지 2 완료",
+   "y": 1613,
+   "w": 104,
+   "h": 84,
+   "path": "/story/1/2",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 입구, 2번째 이야기를",
+    "다시 펼쳐 보았다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-2.png"
+  },
+  {
+   "cid": 3,
+   "label": "스테이지 3 완료",
+   "y": 1495,
+   "w": 104,
+   "h": 84,
+   "path": "/story/1/3",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 입구, 3번째 이야기를",
+    "다시 펼쳐 보았다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-3.png"
+  },
+  {
+   "cid": 4,
+   "label": "스테이지 4 완료",
+   "y": 1377,
+   "w": 104,
+   "h": 84,
+   "path": "/story/1/4",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 입구, 4번째 이야기를",
+    "다시 펼쳐 보았다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-4.png"
+  },
+  {
+   "cid": 5,
+   "label": "스테이지 5 완료",
+   "y": 1259,
+   "w": 104,
+   "h": 84,
+   "path": "/story/1/5",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 입구, 5번째 이야기를",
+    "다시 펼쳐 보았다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-5.png"
+  },
+  {
+   "cid": 6,
+   "label": "스테이지 6 완료",
+   "y": 1141,
+   "w": 104,
+   "h": 84,
+   "path": "/story/1/6",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 입구, 6번째 이야기를",
+    "다시 펼쳐 보았다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-6.png"
+  },
+  {
+   "cid": 7,
+   "label": "스테이지 7 완료",
+   "y": 1023,
+   "w": 104,
+   "h": 84,
+   "path": "/story/1/7",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 입구, 7번째 이야기를",
+    "다시 펼쳐 보았다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-7.png"
+  },
+  {
+   "cid": 8,
+   "label": "보상 상자 열림",
+   "y": 879,
+   "w": 92,
+   "h": 80,
+   "path": "/planet/allostar",
+   "kind": "overlay",
+   "added": [
+    "7 / 7",
+    "이미 받은 상자예요",
+    "의지의 불꽃 2개 · 연속 출석 · 챌린지를 지켜요"
+   ],
+   "gone": 1,
+   "shot": "shots/planetallostar-8.png"
+  },
+  {
+   "cid": 9,
+   "label": "챕터 2 : 별빛 숲 깊은 곳 오프닝 다시보기",
+   "y": 736,
+   "w": 145,
+   "h": 58,
+   "path": "/story/2/0",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "챕터 2 : 별빛 숲 깊은 곳",
+    "별빛 숲 깊은 곳에는",
+    "별빛을 머금은 오래된 나무들이 산다고 했다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-9.png"
+  },
+  {
+   "cid": 10,
+   "label": "스테이지 1 완료",
+   "y": 645,
+   "w": 104,
+   "h": 84,
+   "path": "/story/2/1",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 깊은 곳, 1번째 이야기를",
+    "다시 펼쳐 보았다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-10.png"
+  },
+  {
+   "cid": 11,
+   "label": "스테이지 2 완료",
+   "y": 527,
+   "w": 104,
+   "h": 84,
+   "path": "/story/2/2",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 깊은 곳, 2번째 이야기를",
+    "다시 펼쳐 보았다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-11.png"
+  },
+  {
+   "cid": 12,
+   "label": "스테이지 3 진행 중",
+   "y": 409,
+   "w": 104,
+   "h": 84,
+   "path": "/story/2/3",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 깊은 곳에 들어서자",
+    "나뭇잎도 꽃도 모두 잿빛이었다.",
+    "에너지 1개를 사용했어요",
+    "챕터 2 · 3번째 스테이지로 들어가요"
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-12.png"
+  },
+  {
+   "cid": 13,
+   "label": "보상 상자 잠김",
+   "y": -207,
+   "w": 92,
+   "h": 80,
+   "path": "/planet/allostar",
+   "kind": "overlay",
+   "added": [
+    "보상 상자 · 의지의 불꽃 1개",
+    "7번째 스테이지까지 마치면 열려요"
+   ],
+   "gone": 0,
+   "shot": "shots/planetallostar-13.png"
+  },
+  {
+   "cid": 14,
+   "label": "보상 상자 잠김",
+   "y": -1151,
+   "w": 92,
+   "h": 80,
+   "path": "/planet/allostar",
+   "kind": "overlay",
+   "added": [
+    "보상 상자 · 의지의 불꽃 1개",
+    "14번째 스테이지까지 마치면 열려요"
+   ],
+   "gone": 0,
+   "shot": "shots/planetallostar-14.png"
+  },
+  {
+   "cid": 15,
+   "label": "비코 · 현재 스테이지 열기",
+   "y": 385,
+   "w": 66,
+   "h": 66,
+   "path": "/story/2/3",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "별빛 숲 깊은 곳에 들어서자",
+    "나뭇잎도 꽃도 모두 잿빛이었다.",
+    "에너지 1개를 사용했어요",
+    "챕터 2 · 3번째 스테이지로 들어가요"
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-15.png"
+  },
+  {
+   "cid": 16,
+   "label": "뒤로",
+   "y": 9,
+   "w": 44,
+   "h": 44,
+   "path": "/record",
+   "kind": "route",
+   "added": [
+    "기록",
+    "3,720P",
+    "6일 연속",
+    "수",
+    "목",
+    "금",
+    "토",
+    "일",
+    "월",
+    "화",
+    "모험",
+    "입장하기"
+   ],
+   "gone": 30,
+   "shot": "shots/planetallostar-16.png"
+  },
+  {
+   "cid": 17,
+   "label": "레벨 4",
+   "y": 8,
+   "w": 240,
+   "h": 46,
+   "path": "/my/level",
+   "kind": "route",
+   "added": [
+    "레벨과 배지",
+    "레벨",
+    "배지",
+    "Lv 7까지 700XP 남았어요",
+    "경험치는 아침 체크인 · 기록 · 미션 · 출석으로 쌓여요",
+    "지금",
+    "Lv 6",
+    "다음 보상 · Lv 10",
+    "경험치 200XP · 캐릭터 변경권",
+    "레벨 보상",
+    "Lv 5",
+    "경험치 200XP"
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-17.png"
+  },
+  {
+   "cid": 18,
+   "label": "에너지 2개",
+   "y": 9,
+   "w": 58,
+   "h": 44,
+   "path": "/planet/allostar",
+   "kind": "overlay",
+   "added": [
+    "에너지는",
+    "스테이지를 열 때 1개씩 사용돼요.",
+    "· 오늘의 미션 1개를 하면 1개가 차요",
+    "· 스테이지 하나를 열 때 1개를 써요",
+    "· 하루 최대 5개 · 다음 날 아침 새로 모아요",
+    "확인"
+   ],
+   "gone": 0,
+   "shot": "shots/planetallostar-18.png"
+  },
+  {
+   "cid": 19,
+   "label": "챕터 오프닝 다시보기",
+   "y": 74,
+   "w": 36,
+   "h": 36,
+   "path": "/story/2/0",
+   "kind": "route",
+   "added": [
+    "건너뛰기",
+    "챕터 2 : 별빛 숲 깊은 곳",
+    "별빛 숲 깊은 곳에는",
+    "별빛을 머금은 오래된 나무들이 산다고 했다."
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-19.png"
+  },
+  {
+   "cid": 20,
+   "label": "불꽃 언덕, 대사 37점, 안개",
+   "y": 134,
+   "w": 125,
+   "h": 28,
+   "path": "/v3/index/met",
+   "kind": "route",
+   "added": [
+    "이너뷰티 점수",
+    "장과 진정, 회복을 함께 봐요",
+    "60 / 100",
+    "보통",
+    "▲1",
+    "실천이 늘고 있어요",
+    "60",
+    "75",
+    "85",
+    "이 점수는 검사와 문진, 기록한 실천을 함께 반영해요",
+    "분석 정확도",
+    "66%"
+   ],
+   "gone": 33,
+   "shot": "shots/planetallostar-20.png"
+  },
+  {
+   "cid": 21,
+   "label": "이슬 강, 장 48점",
+   "y": 134,
+   "w": 46,
+   "h": 28,
+   "path": "/v3/index/gut",
+   "kind": "route",
+   "added": [
+    "이너뷰티 점수",
+    "장과 진정, 회복을 함께 봐요",
+    "60 / 100",
+    "보통",
+    "▲1",
+    "실천이 늘고 있어요",
+    "60",
+    "75",
+    "85",
+    "이 점수는 검사와 문진, 기록한 실천을 함께 반영해요",
+    "분석 정확도",
+    "66%"
+   ],
+   "gone": 33,
+   "shot": "shots/planetallostar-21.png"
+  },
+  {
+   "cid": 22,
+   "label": "햇살 들판, 면역 63점",
+   "y": 134,
+   "w": 81,
+   "h": 28,
+   "path": "/v3/index/imm",
+   "kind": "route",
+   "added": [
+    "이너뷰티 점수",
+    "장과 진정, 회복을 함께 봐요",
+    "60 / 100",
+    "보통",
+    "▲1",
+    "실천이 늘고 있어요",
+    "60",
+    "75",
+    "85",
+    "이 점수는 검사와 문진, 기록한 실천을 함께 반영해요",
+    "분석 정확도",
+    "66%"
+   ],
+   "gone": 33,
+   "shot": "shots/planetallostar-22.png"
+  },
+  {
+   "cid": 23,
+   "label": "달빛 숲, 회복 44점",
+   "y": 134,
+   "w": 67,
+   "h": 28,
+   "path": "/v3/index/rec",
+   "kind": "route",
+   "added": [
+    "이너뷰티 점수",
+    "장과 진정, 회복을 함께 봐요",
+    "60 / 100",
+    "보통",
+    "▲1",
+    "실천이 늘고 있어요",
+    "60",
+    "75",
+    "85",
+    "이 점수는 검사와 문진, 기록한 실천을 함께 반영해요",
+    "분석 정확도",
+    "66%"
+   ],
+   "gone": 33,
+   "shot": "shots/planetallostar-23.png"
+  },
+  {
+   "cid": 24,
+   "label": "내 포인트 보기",
+   "y": 745,
+   "w": 48,
+   "h": 16,
+   "path": "/my/point",
+   "kind": "route",
+   "added": [
+    "포인트",
+    "이번 달 110P를 모았어요",
+    "3,720 P",
+    "지금 가진 포인트 · 쇼핑에서 결제할 때 쓸 수 있어요",
+    "포인트 쓰러 가기",
+    "멤버십은 기록 1회 100P",
+    "이 달",
+    "2026년 10월",
+    "적립",
+    "+110P",
+    "사용",
+    "−2,000P"
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-24.png"
+  },
+  {
+   "cid": 25,
+   "label": "체크인, 하러 가기",
+   "y": 773,
+   "w": 62,
+   "h": 34,
+   "path": "/",
+   "kind": "route",
+   "added": [
+    "Lv",
+    "3,720P",
+    "결과지",
+    "보관함",
+    "비코",
+    "쿨쿨 자는 중",
+    "이너뷰티 점수",
+    "집중 회복력",
+    "60 / 100",
+    "보통",
+    "▲1",
+    "실천이 늘고 있어요"
+   ],
+   "gone": 34,
+   "shot": "shots/planetallostar-25.png"
+  },
+  {
+   "cid": 26,
+   "label": "식단, 하러 가기",
+   "y": 773,
+   "w": 62,
+   "h": 34,
+   "path": "/record/diet/add",
+   "kind": "route",
+   "added": [
+    "식단 기록하기",
+    "어느 끼니인가요?",
+    "아침",
+    "468kcal 기록 있음",
+    "점심",
+    "643kcal 기록 있음",
+    "지금 시간",
+    "저녁",
+    "502kcal 기록 있음",
+    "간식",
+    "260kcal 기록 있음"
+   ],
+   "gone": 36,
+   "shot": "shots/planetallostar-26.png"
+  },
+  {
+   "cid": 27,
+   "label": "영양제, 하러 가기",
+   "y": 773,
+   "w": 62,
+   "h": 34,
+   "path": "/record/supplement",
+   "kind": "route",
+   "added": [
+    "루틴",
+    "일",
+    "주",
+    "월",
+    "10/30 오늘",
+    "오늘 챙긴 영양제는",
+    "1 / 3 개",
+    "점심 뉴로 마스터가 남았어요 · 그 뒤로 1개 더",
+    "남은 2개 모두 챙기기",
+    "오늘 체크",
+    "아침",
+    "오전 8:00"
+   ],
+   "gone": 35,
+   "shot": "shots/planetallostar-27.png"
+  },
+  {
+   "cid": 28,
+   "label": "단식, 했어요",
+   "y": 773,
+   "w": 62,
+   "h": 34,
+   "path": "/planet/allostar",
+   "kind": "overlay",
+   "added": [
+    "단식 · 오늘 했어요",
+    "에너지 1개 · +10P를 받았어요"
+   ],
+   "gone": 0,
+   "shot": "shots/planetallostar-28.png"
+  },
+  {
+   "cid": 29,
+   "label": "수면, 했어요",
+   "y": 773,
+   "w": 62,
+   "h": 34,
+   "path": "/planet/allostar",
+   "kind": "overlay",
+   "added": [
+    "수면 · 오늘 했어요",
+    "에너지 1개 · +10P를 받았어요"
+   ],
+   "gone": 0,
+   "shot": "shots/planetallostar-29.png"
+  }
+ ]
+}

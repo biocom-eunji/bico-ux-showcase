@@ -1,0 +1,67 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>하단 호 그래프 시안 4개</title>
+<style>
+body{margin:0;background:#f4f4f5;font-family:Pretendard,-apple-system,"Apple SD Gothic Neo",sans-serif;color:#18181b}
+header{padding:14px 24px;border-bottom:1px solid #e4e4e7;background:#fff}header h1{margin:0;font-size:16px}header p{margin:4px 0 0;font-size:12px;color:#71717a;line-height:1.55;max-width:980px}
+main{display:flex;gap:24px;justify-content:center;padding:20px 24px 40px;flex-wrap:wrap}
+.c{display:flex;flex-direction:column;gap:6px;width:336px}.c h2{margin:0;font-size:13px}.c h2 span{font-weight:400;color:#71717a;font-size:12px;margin-left:6px}
+.c .d{font-size:12px;color:#52525b;line-height:1.6}
+.c .q{font-size:11px;color:#71717a;line-height:1.55;border-top:1px dashed #d4d4d8;padding-top:6px}
+.f{width:336px;height:330px;border:1px solid #e4e4e7;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.07);position:relative}
+iframe{width:390px;height:1400px;border:0;transform:scale(.8615);transform-origin:0 0;position:absolute;left:0;top:0}
+</style></head><body>
+<header><h1>하단 「한눈에 보기」 호 그래프 시안 4개 (11/20 회의 B-1)</h1><p>회의 지적 두 가지: ① 호의 안쪽 눈금 · 점 2개 · 범례가 직관적으로 안 읽힌다(색을 더하면 지저분해짐) ② 상단 카드와 같은 호 · 같은 「65」가 두 번 나온다. 각 안은 실제 홈 화면 안에서 호 영역만 바꿔 끼운 거예요(위쪽 제목 · 진행 줄 · 아래 「최근 7일 점수」는 그대로). 새 색은 쓰지 않고 이미 승인된 게이지 색(코랄 · 호박 · 초록 · 파랑)만 써요. 숫자(65 · 60 · 75 · +2 · 67)는 시안 값이에요.</p></header>
+<main>
+<section class="c"><h2>A · 현재 <span>기준</span></h2><div class="f"><iframe data-v="A" src="tobe/tobe-home.html?res=seen"></iframe></div>
+<div class="d">바깥 4색 호 + 안쪽 눈금 호 + 점 2개(지금 · 좋음) + 범례 2줄 + 큰 「65점」.</div>
+<div class="q">회의 평가: 직관적으로 이해되지 않음. 위와 같은 65가 중복.</div></section>
+<section class="c"><h2>B · 구간 확대 호 <span>숫자 중심</span></h2><div class="f"><iframe data-v="B" src="tobe/tobe-home.html?res=seen"></iframe></div>
+<div class="d">호 하나가 「지금 구간(보통 60~75)」만 뜻해요. 지금 위치 원 + 오늘 할 일 다 하면 올라갈 만큼(점선) + 끝의 초록 원 = 좋음. 가운데는 65 대신 「좋음까지 10점」.</div>
+<div class="q">상단은 「전체에서 어디」, 하단은 「다음 단계까지 얼마」로 역할이 갈려 중복이 사라져요. 단, 위 호(0~100)와 눈금 기준이 달라서 「같은 호인데 왜 위치가 다르지」가 될 수 있어요.</div></section>
+<section class="c"><h2>C · 4단계 + 지금 단계 강조 <span>단계 중심</span></h2><div class="f"><iframe data-v="C" src="tobe/tobe-home.html?res=seen"></iframe></div>
+<div class="d">위와 같은 전체 호를 쓰되 지금 단계(보통)만 굵게, 나머지는 옅게. 경계 숫자 60 · 75만 표시. 가운데는 65 대신 단계 이름 「보통」 + 「좋음까지 10점」.</div>
+<div class="q">위 호와 같은 모양이라 한 몸으로 읽히고(D84 「홈은 호인데 상세는 막대」 문제 없음), 안쪽 장치가 사라져요. 단 「같은 그림이 두 번」 인상은 남아요.</div></section>
+<section class="c"><h2>D · 단순화 + 내일 +2 <span>변화 최소</span></h2><div class="f"><iframe data-v="D" src="tobe/tobe-home.html?res=seen"></iframe></div>
+<div class="d">바깥 4색 호 + 지금 위치 원만 남기고 안쪽 장치 · 범례 삭제. 지금 위치 앞에 점선 원 = 오늘 할 일을 다 하면 내일 반영될 +2. 큰 「65점」은 유지.</div>
+<div class="q">바꾸는 폭이 가장 작고 「올릴 수 있는 만큼」이 한눈에 보여요. 대신 65 중복은 그대로예요(상단이 작아져 눈에 덜 띄긴 해요).</div></section>
+</main>
+<script>
+var SB="font-family:'Pretendard-SemiBold',sans-serif",MD="font-family:'Pretendard-Medium',sans-serif",BD="font-family:'Pretendard-Bold',sans-serif";
+var CO='#F28A6A',YE='#F9C65B',GR='#6CC189',BL='#6495DE';
+function P(a,r){var t=a*Math.PI/180;return [60+r*Math.cos(t),60+r*Math.sin(t)]}
+function arc(a0,a1,r){var p=P(a0,r),q=P(a1,r);return 'M'+p[0].toFixed(2)+' '+p[1].toFixed(2)+' A'+r+' '+r+' 0 '+((a1-a0)>180?1:0)+' 1 '+q[0].toFixed(2)+' '+q[1].toFixed(2)}
+function A(s){return 135+270*s/100}          /* 전체 0~100 */
+function Z(s){return 135+270*(s-60)/15}      /* 보통 구간 60~75 확대 */
+function seg(a0,a1,c,w,op,extra){return '<path d="'+arc(a0,a1,46)+'" fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round" opacity="'+(op==null?1:op)+'" '+(extra||'')+'/>'}
+function dot(a,r,fill,stroke,sw,rr){var p=P(a,r||46);return '<circle cx="'+p[0].toFixed(2)+'" cy="'+p[1].toFixed(2)+'" r="'+rr+'" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+sw+'"/>'}
+function txt(a,r,s,fs){var p=P(a,r);return '<text x="'+p[0].toFixed(1)+'" y="'+(p[1]+3).toFixed(1)+'" text-anchor="middle" font-size="'+fs+'" fill="#72747b" style="'+MD+'">'+s+'</text>'}
+var SVG0='<svg width="116" height="116" viewBox="0 0 120 120" aria-hidden="true" class="tb-gauge-svg tb-cg-svg">',SVG1='</svg>';
+var NOTE='<div class="nt">오늘 할 일을 다 하면 내일 +2점이 반영돼요</div>';
+var YD='<div class="yd2">어제보다 ▲1</div>';
+var V={
+B:{svg:SVG0+seg(135,405,'#EDEEF0',7)+seg(Z(60),Z(65),YE,7)+seg(Z(65),Z(67),YE,7,1,'stroke-dasharray="2.6 2.4" stroke-linecap="butt"')+dot(Z(75),46,'#fff',GR,2.6,5.2)+dot(Z(65),46,'#fff','#E6AC39',3,5.6)+txt(135,0,'',1)+txt(Z(66),57,'+2',9).replace('#72747b','#8A5C00').replace(MD,SB)+'<text x="27" y="110" text-anchor="middle" font-size="9" fill="#72747b" style="'+MD+'">60</text><text x="93" y="110" text-anchor="middle" font-size="9" fill="#72747b" style="'+MD+'">75</text>'+SVG1,
+   c:'<span class="k2">좋음까지</span><b>10<small>점</small></b>',
+   t:'<div class="v3">좋음은 <em>75점</em>부터예요</div>'+YD+NOTE},
+C:{svg:SVG0+seg(A(0)+1.5,A(60)-1.5,CO,4,.38)+seg(A(60)+1.5,A(75)-1.5,YE,9)+seg(A(75)+1.5,A(85)-1.5,GR,5,.8)+seg(A(85)+1.5,A(100)-1.5,BL,4,.38)+dot(A(65),46,'#fff','#E6AC39',3,5.6)+txt(A(60),57,'60',8.5)+txt(A(75),57,'75',8.5)+SVG1,
+   c:'<span class="k3">보통</span><span class="k2">좋음까지 <b2>10점</b2></span>',
+   t:'<div class="v3">좋음까지 <em>10점</em> 남았어요</div>'+YD+NOTE},
+D:{svg:SVG0+seg(A(0),A(60)-1.2,CO,6)+seg(A(60)+1.2,A(75)-1.2,YE,6)+seg(A(75)+1.2,A(85)-1.2,GR,6)+seg(A(85)+1.2,A(100),BL,6)+seg(A(65),A(67),'#fff',6,.9,'stroke-dasharray="1.8 2.2" stroke-linecap="butt"')+dot(A(65),46,'#fff','#E6AC39',3,5.6)+txt(A(66),57,'+2',9).replace('#72747b','#8A5C00').replace(MD,SB)+SVG1,
+   c:'<b>65<small>점</small></b>',
+   t:'<div class="v3">다 하면 내일 <em>+2점</em>이<br>반영돼요</div>'+YD}
+};
+var CSS='.uxpin{display:none!important}'
++'.tb-care .tb-cg .c{inset:0!important;display:flex;flex-direction:column;align-items:center;justify-content:center}'
++'.tb-care .tb-cg .c b{font-size:30px!important;line-height:34px!important}.tb-care .tb-cg .c b small{font-size:14px!important}'
++'.tb-care .tb-cg .c span.k2{font-size:12px;line-height:16px;color:#5a5c63;'+MD+'}.tb-care .tb-cg .c span.k2 b2{font-style:normal;'+SB+';color:#171719}'
++'.tb-care .tb-cg .c span.k3{font-size:22px;line-height:26px;color:#7A4E00;'+BD+'}'
++'.tb-care .tb-cg .v3{font-size:17px;line-height:26px;letter-spacing:-.3px;color:#171719;'+SB+'}.tb-care .tb-cg .v3 em{font-style:normal;'+BD+';background:#FFF0B8;color:#7A4E00;border-radius:8px;padding:0 6px}'
++'.tb-care .tb-cg .yd2{display:inline-flex;align-items:center;margin-top:8px;min-height:24px;padding:0 8px;border-radius:6px;background:#f6f8f9;color:#5a5c63;font-size:12px;'+SB+'}'
++'.tb-care .tb-cg .nt{margin-top:8px;font-size:12px;line-height:16px;color:#72747b;'+MD+'}';
+[].forEach.call(document.querySelectorAll('iframe'),function(f){f.addEventListener('load',function(){setTimeout(function(){
+  var d=f.contentDocument,v=V[f.dataset.v],care=d.querySelector('.tb-care');
+  if(v){var s=d.createElement('style');s.textContent=CSS;d.head.appendChild(s);
+    var cg=d.querySelector('.tb-cg');cg.querySelector('.g').innerHTML=v.svg+'<div class="c">'+v.c+'</div>';cg.querySelector('.t').innerHTML=v.t;}
+  var t=care.getBoundingClientRect().top;
+  f.style.top=(-(t-6)*0.8615)+'px';
+  var hd=d.querySelector('.tb-hdr');if(hd)hd.style.visibility='hidden';
+},1100)})});
+</script></body></html>

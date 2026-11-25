@@ -1,0 +1,6 @@
+후보 5
+0 뒤로 → /record (+12)
+1 아침 → /record/diet/add (+8)
+2 점심 → /record/diet/add (+8)
+3 저녁 → /record/diet/add (+8)
+4 간식 → /record/diet/add (+8)

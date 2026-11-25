@@ -1,0 +1,12 @@
+후보 11
+0 뒤로 → /record (+12)
+1 일 → /record/checkin 
+2 주 → /record/checkin (+12)
+3 월 → /record/checkin (+12)
+4 이전 기간 → /record/checkin (+12)
+5 아침 체크인하기 → / (+12)
+6 회복 「체력」 보기 → /v3/index/rec?sub=stamina (+12)
+7 면역 「피부」 보기 → /v3/index/imm?sub=skin (+12)
+8 면역 「피부」 보기 → /v3/index/imm?sub=skin (+12)
+9 면역 「피부」 보기 → /v3/index/imm?sub=skin (+12)
+10 이 기록이 들어가는 곳 · 답은 하위 지표의 근거로 목표 점수에 들어가요 → /v3/index/rec?sub=stamina (+12)

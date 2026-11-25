@@ -1,0 +1,15 @@
+후보 14
+0 뒤로 → /record (+12)
+1 식단 기록하기 → /record/diet/add (+7)
+2 일 → /record/diet 
+3 주 → /record/diet (+12)
+4 월 → /record/diet (+12)
+5 이전 기간 → /record/diet (+12)
+6 계산 방법 → /record/diet (+12)
+7 아침 상세 → /record/diet/meal/raw13-0 (+12)
+8 점심 상세 → /record/diet/meal/raw13-1 (+12)
+9 저녁 상세 → /record/diet/meal/raw13-3 (+12)
+10 간식 상세 → /record/diet/meal/raw13-2 (+12)
+11 + 간식 남기기 → /record/diet/add?slot=%EA%B0%84%EC%8B%9D (+8)
+12 이유 · 함께 읽은 검사 · 알로의 제안은 멤버십에서 볼 수 있어요 → /my/membership (+12)
+13 이 기록이 들어가는 곳 · 식단 관리, 장, 음식 반응, 탄수화물 대사에 → /v3/index/met (+12)
